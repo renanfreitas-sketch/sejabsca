@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BSCA — Comunicados por Categoria 2026/2027</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+  :root {
+    --espresso: #2C1A0E;
+    --mocha: #5C3317;
+    --caramel: #A0522D;
+    --latte: #C8956C;
+    --cream: #F5ECD7;
+    --milk: #FBF7F0;
+    --gold: #C9A84C;
+    --green: #3D6B4F;
+    --green-light: #EAF2EC;
+    --white: #FFFFFF;
+    --gray: #6B7280;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #E8DDD0;
+    padding: 40px 20px;
+  }
+
+  .page-title {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .page-title h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    color: var(--espresso);
+    letter-spacing: -0.5px;
+  }
+  .page-title p {
+    color: var(--mocha);
+    font-size: 1rem;
+    margin-top: 8px;
+    font-weight: 500;
+  }
+
+  /* NAV INDEX */
+  .index {
+    max-width: 900px;
+    margin: 0 auto 56px;
+    background: var(--white);
+    border-radius: 16px;
+    padding: 28px 32px;
+    box-shadow: 0 4px 20px rgba(44,26,14,0.10);
+  }
+  .index h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--espresso);
+    margin-bottom: 16px;
+    border-bottom: 2px solid var(--cream);
+    padding-bottom: 10px;
+  }
+  .index-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 8px;
+  }
+  .index-grid a {
+    color: var(--mocha);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 6px 10px;
+    border-radius: 8px;
+    background: var(--cream);
+    transition: background 0.2s;
+  }
+  .index-grid a:hover { background: var(--latte); color: var(--white); }
+
+  /* FLYER */
+  .flyer {
+    max-width: 900px;
+    margin: 0 auto 56px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 40px rgba(44,26,14,0.15);
+    page-break-after: always;
+  }
+
+  .flyer-header {
+    padding: 36px 40px 28px;
+    position: relative;
+    overflow: hidden;
+  }
+  .flyer-header::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.08);
+  }
+  .flyer-header::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; right: 60px;
+    width: 140px; height: 140px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.06);
+  }
+
+  .flyer-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    color: var(--white);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+  }
+  .flyer-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--white);
+    line-height: 1.2;
+    position: relative;
+    z-index: 1;
+  }
+  .flyer-header .tagline {
+    margin-top: 8px;
+    color: rgba(255,255,255,0.85);
+    font-size: 0.95rem;
+    font-weight: 400;
+    position: relative;
+    z-index: 1;
+  }
+
+  .flyer-body {
+    background: var(--milk);
+    padding: 32px 40px;
+  }
+
+  .flyer-intro {
+    color: var(--espresso);
+    font-size: 0.97rem;
+    line-height: 1.7;
+    margin-bottom: 24px;
+    border-left: 3px solid var(--caramel);
+    padding-left: 16px;
+  }
+
+  /* PRICING BOX */
+  .pricing-box {
+    background: var(--white);
+    border-radius: 12px;
+    border: 1px solid #E8DDD0;
+    padding: 20px 24px;
+    margin-bottom: 24px;
+  }
+  .pricing-box h4 {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 14px;
+  }
+  .price-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 10px;
+  }
+  .price-item {
+    background: var(--cream);
+    border-radius: 10px;
+    padding: 12px 14px;
+  }
+  .price-item .label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--caramel);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 4px;
+  }
+  .price-item .value {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--espresso);
+  }
+  .price-item .sub {
+    font-size: 0.72rem;
+    color: var(--gray);
+    margin-top: 2px;
+  }
+  .price-free {
+    background: var(--green-light);
+    border-radius: 10px;
+    padding: 14px 18px;
+    text-align: center;
+  }
+  .price-free .value {
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: var(--green);
+    letter-spacing: -0.5px;
+  }
+  .price-free .sub {
+    font-size: 0.82rem;
+    color: var(--green);
+    margin-top: 4px;
+    font-weight: 500;
+  }
+
+  /* SUBCATEGORIES */
+  .subcats {
+    margin-bottom: 24px;
+  }
+  .subcats h4 {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 12px;
+  }
+  .subcat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 8px;
+  }
+  .subcat-item {
+    background: var(--white);
+    border: 1px solid #E8DDD0;
+    border-radius: 10px;
+    padding: 12px 14px;
+  }
+  .subcat-item .sc-name {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--mocha);
+  }
+  .subcat-item .sc-range {
+    font-size: 0.72rem;
+    color: var(--gray);
+    margin: 2px 0 6px;
+  }
+  .subcat-item .sc-price {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--espresso);
+  }
+  .subcat-item .sc-monthly {
+    font-size: 0.7rem;
+    color: var(--gray);
+  }
+
+  /* BENEFITS */
+  .benefits {
+    margin-bottom: 24px;
+  }
+  .benefits h4 {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 12px;
+  }
+  .benefit-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .benefit-item {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    background: var(--white);
+    border-radius: 10px;
+    padding: 12px 14px;
+    border: 1px solid #E8DDD0;
+  }
+  .benefit-icon {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .benefit-text {
+    font-size: 0.82rem;
+    color: var(--espresso);
+    line-height: 1.5;
+    font-weight: 500;
+  }
+
+  /* CTA */
+  .cta-bar {
+    background: var(--espresso);
+    padding: 22px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .cta-bar .cta-text {
+    color: var(--cream);
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  .cta-bar .cta-text strong {
+    color: var(--gold);
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 2px;
+  }
+  .cta-btn {
+    background: var(--gold);
+    color: var(--espresso);
+    font-weight: 700;
+    font-size: 0.88rem;
+    padding: 12px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    display: inline-block;
+    transition: background 0.2s;
+  }
+  .cta-btn:hover { background: var(--latte); }
+
+  /* COLOR THEMES */
+  .theme-producer .flyer-header { background: linear-gradient(135deg, #3D6B4F 0%, #2A4A36 100%); }
+  .theme-roaster .flyer-header  { background: linear-gradient(135deg, #5C3317 0%, #3A1F0A 100%); }
+  .theme-cafe .flyer-header     { background: linear-gradient(135deg, #A0522D 0%, #7A3A1A 100%); }
+  .theme-exporter .flyer-header { background: linear-gradient(135deg, #1A4A6B 0%, #0D2E45 100%); }
+  .theme-coop .flyer-header     { background: linear-gradient(135deg, #5B3A8C 0%, #3A2060 100%); }
+  .theme-broker .flyer-header   { background: linear-gradient(135deg, #B5651D 0%, #7A3F0A 100%); }
+  .theme-storage .flyer-header  { background: linear-gradient(135deg, #4A6741 0%, #2E4228 100%); }
+  .theme-equipment .flyer-header{ background: linear-gradient(135deg, #2E5D7E 0%, #1A3A52 100%); }
+  .theme-community .flyer-header{ background: linear-gradient(135deg, #6B7280 0%, #374151 100%); }
+  .theme-intl .flyer-header     { background: linear-gradient(135deg, #0E4D7B 0%, #073258 100%); }
+  .theme-lovers .flyer-header   { background: linear-gradient(135deg, #8B1A4A 0%, #5C1030 100%); }
+  .theme-emeritus .flyer-header { background: linear-gradient(135deg, #7A6830 0%, #4A3F18 100%); }
+
+  /* FOOTER */
+  .site-footer {
+    text-align: center;
+    color: var(--mocha);
+    font-size: 0.8rem;
+    margin-top: 24px;
+    opacity: 0.7;
+  }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .flyer { box-shadow: none; page-break-after: always; margin-bottom: 0; }
+    .index { display: none; }
+  }
+
+  @media (max-width: 600px) {
+    .benefit-list { grid-template-columns: 1fr; }
+    .price-grid { grid-template-columns: 1fr 1fr; }
+    .flyer-header h2 { font-size: 1.5rem; }
+    .cta-bar { flex-direction: column; text-align: center; }
+    .flyer-header, .flyer-body, .cta-bar { padding-left: 24px; padding-right: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-title">
+  <h1>BSCA — Associe-se 2026/2027</h1>
+  <p>Comunicados por categoria de associado · Ciclo Fev/2026–Jan/2027</p>
+</div>
+
+<!-- INDEX -->
+<div class="index">
+  <h2>Navegue pelas categorias</h2>
+  <div class="index-grid">
+    <a href="#produtor">🌱 Produtor</a>
+    <a href="#torrefador">🔥 Torrefador</a>
+    <a href="#cafeteria">☕ Cafeteria</a>
+    <a href="#exportador">🌍 Exportador</a>
+    <a href="#cooperativa">🤝 Cooperativa</a>
+    <a href="#corretor">📋 Corretor</a>
+    <a href="#armazem">🏭 Armazém</a>
+    <a href="#equipamentos">⚙️ Implementos &amp; Equipamentos</a>
+    <a href="#profissionais">🎓 Profissionais</a>
+    <a href="#assoc-produtores">🌿 Assoc. de Produtores</a>
+    <a href="#assoc-cooperativas">🔗 Assoc. de Cooperativas</a>
+    <a href="#internacional">🌐 Membro Internacional</a>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════
+     1. PRODUTOR
+════════════════════════════════════ -->
+<div class="flyer theme-producer" id="produtor">
+  <div class="flyer-header">
+    <div class="flyer-badge">Membro Associado · Produtor</div>
+    <h2>Coloque seu café especial<br>no mapa do mundo</h2>
+    <p class="tagline">Para produtores rurais de café especial — do pequeno ao grande produtor</p>
+  </div>
+  <div class="flyer-body">
+    <p class="flyer-intro">
+      A BSCA é a ponte entre a sua fazenda e os melhores compradores do mundo. Ao se associar como Produtor, você garante acesso ao Selo de Qualidade BSCA, à Vitrine digital, às maiores feiras internacionais e a um ecossistema completo que transforma qualidade em prêmio sobre a cotação de mercado.
+    </p>
+
+    <div class="subcats">
+      <h4>Enquadramento por área da propriedade</h4>
+      <div class="subcat-grid">
+        <div class="subcat-item">
+          <div class="sc-name">A1</div>
+          <div class="sc-range">Até 20 hectares</div>
+          <div class="sc-price">R$ 770,70</div>
+          <div class="sc-monthly">ou 12x R$ 70,06</div>
+        </div>
+        <div class="subcat-item">
+          <div class="sc-name">AA</div>
+          <div class="sc-range">20 a 50 ha</div>
+          <div class="sc-price">R$ 1.321,99</div>
+          <div class="sc-monthly">ou 12x R$ 120,18</div>
+        </div>
+        <div class="subcat-item">
+          <div class="sc-name">A</div>
+          <div class="sc-range">51 a 100 ha</div>
+          <div class="sc-price">R$ 2.636,28</div>
+          <div class="sc-monthly">ou 12x R$ 239,65</div>
+        </div>
+        <div class="subcat-item">
+          <div class="sc-name">B</div>
+          <div class="sc-range">101 a 200 ha</div>
+          <div class="sc-price">R$ 5.272,83</div>
+          <div class="sc-monthly">ou 12x R$ 479,33</div>
+        </div>
+        <div class="subcat-item">
+          <div class="sc-name">C</div>
+          <div class="sc-range">201 a 400 ha</div>
+          <div class="sc-price">R$ 10.545,54</div>
+          <div class="sc-monthly">ou 12x R$ 958,65</div>
+        </div>
+        <div class="subcat-item">
+          <div class="sc-name">D</div>
+          <div class="sc-range">Acima de 401 ha</div>
+          <div class="sc-price">R$ 15.733,11</div>
+          <div class="sc-monthly">ou 12x R$ 1.430,23</div>
+        </div>
+      </div>
+      <p style="font-size:0.72rem;color:#999;margin-top:8px;">* Valores com desconto de parcela única anual (~8%). Pagamento semestral e mensal também disponíveis. Ajuste ciclo 2026/2027: +6,7%.</p>
+    </div>
+
+    <div class="benefits">
+      <h4>O que você recebe</h4>
+      <div class="benefit-list">
+        <div class="benefit-item"><div class="benefit-icon">🏅</div><div class="benefit-text">Selo de Qualidade BSCA com rastreabilidade total por lote — único no Brasil</div></div>
+        <div class="benefit-item"><div class="benefit-icon">🛒</div><div class="benefit-text">Vitrine BSCA gratuita: seu café exposto a compradores nacionais e internacionais</div></div>
+        <div class="benefit-item"><div class="benefit-icon">🌍</div><div class="benefit-text">Presença em feiras internacionais: World of Coffee, Specialty Coffee Expo, SCAJ, Café Show e mais</div></div>
+        <div class="benefit-item"><div class="benefit-icon">🤝</div><div class="benefit-text">Matchmaking qualificado com importadores e rodadas de negócios</div></div>
+        <div class="benefit-item"><div class="benefit-icon">🏆</div><div class="benefit-text">Elegibilidade para o Cup of Excellence, o concurso mais prestigiado do mundo</div></div>
+        <div class="benefit-item"><div class="benefit-icon">🎓</div><div class="benefit-text">Descontos na BSCA Academy e acesso ao programa educacional SCA</div></div>
+        <div class="benefit-item"><div class="benefit-icon">💰</div><div class="benefit-text">Descontos progressivos na anuidade a partir do 5º ano de associação</div></div>
+        <div class="benefit-item"><div class="benefit-icon">🗳️</div><div class="benefit-text">Direito a voto em Assembleia Geral e voz ativa na associação</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="cta-bar">
+    <div class="cta-text">
+      <strong>Associe-se hoje e leve seu café para o mundo.</strong>
+      Desde 1991 conectando a qualidade brasileira aos melhores compradores globais.
+    </div>
+    <a class="cta-btn" href="http://app.associatec.com.br/AreaAssociados/BSCA" target="_blank">Quero ser membro →</a>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════
+     2. TORREFADOR
+════════════════════════════════════ -->
+<div class="flyer theme-roaster" id="torrefador">
+  <div class="flyer-header">
+    <div class="flyer-badge">Membro Associado · Torrefador</div>
+    <h2>Use a marca BSCA e<br>diferencie seu produto no mercado</h2>
+    <p class="tagline">Para empresas de torrefação de café especial</p>
+  </div>
+  <div class="flyer-body">
+    <p class="flyer-intro">
+      Ser membro BSCA como torrefador significa sinalizar ao mercado que você trabalha com qualidade certificada — e ter o direito exclusivo de usar a marca BSCA nas suas embalagens. Além disso, você entra na rede de negócios mais representativa do café especial brasileiro.
+    </p>
+
+    <div class="subcats">
+      <h4>Duas variações de enquadramento</h4>
+      <div class="subcat-grid">
+        <div class="subcat-item">
+          <div class="sc-name">Vinculado</div>
+          <div class="sc-range">Torrefação ligada a fazenda / produtor certificado BSCA</div>
+          <div class="sc-price">R$ 2.636,28</div>
+          <div class="sc-monthly">ou 12x R$ 239,65</div>
+        </div>
+        <div class="subcat-item">
+          <div class="sc-name">Não Vinculado</div>
+          <div class="sc-range">Torrefação independente, sem vínculo com fazenda certificada</div>
+          <div class="sc-price">R$ 3.996,86</div>
+          <div class="sc-monthly">ou 12x R$ 363,34</div>
+        </div>
+      </div>
+      <p style="font-size:0.72rem;color:#999;margin-top:8px;">* Valores com desconto de parcela única anual (~8%). Pagamento semestral e mensal também disponíveis. Ajuste ciclo 2026/2027: +6,7%.</p>
+    </div>
+
+    <div class="benefits">
+      <h4>O que você recebe</h4>
+      <div class="benefit-list">
+        <div class="benefit-item"><div class="benefit-icon">📦</div><div class="benefit-text">Uso exclusivo da marca BSCA nas embalagens do seu produto torrado</div></div>
+        <div class="benefit-item"><div class="benefit-icon">🌍</div><div class="benefit-text">Acesso a feiras internacionais e missões comerciais no exterior</div></div>
+        <div class="benefit-item"><div class="benefit-icon">📣</div><div class="benefit-text">Divulgação da sua torrefação pelos canais oficiais da BSCA</div></div>
+        <div class="benefit-item"><div class="benefit-icon">🤝</div><div class="benefit-text">Matchmaking com compradores nacionais e internacionais</div></div>
+        <div class="benefit-item"><div class="benefit-icon">🎓</div><div class="benefit-text">Descontos na BSCA Academy: torra, classificação sensorial, gestão e mais</div></div>
+        <div class="benefit-item"><div class="benefit-icon">💰</div><div class="benefit-text">Descontos progressivos na anuidade a partir do 5º ano de associação</div></div>
+        <div class="benefit-item"><div class="benefit-icon">🔗</div><div class="benefit-text">Acesso à rede Apex-Brasil para promoção e exportação</div></div>
+        <div class="benefit-item"><div class="benefit-icon">🗳️</div><div class="benefit-text">Direito a voto em Assembleia Geral</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="cta-bar">
+    <div class="cta-text">
+      <strong>Seu café torrado com o respaldo da maior entidade de cafés especiais do Brasil.</strong>
+      Entre para a rede BSCA e amplie sua visibilidade nacional e internacional.
+    </div>
+    <a class="cta-btn" href="http://app.associatec.com.br/AreaAssociados/BSCA" target="_blank">Quero ser membro →</a>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════
+     3. CAFETERIA
+════════════════════════════════════ -->
+<div class="flyer theme-cafe" id="cafeteria">
+  <div class="flyer-header">
+    <div class="flyer-badge">Membro Associado · Cafeteria</div>
+    <h2>Faça parte da vitrine<br>do café especial brasileiro</h2>
+    <p class="tagline">Para estabelecimentos de venda e preparo de café especial ao consumidor final</p>
+  </div>
+  <div class="flyer-body">
+    <p class="flyer-intro">
+      Sua cafeteria é o ponto onde a jornada do café especial encontra o consumidor. Ao associar-se à BSCA, você reforça o compromisso com a qualidade, acessa uma rede de fornecedores certificados e posiciona seu negócio no maior ecossistema do setor no Brasil.
+    </p>
+
+    <div class="pricing-box">
+      <h4>Investimento anual</h4>
+      <div class="price-grid">
+        <div class="price-item">
+          <div class="label">Parcela única (c/ desconto)</div>
+          <div class="value">R$ 1.360,57</div>
+          <div class="sub">equivale a ~8% de desconto</div>
+        </div>
+        <div class="price-item">
+          <div class="label">Semestral</div>
+          <div class="value">2x R$ 711,18</div>
+          <div class="sub">com desconto equivalente a meio mês</div>
+        </div>
+        <div class="price-item">
+          <div class="label">Mensal</div>
+          <div class="value">12x R$ 123,68</div>
+          <div class="sub">anuidade integral R$ 1.484,21</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="benefits">
+      <h4>O que você recebe</h4>
+      <div class="benefit-list">
+        <div class="benefit-item"><div class="benefit-icon">🛒</div><div class="benefit-text">Acesso à Vitrine BSCA para encontrar produtores e lotes certificados</div></div>
+        <div class="benefit-item"><div class="benefit-icon">📣</div><div class="benefit-text">Divulgação da sua cafeteria pelos canais oficiais da BSCA</div></div>
+        <div class="benefit-item"><div class="benefit-icon">🎓</div><div class="benefit-text">Descontos na BSCA Academy: barismo, gestão de cafeteria, protocolo CVA/SCA</div></div>
+        <div class="benefit-item"><div class="benefit-icon">🤝</div><div class="benefit-text">Networking em eventos exclusivos e grupos de membros do setor</div></div>
+        <div class="benefit-item"><div class="benefit-icon">🌍</div><div class="benefit-text">Acesso a missões e feiras para conhecer tendências globais do setor</div></div>
+        <div class="benefit-item"><div class="benefit-icon">💰</div><div class="benefit-text">Descontos progressivos a partir do 5º ano de associação</div></div>
+        <div class="benefit-item"><div class="benefit-icon">🔗</div><div class="benefit-text">Conexão com parceiros institucionais: Apex-Brasil e SCA</div></div>
+        <div class="benefit-item"><div class="benefit-icon">🗳️</div><div class="benefit-text">Direito a voto em Assembleia Geral e representação no setor</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="cta-bar">
+    <div class="cta-text">
+      <strong>Sua cafeteria merece o selo de quem leva o café especial a sério.</strong>
+      Associe-se à BSCA e fortaleça sua marca junto à maior rede do setor no Brasil.
+    </div>
+    <a class="cta-btn" href="http://app.associatec.com.br/AreaAssociados/BSCA" target="_blank">Quero ser membro →</a>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════
+     4. EXPORTADOR
+════════════════════════════════════ -->
+<div class="flyer theme-exporter" id="exportador">
+  <div class="flyer-header">
+    <div class="flyer-badge">Membro Associado · Exportador</div>
+    <h2>Acesse o melhor do café<br>especial brasileiro para exportar</h2>
+    <p class="tagline">Para empresas exportadoras de café especial</p>
+  </div>
+  <div class="flyer-body">
+    <p class="flyer-intro">
+      O exportador BSCA tem acesso privilegiado ao portfólio mais qualificado de cafés especiais certificados do Brasil. Com a BSCA, você conecta seus compradores internacionais a lotes com rastreabilidade, qualidade garantida e a credibilidade da maior associação do setor.
+    </p>
+
+    <div class="subcats">
+      <h4>Enquadramento por volume anual exportado</h4>
+      <div class="subcat-grid">
+        <div class="subcat-item">
+          <div class="sc-name">Exportadora A</div>
+          <div class="sc-range">Até US$ 10 milhões/ano</div>
+          <div class="sc-price">R$ 16.793,46</div>
+          <div class="sc-monthly">ou 12x R$ 1.526,62</div>
+        </div>
+        <div class="subcat-item">
+          <div class="sc-name">Exportadora B</div>
+          <div class="sc-range">Entre US$ 10 e 50 milhões/ano</div>
+          <div class="sc-price">R$ 20.711,75</div>
+          <div class="sc-monthly">ou 12x R$ 1.882,82</div>
+        </div>
+        <div class="subcat-item">
+          <div class="sc-name">Exportadora C</div>
+          <div class="sc-range">Acima de US$ 50 milhões/ano</div>
+          <div class="sc-price">R$ 25.889,68</div>
+          <div class="sc-monthly">ou 12x R$ 2.353,52</div>
+        </div>
+      </div>
+      <p style="font-size:0.72rem;color:#999;margin-top:8px;">* Valores com desconto de parcela única anual (~8%). Pagamento semestral e mensal também disponíveis. Ajuste ciclo 2026/2027: +6,7%.</p>
+    </div>
+
+    <div class="benefits">
+      <h4>O que você recebe</h4>
+      <div class="benefit-list">
+        <div class="benefit-item"><div class="benefit-icon">🏅</div><div class="benefit-text">Acesso a lotes com Selo de Qualidade BSCA — rastreabilidade e credibilidade para seus compradores</div></div>
+        <div class="benefit-item"><div class="benefit-icon">🌍</div><div class="benefit-text">Presença garantida nas maiores feiras internacionais do setor</div></div>
+        <div class="benefit-item"><div class="benefit-icon">🤝</div><div class="benefit-text">Matchmaking qualificado com compradores internacionais e salas de cupping exclusivas</div></div>
+        <div class="benefit-item"><div class="benefit-icon">🔗</div><div class="benefit-text">Parceria com Apex-Brasil para promoção e acesso a mercados externos</div></div>
+        <div class="benefit-item"><div class="benefit-icon">📣</div><div class="benefit-text">Divulgação da sua empresa pelos canais oficiais da BSCA no Brasil e no exterior</div></div>
+        <div class="benefit-item"><div class="benefit-icon">🏆</div><div class="benefit-text">Acesso a lotes do Cup of Excellence com total rastreabilidade de origem</div></div>
+        <div class="benefit-item"><div class="benefit-icon">💰</div><div class="benefit-text">Descontos progressivos a partir do 5º ano de associação</div></div>
+        <div class="benefit-item"><div class="benefit-icon">🗳️</div><div class="benefit-text">Direito a voto em Assembleia Geral e representação no setor</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="cta-bar">
+    <div class="cta-text">
+      <strong>O café especial brasileiro tem credencial. E ela é a BSCA.</strong>
+      Associe-se e ofereça aos seus clientes internacionais o que há de melhor no Brasil.
+    </div>
+    <a class="cta-btn" href="http://app.associatec.com.br/AreaAssociados/BSCA" target="_blank">Quero ser membro →</a>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════
+     5. COOPERATIVA
+════════════════════════════════════ -->
+<div class="flyer theme-coop" id="cooperativa">
+  <div class="flyer-header">
+    <div class="flyer-badge">Membro Associado · Cooperativa</div>
+    <h2>Leve seus cooperados para<br>o mercado de cafés especiais</h2>
+    <p class="tagline">Para cooperativas de produtores de café especial</p>
+  </div>
+  <div class="flyer-body">
+    <p class="flyer-intro">
+      A BSCA é a aliada estratégica da sua cooperativa para acessar mercados premium, certificar lotes com rastreabilidade e capacitar cooperados. Juntos, construímos a reputação que gera preço justo e competitividade real.
+    </p>
+
+    <div class="subcats">
+      <h4>Enquadramento por número de cooperados</h4>
+      <div class="subcat-grid">
+        <div class="subcat-item">
+          <div class="sc-name">Cooperativa A</div>
+          <div class="sc-range">Até 1.000 cooperados</div>
+          <div class="sc-price">R$ 16.793,46</div>
+          <div class="sc-monthly">ou 12x R$ 1.526,62</div>
+        </div>
+        <div class="subcat-item">
+          <div class="sc-name">Cooperativa B</div>
+          <div class="sc-range">1.000 a 10.000 cooperados</div>
+          <div class="sc-price">R$ 20.711,75</div>
+          <div class="sc-monthly">ou 12x R$ 1.882,82</div>
+        </div>
+        <div class="subcat-item">
+          <div class="sc-name">Cooperativa C</div>
+          <div class="sc-range">Acima de 10.000 cooperados</div>
+          <div class="sc-price">R$ 25.889,68</div>
+          <div class="sc-monthly">ou 12x R$ 2.353,52</div>
+        </div>
+      </div>
+      <p style="font-size:0.72rem;color:#999;margin-top:8px;">* Valores com desconto de parcela única anual (~8%). Pagamento semestral e mensal também disponíveis. Ajuste ciclo 2026/2027: +6,7%.</p>
+    </div>
+
+    <div class="benefits">
+      <h4>O que você recebe</h4>
+      <div class="benefit-list">
+        <div class="benefit-item"><div class="benefit-icon">🏅</div><div class="benefit-text">Acesso ao Selo de Qualidade BSCA para certificar lotes dos seus cooperados</div></div>
+        <div class="benefit-item"><div class="benefit-icon">🌍</div><div class="benefit-text">Presença em feiras internacionais e missões comerciais no exterior</div></div>
+        <div class="benefit-item"><div class="benefit-icon">🤝</div><div class="benefit-text">Matchmaking com compradores internacionais e rodadas de negócios</div></div>
+        <div class="benefit-item"><div class="benefit-icon">🎓</div><div class="benefit-text">Acesso à BSCA Academy para capacitação dos seus cooperados</div></div>
+        <div class="benefit-item"><div class="benefit-icon">🛒</div><div class="benefit-text">Vitrine BSCA: exposição dos lotes certificados a compradores do mundo todo</div></div>
+        <div class="benefit-item"><div class="benefit-icon">🔗</div><div class="benefit-text">Parceria com Apex-Brasil para promoção internacional</div></div>
+        <div class="benefit-item"><div class="benefit-icon">💰</div><div class="benefit-text">Descontos progressivos na anuidade a partir do 5º ano de associação</div></div>
+        <div class="benefit-item"><div class="benefit-icon">🗳️</div><div class="benefit-text">Direito a voto em Assembleia Geral</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="cta-bar">
+    <div class="cta-text">
+      <strong>Sua cooperativa mais competitiva, seus cooperados mais valorizados.</strong>
+      Associe-se à BSCA e abra as portas do mercado premium para todos.
+    </div>
+    <a class="cta-btn" href="http://app.associatec.com.br/AreaAssociados/BSCA" target="_blank">Quero ser membro →</a>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════
+     6. CORRETOR
+════════════════════════════════════ -->
+<div class="flyer theme-broker" id="corretor">
+  <div class="flyer-header">
+    <div class="flyer-badge">Membro Associado · Corretor</div>
+    <h2>Intermedie negócios com<br>a credencial do mercado especial</h2>
+    <p class="tagline">Para profissionais e empresas de intermediação comercial de café especial</p>
+  </div>
+  <div class="flyer-body">
+    <p class="flyer-intro">
+      Como corretor membro BSCA, você opera no coração da rede mais qualificada do café especial brasileiro. Acesso a produtores certificados, compradores nacionais e internacionais, e todo o respaldo institucional da associação para suas negociações.
+    </p>
+
+    <div class="pricing-box">
+      <h4>Investimento anual</h4>
+      <div class="price-grid">
+        <div class="price-item">
+          <div class="label">Parcela única (c/ desconto)</div>
+          <div class="value">R$ 8.252,31</div>
+          <div class="sub">equivale a ~8% de desconto</div>
+        </div>
+        <div class="price-item">
+          <div class="label">Semestral</div>
+          <div class="value">2x R$ 4.313,55</div>
+          <div class="sub">com desconto equivalente a meio mês</div>
+        </div>
+        <div class="price-item">
+          <div class="label">Mensal</div>
+          <div class="value">12x R$ 750,18</div>
+          <div class="sub">anuidade integral R$ 9.002,19</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="benefits">
+      <h4>O que você recebe</h4>
+      <div class="benefit-list">
+        <div class="benefit-item"><div class="benefit-icon">🏅</div><div class="benefit-text">Acesso ao portfólio de lotes certificados com Selo BSCA — maior credibilidade nas negociações</div></div>
+        <div class="benefit-item"><div class="benefit-icon">🌍</div><div class="benefit-text">Presença em feiras internacionais e salas de cupping reservadas para membros</div></div>
+        <div class="benefit-item"><div class="benefit-icon">🤝</div><div class="benefit-text">Matchmaking qualificado com produtores, exportadores e compradores internacionais</div></div>
+        <div class="benefit-item"><div class="benefit-icon">📣</div><div class="benefit-text">Divulgação da sua atuação pelos canais oficiais da BSCA</div></div>
+        <div class="benefit-item"><div class="benefit-icon">🎓</div><div class="benefit-text">Descontos na BSCA Academy em cursos de classificação, exportação e gestão</div></div>
+        <div class="benefit-item"><div class="benefit-icon">💰</div><div class="benefit-text">Descontos progressivos a partir do 5º ano de associação</div></div>
+        <div class="benefit-item"><div class="benefit-icon">🔗</div><div class="benefit-text">Acesso à rede Apex-Brasil e SCA</div></div>
+        <div class="benefit-item"><div class="benefit-icon">🗳️</div><div class="benefit-text">Direito a voto em Assembleia Geral</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="cta-bar">
+    <div class="cta-text">
+      <strong>Corretagem com o respaldo da principal entidade do café especial brasileiro.</strong>
+      Entre para a rede BSCA e opere com mais confiança e acesso.
+    </div>
+    <a class="cta-btn" href="http://app.associatec.com.br/AreaAssociados/BSCA" target="_blank">Quero ser membro →</a>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════
+     7. ARMAZÉM
+════════════════════════════════════ -->
+<div class="flyer theme-storage" id="armazem">
+  <div class="flyer-header">
+    <div class="flyer-badge">Membro Associado · Armazém</div>
+    <h2>Sua estrutura no centro<br>da cadeia do café especial</h2>
+    <p class="tagline">Para empresas de armazenagem e logística especializadas em café especial</p>
+  </div>
+  <div class="flyer-body">
+    <p class="flyer-intro">
+      Armazéns associados à BSCA fazem parte da cadeia de guarda e preservação de qualidade dos cafés especiais certificados. Ao se associar, você se posiciona como parceiro de confiança para produtores, exportadores e torrefadores do setor.
+    </p>
+
+    <div class="pricing-box">
+      <h4>Investimento anual</h4>
+      <div class="price-grid">
+        <div class="price-item">
+          <div class="label">Parcela única (c/ desconto)</div>
+          <div class="value">R$ 7.823,99</div>
+          <div class="sub">equivale a ~8% de desconto</div>
+        </div>
+        <div class="price-item">
+          <div class="label">Semestral</div>
+          <div class="value">2x R$ 4.089,67</div>
+          <div class="sub">com desconto equivalente a meio mês</div>
+        </div>
+        <div class="price-item">
+          <div class="label">Mensal</div>
+          <div class="value">12x R$ 711,25</div>
+          <div class="sub">anuidade integral R$ 8.534,95</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="benefits">
+      <h4>O que você recebe</h4>
+      <div class="benefit-list">
+        <div class="benefit-item"><div class="benefit-icon">📣</div><div class="benefit-text">Divulgação da sua empresa na rede BSCA para produtores e exportadores membros</div></div>
+        <div class="benefit-item"><div class="benefit-icon">🤝</div><div class="benefit-text">Networking em eventos exclusivos com toda a cadeia do café especial</div></div>
+        <div class="benefit-item"><div class="benefit-icon">🌍</div><div class="benefit-text">Acesso a feiras internacionais e missões do setor</div></div>
+        <div class="benefit-item"><div class="benefit-icon">🎓</div><div class="benefit-text">Descontos na BSCA Academy para capacitação da equipe</div></div>
+        <div class="benefit-item"><div class="benefit-icon">🔗</div><div class="benefit-text">Acesso à rede de parceiros institucionais: Apex-Brasil e SCA</div></div>
+        <div class="benefit-item"><div class="benefit-icon">💰</div><div class="benefit-text">Descontos progressivos a partir do 5º ano de associação</div></div>
+        <div class="benefit-item"><div class="benefit-icon">🏅</div><div class="benefit-text">Credibilidade de fazer parte da cadeia rastreável do Selo BSCA</div></div>
+        <div class="benefit-item"><div class="benefit-icon">🗳️</div><div class="benefit-text">Direito a voto em Assembleia Geral</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="cta-bar">
+    <div class="cta-text">
+      <strong>Sua empresa no coração da cadeia de qualidade do café especial.</strong>
+      Associe-se à BSCA e seja referência para os melhores produtores e exportadores do Brasil.
+    </div>
+    <a class="cta-btn" href="http://app.associatec.com.br/AreaAssociados/BSCA" target="_blank">Quero ser membro →</a>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════
+     8. IMPLEMENTOS E EQUIPAMENTOS
+════════════════════════════════════ -->
+<div class="flyer theme-equipment" id="equipamentos">
+  <div class="flyer-header">
+    <div class="flyer-badge">Membro Associado · Implementos &amp; Equipamentos</div>
+    <h2>Suas soluções nas mãos<br>de quem mais investe em qualidade</h2>
+    <p class="tagline">Para fabricantes e fornecedores de máquinas, implementos e equipamentos para café</p>
+  </div>
+  <div class="flyer-body">
+    <p class="flyer-intro">
+      Os produtores, torrefadores e cafeterias da BSCA são justamente quem mais valoriza tecnologia e qualidade em cada etapa da cadeia. Associar-se significa ter acesso direto a esse público qualificado — e posicionar sua marca como parceira do café especial brasileiro.
+    </p>
+
+    <div class="pricing-box">
+      <h4>Investimento anual</h4>
+      <div class="price-grid">
+        <div class="price-item">
+          <div class="label">Parcela única (c/ desconto)</div>
+          <div class="value">R$ 2.636,28</div>
+          <div class="sub">equivale a ~8% de desconto</div>
+        </div>
+        <div class="price-item">
+          <div class="label">Semestral</div>
+          <div class="value">2x R$ 1.378,01</div>
+          <div class="sub">com desconto equivalente a meio mês</div>
+        </div>
+        <div class="price-item">
+          <div class="label">Mensal</div>
+          <div class="value">12x R$ 239,65</div>
+          <div class="sub">anuidade integral R$ 2.875,84</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="benefits">
+      <h4>O que você recebe</h4>
+      <div class="benefit-list">
+        <div class="benefit-item"><div class="benefit-icon">🌍</div><div class="benefit-text">Exposição nas maiores feiras internacionais do café ao lado da delegação BSCA</div></div>
+        <div class="benefit-item"><div class="benefit-icon">📣</div><div class="benefit-text">Divulgação da sua marca e produtos pelos canais oficiais da BSCA</div></div>
+        <div class="benefit-item"><div class="benefit-icon">🤝</div><div class="benefit-text">Acesso direto a produtores, torrefadores e cafeterias membros — seu público ideal</div></div>
+        <div class="benefit-item"><div class="benefit-icon">🎓</div><div class="benefit-text">Descontos na BSCA Academy e oportunidades de patrocinar conteúdo educacional</div></div>
+        <div class="benefit-item"><div class="benefit-icon">🔗</div><div class="benefit-text">Acesso à rede de parceiros e eventos exclusivos do setor</div></div>
+        <div class="benefit-item"><div class="benefit-icon">💰</div><div class="benefit-text">Descontos progressivos a partir do 5º ano de associação</div></div>
+        <div class="benefit-item"><div class="benefit-icon">🏅</div><div class="benefit-text">Credibilidade de ser reconhecido como parceiro da cadeia do café especial brasileiro</div></div>
+        <div class="benefit-item"><div class="benefit-icon">🗳️</div><div class="benefit-text">Direito a voto em Assembleia Geral</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="cta-bar">
+    <div class="cta-text">
+      <strong>Sua tecnologia no campo e na xícara do café especial brasileiro.</strong>
+      Associe-se à BSCA e conecte sua empresa a quem realmente investe em qualidade.
+    </div>
+    <a class="cta-btn" href="http://app.associatec.com.br/AreaAssociados/BSCA" target="_blank">Quero ser membro →</a>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════
+     9. PROFISSIONAIS (Comunidade)
+════════════════════════════════════ -->
+<div class="flyer theme-community" id="profissionais">
+  <div class="flyer-header">
+    <div class="flyer-badge">Membro Comunidade · Profissional · Gratuito</div>
+    <h2>Sua carreira no café especial<br>começa aqui — de graça</h2>
+    <p class="tagline">Para baristas, classificadores, mestres de torra, consultores e profissionais do setor</p>
+  </div>
+  <div class="flyer-body">
+    <p class="flyer-intro">
+      Se você atua profissionalmente no universo do café especial, a BSCA tem um lugar para você — sem custo. O Membership Comunidade para Profissionais garante acesso à rede de relacionamento, à educação da BSCA Academy e ao ecossistema mais representativo do setor no Brasil.
+    </p>
+
+    <div class="pricing-box">
+      <h4>Investimento anual</h4>
+      <div class="price-grid">
+        <div class="price-item">
+          <div class="label">Parcela única (c/ desconto)</div>
+          <div class="value">R$ 1.360,57</div>
+          <div class="sub">equivale a ~8% de desconto</div>
+        </div>
+        <div class="price-item">
+          <div class="label">Semestral</div>
+          <div class="value">2x R$ 711,18</div>
+          <div class="sub">com desconto equivalente a meio mês</div>
+        </div>
+        <div class="price-item">
+          <div class="label">Mensal</div>
+          <div class="value">12x R$ 123,68</div>
+          <div class="sub">anuidade integral R$ 1.484,21</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="benefits">
+      <h4>O que você recebe</h4>
+      <div class="benefit-list">
+        <div class="benefit-item"><div class="benefit-icon">🎓</div><div class="benefit-text">Acesso à BSCA Academy: cursos, certificações internacionais SCA e programa educacional</div></div>
+        <div class="benefit-item"><div class="benefit-icon">🤝</div><div class="benefit-text">Networking com toda a cadeia: produtores, torrefadores, cafeterias e exportadores</div></div>
+        <div class="benefit-item"><div class="benefit-icon">📚</div><div class="benefit-text">Acesso a conteúdos exclusivos, publicações e materiais educacionais da BSCA</div></div>
+        <div class="benefit-item"><div class="benefit-icon">🌱</div><div class="benefit-text">Porta de entrada para o ecossistema BSCA — com possibilidade de evolução na rede</div></div>
+      </div>
+    </div>
+    <p style="font-size:0.82rem;color:#6B7280;margin-top:4px;">* O Membro Comunidade não possui acesso às ferramentas comerciais (Selo, Vitrine, matchmaking) nem direito a voto em Assembleia.</p>
+  </div>
+  <div class="cta-bar">
+    <div class="cta-text">
+      <strong>O café especial é a sua profissão. A BSCA é a sua comunidade.</strong>
+      Associe-se e faça parte da maior rede do setor no Brasil.
+    </div>
+    <a class="cta-btn" href="http://app.associatec.com.br/AreaAssociados/BSCA" target="_blank">Quero ser membro →</a>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════
+     10. ASSOCIAÇÃO DE PRODUTORES (Comunidade)
+════════════════════════════════════ -->
+<div class="flyer theme-community" id="assoc-produtores">
+  <div class="flyer-header">
+    <div class="flyer-badge">Membro Comunidade · Assoc. de Produtores</div>
+    <h2>Sua associação conectada<br>ao ecossistema BSCA</h2>
+    <p class="tagline">Para associações que representam produtores de café especial</p>
+  </div>
+  <div class="flyer-body">
+    <p class="flyer-intro">
+      Associações de produtores que representam a agricultura familiar e o cooperativismo do café especial têm um lugar na BSCA. Aqui, sua entidade encontra informação, educação e rede de relacionamento para fortalecer ainda mais quem você representa.
+    </p>
+
+    <div class="pricing-box">
+      <h4>Investimento anual</h4>
+      <div class="price-grid">
+        <div class="price-item">
+          <div class="label">Parcela única (c/ desconto)</div>
+          <div class="value">R$ 5.757,21</div>
+          <div class="sub">equivale a ~8% de desconto</div>
+        </div>
+        <div class="price-item">
+          <div class="label">Semestral</div>
+          <div class="value">2x R$ 3.009,92</div>
+          <div class="sub">com desconto equivalente a meio mês</div>
+        </div>
+        <div class="price-item">
+          <div class="label">Mensal</div>
+          <div class="value">12x R$ 523,36</div>
+          <div class="sub">anuidade integral R$ 6.280,36</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="benefits">
+      <h4>O que você recebe</h4>
+      <div class="benefit-list">
+        <div class="benefit-item"><div class="benefit-icon">🎓</div><div class="benefit-text">Acesso à BSCA Academy para formação e capacitação dos produtores associados</div></div>
+        <div class="benefit-item"><div class="benefit-icon">🤝</div><div class="benefit-text">Rede de relacionamento com o ecossistema BSCA: produtores, cooperativas e compradores</div></div>
+        <div class="benefit-item"><div class="benefit-icon">📚</div><div class="benefit-text">Acesso a conteúdos, publicações e materiais educacionais da BSCA</div></div>
+        <div class="benefit-item"><div class="benefit-icon">🌱</div><div class="benefit-text">Visibilidade junto à maior comunidade do café especial brasileiro</div></div>
+      </div>
+    </div>
+    <p style="font-size:0.82rem;color:#6B7280;margin-top:4px;">* O Membro Comunidade não possui acesso às ferramentas comerciais (Selo, Vitrine, matchmaking) nem direito a voto em Assembleia.</p>
+  </div>
+  <div class="cta-bar">
+    <div class="cta-text">
+      <strong>Fortaleça sua associação com a rede mais representativa do café especial.</strong>
+      Associe-se à BSCA.
+    </div>
+    <a class="cta-btn" href="http://app.associatec.com.br/AreaAssociados/BSCA" target="_blank">Quero ser membro →</a>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════
+     11. ASSOCIAÇÃO DE COOPERATIVAS (Comunidade)
+════════════════════════════════════ -->
+<div class="flyer theme-community" id="assoc-cooperativas">
+  <div class="flyer-header">
+    <div class="flyer-badge">Membro Comunidade · Assoc. de Cooperativas</div>
+    <h2>Mais força para quem<br>representa o cooperativismo</h2>
+    <p class="tagline">Para associações que representam cooperativas de produtores de café</p>
+  </div>
+  <div class="flyer-body">
+    <p class="flyer-intro">
+      Organizações que representam cooperativas de café especial têm acesso à BSCA. Aqui, sua entidade encontra uma rede qualificada, conteúdo educacional e conexões estratégicas que beneficiam todas as cooperativas que você representa.
+    </p>
+
+    <div class="pricing-box">
+      <h4>Investimento anual</h4>
+      <div class="price-grid">
+        <div class="price-item">
+          <div class="label">Parcela única (c/ desconto)</div>
+          <div class="value">R$ 5.757,21</div>
+          <div class="sub">equivale a ~8% de desconto</div>
+        </div>
+        <div class="price-item">
+          <div class="label">Semestral</div>
+          <div class="value">2x R$ 3.009,92</div>
+          <div class="sub">com desconto equivalente a meio mês</div>
+        </div>
+        <div class="price-item">
+          <div class="label">Mensal</div>
+          <div class="value">12x R$ 523,36</div>
+          <div class="sub">anuidade integral R$ 6.280,36</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="benefits">
+      <h4>O que você recebe</h4>
+      <div class="benefit-list">
+        <div class="benefit-item"><div class="benefit-icon">🎓</div><div class="benefit-text">Acesso à BSCA Academy para formação contínua das cooperativas representadas</div></div>
+        <div class="benefit-item"><div class="benefit-icon">🤝</div><div class="benefit-text">Rede de relacionamento com cooperativas, produtores e compradores do ecossistema BSCA</div></div>
+        <div class="benefit-item"><div class="benefit-icon">📚</div><div class="benefit-text">Acesso a publicações, pesquisas e materiais institucionais da BSCA</div></div>
+        <div class="benefit-item"><div class="benefit-icon">🌱</div><div class="benefit-text">Visibilidade e reconhecimento junto ao setor do café especial brasileiro</div></div>
+      </div>
+    </div>
+    <p style="font-size:0.82rem;color:#6B7280;margin-top:4px;">* O Membro Comunidade não possui acesso às ferramentas comerciais (Selo, Vitrine, matchmaking) nem direito a voto em Assembleia.</p>
+  </div>
+  <div class="cta-bar">
+    <div class="cta-text">
+      <strong>O cooperativismo do café especial tem um lar na BSCA.</strong>
+      Associe-se e amplie a rede que você representa.
+    </div>
+    <a class="cta-btn" href="http://app.associatec.com.br/AreaAssociados/BSCA" target="_blank">Quero ser membro →</a>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════
+     12. MEMBRO INTERNACIONAL
+════════════════════════════════════ -->
+<div class="flyer theme-intl" id="internacional">
+  <div class="flyer-header">
+    <div class="flyer-badge">Membro Associado · Internacional</div>
+    <h2>O melhor do café especial<br>brasileiro, ao seu alcance</h2>
+    <p class="tagline">Para compradores, importadores e players internacionais do mercado de cafés especiais</p>
+  </div>
+  <div class="flyer-body">
+    <p class="flyer-intro">
+      O Membro Internacional da BSCA tem acesso privilegiado ao maior ecossistema de cafés especiais do Brasil — com produtores certificados, lotes rastreados, salas de cupping e um canal direto com a origem mais diversa e premiada do mundo.
+    </p>
+
+    <div class="pricing-box">
+      <h4>Investimento</h4>
+      <div class="price-grid">
+        <div class="price-item">
+          <div class="label">Anuidade (BRL)</div>
+          <div class="value">R$ 3.850,77</div>
+          <div class="sub">Pagamento anual único · Ciclo 2026/2027</div>
+        </div>
+        <div class="price-item">
+          <div class="label">Anuidade (USD)</div>
+          <div class="value">US$ 739,11</div>
+          <div class="sub">Equivalente em dólar</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="benefits">
+      <h4>O que você recebe</h4>
+      <div class="benefit-list">
+        <div class="benefit-item"><div class="benefit-icon">🏅</div><div class="benefit-text">Acesso ao portfólio completo de lotes com Selo de Qualidade BSCA — rastreabilidade e origem garantidas</div></div>
+        <div class="benefit-item"><div class="benefit-icon">🛒</div><div class="benefit-text">Vitrine BSCA: centenas de produtores e lotes certificados em um único canal</div></div>
+        <div class="benefit-item"><div class="benefit-icon">🤝</div><div class="benefit-text">Matchmaking qualificado com produtores alinhados ao seu perfil de compra</div></div>
+        <div class="benefit-item"><div class="benefit-icon">🏺</div><div class="benefit-text">Salas de cupping exclusivas nas maiores feiras internacionais do café</div></div>
+        <div class="benefit-item"><div class="benefit-icon">🌾</div><div class="benefit-text">Recepção em fazendas brasileiras para degustações e visitas técnicas</div></div>
+        <div class="benefit-item"><div class="benefit-icon">🏆</div><div class="benefit-text">Acesso a lotes do Cup of Excellence — concurso mais prestigiado do mundo</div></div>
+        <div class="benefit-item"><div class="benefit-icon">📣</div><div class="benefit-text">Divulgação da sua empresa nos canais da BSCA como comprador parceiro</div></div>
+        <div class="benefit-item"><div class="benefit-icon">🗳️</div><div class="benefit-text">Direito a voto em Assembleia Geral e voz ativa na associação</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="cta-bar">
+    <div class="cta-text">
+      <strong>Brazil Specialty Coffee. Direct from origin, certified, traceable.</strong>
+      Join BSCA and access the best of Brazilian specialty coffee.
+    </div>
+    <a class="cta-btn" href="http://app.associatec.com.br/AreaAssociados/BSCA" target="_blank">Contact us →</a>
+  </div>
+</div>
+
+
+<p class="site-footer">BSCA — Associação Brasileira de Cafés Especiais · bsca.com.br · Ciclo 2026/2027</p>
+
+</body>
+</html>
