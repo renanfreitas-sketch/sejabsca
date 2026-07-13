@@ -1,1128 +1,1032 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BSCA — Comunicados por Categoria 2026/2027</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600;700&display=swap');
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Associe-se à BSCA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+
+  <!--
+  ╔══════════════════════════════════════════════════════════╗
+  ║        MAILCHIMP – COMO CONFIGURAR                      ║
+  ║                                                          ║
+  ║  1. Entre em Mailchimp → Audience →                     ║
+  ║     INTERESSE_MEMBROS_BSCA → Signup forms →             ║
+  ║     Embedded forms                                       ║
+  ║  2. Copie a URL do atributo "action" do <form>           ║
+  ║     Ex: https://CONTA.us1.list-manage.com/subscribe/    ║
+  ║         post?u=XXXX&id=YYYY                              ║
+  ║  3. Cole essa URL na variável MAILCHIMP_URL abaixo       ║
+  ║  4. (Opcional) Crie merge fields na audiência:           ║
+  ║     PHONE → número de telefone                          ║
+  ║     CIDADE → cidade                                     ║
+  ║     CATEGORIA → categoria de membro                     ║
+  ╚══════════════════════════════════════════════════════════╝
+  -->
+
+  <style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --espresso: #2C1A0E;
-    --mocha: #5C3317;
-    --caramel: #A0522D;
-    --latte: #C8956C;
-    --cream: #F5ECD7;
-    --milk: #FBF7F0;
-    --gold: #C9A84C;
-    --green: #3D6B4F;
-    --green-light: #EAF2EC;
-    --white: #FFFFFF;
-    --gray: #6B7280;
+    --green:       #1E5C34;
+    --green-dark:  #0D2818;
+    --green-mid:   #2A7A44;
+    --gold:        #C9A84C;
+    --gold-hover:  #D4B55A;
+    --gold-light:  #F5E9C8;
+    --green-light: #EAF4EE;
+    --bg:          #EDEAE4;
+    --white:       #FFFFFF;
+    --cream:       #F8F4EE;
+    --border:      #E4DDD5;
+    --text:        #111111;
+    --t-mid:       #4A4A4A;
+    --t-sub:       #6B7280;
+    --radius:      12px;
+    --radius-lg:   20px;
+    --shadow:      0 2px 14px rgba(0,0,0,0.08);
+    --shadow-lg:   0 8px 36px rgba(0,0,0,0.14);
+    --tr:          0.22s ease;
   }
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-
+  html { scroll-behavior: smooth; }
   body {
-    font-family: 'Inter', sans-serif;
-    background: #E8DDD0;
-    padding: 40px 20px;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
   }
+  h1, h2, h3 { font-family: 'DM Serif Display', Georgia, serif; line-height: 1.2; }
 
-  .page-title {
-    text-align: center;
-    margin-bottom: 48px;
-  }
-  .page-title h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.4rem;
-    color: var(--espresso);
-    letter-spacing: -0.5px;
-  }
-  .page-title p {
-    color: var(--mocha);
-    font-size: 1rem;
-    margin-top: 8px;
-    font-weight: 500;
-  }
-
-  /* NAV INDEX */
-  .index {
-    max-width: 900px;
-    margin: 0 auto 56px;
-    background: var(--white);
-    border-radius: 16px;
-    padding: 28px 32px;
-    box-shadow: 0 4px 20px rgba(44,26,14,0.10);
-  }
-  .index h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.1rem;
-    color: var(--espresso);
-    margin-bottom: 16px;
-    border-bottom: 2px solid var(--cream);
-    padding-bottom: 10px;
-  }
-  .index-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 8px;
-  }
-  .index-grid a {
-    color: var(--mocha);
-    text-decoration: none;
-    font-size: 0.85rem;
-    font-weight: 500;
-    padding: 6px 10px;
-    border-radius: 8px;
-    background: var(--cream);
-    transition: background 0.2s;
-  }
-  .index-grid a:hover { background: var(--latte); color: var(--white); }
-
-  /* FLYER */
-  .flyer {
-    max-width: 900px;
-    margin: 0 auto 56px;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 8px 40px rgba(44,26,14,0.15);
-    page-break-after: always;
-  }
-
-  .flyer-header {
-    padding: 36px 40px 28px;
-    position: relative;
-    overflow: hidden;
-  }
-  .flyer-header::before {
-    content: '';
-    position: absolute;
-    top: -40px; right: -40px;
-    width: 200px; height: 200px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.08);
-  }
-  .flyer-header::after {
-    content: '';
-    position: absolute;
-    bottom: -60px; right: 60px;
-    width: 140px; height: 140px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.06);
-  }
-
-  .flyer-badge {
-    display: inline-block;
-    background: rgba(255,255,255,0.2);
-    color: var(--white);
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    padding: 5px 12px;
-    border-radius: 20px;
-    margin-bottom: 14px;
-  }
-  .flyer-header h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    color: var(--white);
-    line-height: 1.2;
-    position: relative;
-    z-index: 1;
-  }
-  .flyer-header .tagline {
-    margin-top: 8px;
-    color: rgba(255,255,255,0.85);
-    font-size: 0.95rem;
-    font-weight: 400;
-    position: relative;
-    z-index: 1;
-  }
-
-  .flyer-body {
-    background: var(--milk);
-    padding: 32px 40px;
-  }
-
-  .flyer-intro {
-    color: var(--espresso);
-    font-size: 0.97rem;
-    line-height: 1.7;
-    margin-bottom: 24px;
-    border-left: 3px solid var(--caramel);
-    padding-left: 16px;
-  }
-
-  /* PRICING BOX */
-  .pricing-box {
-    background: var(--white);
-    border-radius: 12px;
-    border: 1px solid #E8DDD0;
-    padding: 20px 24px;
-    margin-bottom: 24px;
-  }
-  .pricing-box h4 {
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 1.2px;
-    text-transform: uppercase;
-    color: var(--gray);
-    margin-bottom: 14px;
-  }
-  .price-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 10px;
-  }
-  .price-item {
-    background: var(--cream);
-    border-radius: 10px;
-    padding: 12px 14px;
-  }
-  .price-item .label {
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--caramel);
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-    margin-bottom: 4px;
-  }
-  .price-item .value {
-    font-size: 1.15rem;
-    font-weight: 700;
-    color: var(--espresso);
-  }
-  .price-item .sub {
-    font-size: 0.72rem;
-    color: var(--gray);
-    margin-top: 2px;
-  }
-  .price-free {
-    background: var(--green-light);
-    border-radius: 10px;
-    padding: 14px 18px;
-    text-align: center;
-  }
-  .price-free .value {
-    font-size: 1.6rem;
-    font-weight: 900;
-    color: var(--green);
-    letter-spacing: -0.5px;
-  }
-  .price-free .sub {
-    font-size: 0.82rem;
-    color: var(--green);
-    margin-top: 4px;
-    font-weight: 500;
-  }
-
-  /* SUBCATEGORIES */
-  .subcats {
-    margin-bottom: 24px;
-  }
-  .subcats h4 {
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 1.2px;
-    text-transform: uppercase;
-    color: var(--gray);
-    margin-bottom: 12px;
-  }
-  .subcat-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 8px;
-  }
-  .subcat-item {
-    background: var(--white);
-    border: 1px solid #E8DDD0;
-    border-radius: 10px;
-    padding: 12px 14px;
-  }
-  .subcat-item .sc-name {
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: var(--mocha);
-  }
-  .subcat-item .sc-range {
-    font-size: 0.72rem;
-    color: var(--gray);
-    margin: 2px 0 6px;
-  }
-  .subcat-item .sc-price {
-    font-size: 0.9rem;
-    font-weight: 700;
-    color: var(--espresso);
-  }
-  .subcat-item .sc-monthly {
-    font-size: 0.7rem;
-    color: var(--gray);
-  }
-
-  /* BENEFITS */
-  .benefits {
-    margin-bottom: 24px;
-  }
-  .benefits h4 {
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 1.2px;
-    text-transform: uppercase;
-    color: var(--gray);
-    margin-bottom: 12px;
-  }
-  .benefit-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-  }
-  .benefit-item {
-    display: flex;
-    gap: 10px;
-    align-items: flex-start;
-    background: var(--white);
-    border-radius: 10px;
-    padding: 12px 14px;
-    border: 1px solid #E8DDD0;
-  }
-  .benefit-icon {
-    font-size: 1.1rem;
-    flex-shrink: 0;
-    margin-top: 1px;
-  }
-  .benefit-text {
-    font-size: 0.82rem;
-    color: var(--espresso);
-    line-height: 1.5;
-    font-weight: 500;
-  }
-
-  /* CTA */
-  .cta-bar {
-    background: var(--espresso);
-    padding: 22px 40px;
+  /* HEADER */
+  .site-header {
+    background: var(--green-dark);
+    padding: 14px 24px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 16px;
+    position: sticky; top: 0; z-index: 200;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.35);
   }
-  .cta-bar .cta-text {
-    color: var(--cream);
-    font-size: 0.9rem;
-    line-height: 1.5;
+  .logo img { height: 38px; display: block; }
+  .logo-text { color:#fff; font-family:'DM Serif Display',serif; font-size:24px; letter-spacing:.04em; }
+  .lang-switcher { display:flex; gap:6px; }
+  .lang-btn {
+    background:transparent; border:1px solid rgba(255,255,255,.28);
+    color:rgba(255,255,255,.65); font-family:'DM Sans',sans-serif;
+    font-size:11px; font-weight:700; letter-spacing:.06em;
+    padding:4px 10px; border-radius:20px; cursor:pointer; transition:var(--tr);
   }
-  .cta-bar .cta-text strong {
-    color: var(--gold);
-    display: block;
-    font-size: 1rem;
-    margin-bottom: 2px;
-  }
-  .cta-btn {
-    background: var(--gold);
-    color: var(--espresso);
-    font-weight: 700;
-    font-size: 0.88rem;
-    padding: 12px 24px;
-    border-radius: 30px;
-    text-decoration: none;
-    letter-spacing: 0.5px;
-    white-space: nowrap;
-    display: inline-block;
-    transition: background 0.2s;
-  }
-  .cta-btn:hover { background: var(--latte); }
+  .lang-btn:hover,.lang-btn.active { background:rgba(255,255,255,.14); color:#fff; border-color:rgba(255,255,255,.55); }
 
-  /* COLOR THEMES */
-  .theme-producer .flyer-header { background: linear-gradient(135deg, #3D6B4F 0%, #2A4A36 100%); }
-  .theme-roaster .flyer-header  { background: linear-gradient(135deg, #5C3317 0%, #3A1F0A 100%); }
-  .theme-cafe .flyer-header     { background: linear-gradient(135deg, #A0522D 0%, #7A3A1A 100%); }
-  .theme-exporter .flyer-header { background: linear-gradient(135deg, #1A4A6B 0%, #0D2E45 100%); }
-  .theme-coop .flyer-header     { background: linear-gradient(135deg, #5B3A8C 0%, #3A2060 100%); }
-  .theme-broker .flyer-header   { background: linear-gradient(135deg, #B5651D 0%, #7A3F0A 100%); }
-  .theme-storage .flyer-header  { background: linear-gradient(135deg, #4A6741 0%, #2E4228 100%); }
-  .theme-equipment .flyer-header{ background: linear-gradient(135deg, #2E5D7E 0%, #1A3A52 100%); }
-  .theme-community .flyer-header{ background: linear-gradient(135deg, #6B7280 0%, #374151 100%); }
-  .theme-intl .flyer-header     { background: linear-gradient(135deg, #0E4D7B 0%, #073258 100%); }
-  .theme-lovers .flyer-header   { background: linear-gradient(135deg, #8B1A4A 0%, #5C1030 100%); }
-  .theme-emeritus .flyer-header { background: linear-gradient(135deg, #7A6830 0%, #4A3F18 100%); }
+  /* QUIZ WRAPPER */
+  .quiz-wrapper { max-width:900px; margin:0 auto; padding:36px 16px 72px; }
 
-  /* FOOTER */
-  .site-footer {
-    text-align: center;
-    color: var(--mocha);
-    font-size: 0.8rem;
-    margin-top: 24px;
-    opacity: 0.7;
+  /* PROGRESS */
+  .progress-bar-wrap { margin-bottom:36px; }
+  .progress-steps { display:flex; align-items:flex-start; position:relative; }
+  .progress-step { flex:1; display:flex; flex-direction:column; align-items:center; position:relative; }
+  .progress-step:not(:last-child)::after {
+    content:''; position:absolute; top:13px; left:50%; width:100%; height:2px;
+    background:var(--border); z-index:0; transition:background .4s ease;
   }
+  .progress-step.done:not(:last-child)::after { background:var(--green); }
+  .step-dot {
+    width:27px; height:27px; border-radius:50%; border:2px solid var(--border);
+    background:var(--white); display:flex; align-items:center; justify-content:center;
+    font-size:11px; font-weight:700; color:var(--t-sub);
+    position:relative; z-index:1; transition:all .3s ease; flex-shrink:0;
+  }
+  .progress-step.active .step-dot { border-color:var(--green); background:var(--green); color:#fff; box-shadow:0 0 0 4px rgba(30,92,52,.15); }
+  .progress-step.done .step-dot   { border-color:var(--green); background:var(--green); color:#fff; }
+  .step-label { font-size:10px; font-weight:600; color:var(--t-sub); margin-top:6px; text-align:center; white-space:nowrap; letter-spacing:.03em; }
+  .progress-step.active .step-label,.progress-step.done .step-label { color:var(--green); }
 
-  @media print {
-    body { background: white; padding: 0; }
-    .flyer { box-shadow: none; page-break-after: always; margin-bottom: 0; }
-    .index { display: none; }
-  }
+  /* STEP PANELS */
+  .step-panel { display:none; }
+  .step-panel.active { display:block; animation:fadeUp .32s ease; }
+  @keyframes fadeUp { from{opacity:0;transform:translateY(14px)} to{opacity:1;transform:translateY(0)} }
 
-  @media (max-width: 600px) {
-    .benefit-list { grid-template-columns: 1fr; }
-    .price-grid { grid-template-columns: 1fr 1fr; }
-    .flyer-header h2 { font-size: 1.5rem; }
-    .cta-bar { flex-direction: column; text-align: center; }
-    .flyer-header, .flyer-body, .cta-bar { padding-left: 24px; padding-right: 24px; }
+  /* STEP 1 HERO */
+  .step-hero { text-align:center; margin-bottom:32px; }
+  .step-hero h1 { font-size:clamp(26px,5vw,44px); color:var(--green-dark); margin-bottom:12px; }
+  .step-hero p  { font-size:17px; color:var(--t-mid); max-width:540px; margin:0 auto; }
+
+  /* LEAD FORM */
+  .lead-form { background:var(--white); border-radius:var(--radius-lg); padding:30px 28px; box-shadow:var(--shadow); margin-bottom:40px; }
+  .form-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  @media(max-width:580px){.form-grid{grid-template-columns:1fr}}
+  .form-field { display:flex; flex-direction:column; gap:5px; }
+  .form-field label { font-size:12px; font-weight:700; color:var(--t-mid); letter-spacing:.05em; text-transform:uppercase; }
+  .form-field input {
+    border:1.5px solid var(--border); border-radius:8px; padding:12px 14px;
+    font-family:'DM Sans',sans-serif; font-size:15px; color:var(--text);
+    background:var(--cream); outline:none; transition:border-color var(--tr),box-shadow var(--tr);
   }
-</style>
+  .form-field input:focus { border-color:var(--green); box-shadow:0 0 0 3px rgba(30,92,52,.12); background:#fff; }
+  .form-field input.field-error { border-color:#e53e3e !important; }
+
+  /* CAT SECTION */
+  .cat-section-title { text-align:center; margin-bottom:20px; }
+  .cat-section-title h2 { font-size:26px; color:var(--green-dark); margin-bottom:6px; }
+  .cat-section-title p  { font-size:15px; color:var(--t-sub); }
+
+  /* CAT GRID */
+  .cat-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:14px; }
+  @media(max-width:680px){.cat-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:400px){.cat-grid{grid-template-columns:1fr}}
+  .cat-card {
+    border-radius:var(--radius); padding:20px 14px 16px;
+    cursor:pointer; text-align:center; color:#fff;
+    position:relative; overflow:hidden;
+    outline:3px solid transparent; outline-offset:2px;
+    transition:transform var(--tr),box-shadow var(--tr),outline-color var(--tr);
+    user-select:none;
+  }
+  .cat-card::after { content:''; position:absolute; inset:0; background:rgba(255,255,255,.1); opacity:0; transition:opacity var(--tr); }
+  .cat-card:hover { transform:translateY(-3px); box-shadow:var(--shadow-lg); }
+  .cat-card:hover::after { opacity:1; }
+  .cat-card.selected { outline-color:var(--gold); transform:translateY(-2px); box-shadow:0 0 0 6px rgba(201,168,76,.22); }
+  .cat-card.selected::after { opacity:1; }
+  .cat-icon  { font-size:30px; display:block; margin-bottom:8px; }
+  .cat-name  { font-family:'DM Serif Display',serif; font-size:15px; line-height:1.25; margin-bottom:3px; }
+  .cat-desc  { font-size:11px; opacity:.8; line-height:1.35; }
+  .cat-badge { display:inline-block; background:var(--gold); color:var(--green-dark); font-size:9px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; padding:2px 8px; border-radius:20px; margin-top:6px; }
+
+  /* ERRORS */
+  .form-error-msg { text-align:center; color:#c53030; font-size:13px; font-weight:600; padding:8px 12px; background:#fff5f5; border-radius:8px; border:1px solid #fed7d7; margin-top:10px; display:none; }
+  .form-error-msg.visible { display:block; }
+
+  /* STEP 2 */
+  .sub-hero { text-align:center; margin-bottom:28px; }
+  .back-btn { display:inline-flex; align-items:center; gap:5px; background:none; border:none; color:var(--green); font-family:'DM Sans',sans-serif; font-size:14px; font-weight:600; cursor:pointer; margin-bottom:18px; padding:0; transition:color var(--tr); }
+  .back-btn:hover { color:var(--green-mid); }
+  .sub-hero h2 { font-size:30px; color:var(--green-dark); margin-bottom:8px; }
+  .sub-hero p  { font-size:16px; color:var(--t-mid); }
+  .sub-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:14px; }
+  .sub-card { background:var(--white); border:2px solid var(--border); border-radius:var(--radius); padding:20px; cursor:pointer; transition:all var(--tr); user-select:none; }
+  .sub-card:hover { border-color:var(--green-mid); box-shadow:var(--shadow); transform:translateY(-2px); }
+  .sub-card.selected { border-color:var(--green); background:var(--green-light); box-shadow:0 0 0 3px rgba(30,92,52,.15); }
+  .sub-card h3 { font-family:'DM Serif Display',serif; font-size:16px; color:var(--green-dark); margin-bottom:4px; }
+  .sub-card p  { font-size:13px; color:var(--t-sub); line-height:1.4; }
+  .sub-price { font-size:13px; font-weight:700; color:var(--green); margin-top:10px; padding-top:8px; border-top:1px solid var(--border); }
+
+  /* STEP 3 BENEFITS */
+  .benefits-hero { border-radius:var(--radius-lg); padding:44px 32px; color:#fff; text-align:center; margin-bottom:28px; position:relative; overflow:hidden; }
+  .benefits-hero::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 30% 50%,rgba(255,255,255,.09) 0%,transparent 65%); pointer-events:none; }
+  .benefits-hero h2 { font-size:clamp(22px,4vw,36px); margin-bottom:10px; position:relative; }
+  .benefits-hero p  { font-size:17px; opacity:.88; max-width:500px; margin:0 auto; position:relative; }
+  .benefits-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:14px; margin-bottom:32px; }
+  .benefit-card { background:var(--white); border-radius:var(--radius); padding:18px; display:flex; gap:14px; align-items:flex-start; box-shadow:var(--shadow); transition:transform var(--tr); }
+  .benefit-card:hover { transform:translateY(-2px); }
+  .benefit-icon { width:42px; height:42px; flex-shrink:0; background:var(--green-light); border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:20px; }
+  .benefit-text h4 { font-size:14px; font-weight:700; color:var(--green-dark); margin-bottom:3px; }
+  .benefit-text p  { font-size:13px; color:var(--t-sub); line-height:1.45; }
+
+  /* BUTTONS */
+  .btn { display:inline-flex; align-items:center; gap:8px; padding:13px 26px; border-radius:8px; font-family:'DM Sans',sans-serif; font-size:15px; font-weight:700; cursor:pointer; border:none; transition:all var(--tr); text-decoration:none; white-space:nowrap; }
+  .btn-primary { background:var(--green); color:#fff; }
+  .btn-primary:hover { background:var(--green-mid); transform:translateY(-1px); box-shadow:var(--shadow); }
+  .btn-gold { background:var(--gold); color:var(--green-dark); font-size:17px; padding:18px 44px; border-radius:10px; letter-spacing:.03em; box-shadow:0 4px 18px rgba(201,168,76,.3); }
+  .btn-gold:hover { background:var(--gold-hover); transform:translateY(-2px); box-shadow:0 8px 28px rgba(201,168,76,.4); }
+  .btn-outline { background:transparent; color:var(--green); border:2px solid var(--green); }
+  .btn-outline:hover { background:var(--green-light); }
+  .btn-sm { padding:9px 18px; font-size:13px; }
+  .step-nav { display:flex; justify-content:center; gap:12px; margin-top:4px; flex-wrap:wrap; }
+
+  /* STEP 4 PRICE */
+  .price-hero { border-radius:var(--radius-lg); padding:44px 32px; color:#fff; text-align:center; margin-bottom:28px; position:relative; overflow:hidden; }
+  .price-hero::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 70% 40%,rgba(255,255,255,.07) 0%,transparent 60%); pointer-events:none; }
+  .price-hero h2 { font-size:clamp(22px,4vw,36px); margin-bottom:8px; position:relative; }
+  .price-hero p  { font-size:16px; opacity:.87; position:relative; }
+
+  .price-cards { display:grid; grid-template-columns:repeat(auto-fill,minmax(190px,1fr)); gap:14px; margin-bottom:28px; }
+  .price-card { background:var(--white); border-radius:var(--radius); padding:22px 18px; text-align:center; box-shadow:var(--shadow); border:2px solid var(--border); position:relative; }
+  .price-card.featured { border-color:var(--green); }
+  .price-card-badge { position:absolute; top:-11px; left:50%; transform:translateX(-50%); background:var(--green); color:#fff; font-size:9px; font-weight:800; letter-spacing:.09em; text-transform:uppercase; padding:3px 14px; border-radius:20px; white-space:nowrap; }
+  .price-card-label  { font-size:11px; font-weight:700; color:var(--t-sub); text-transform:uppercase; letter-spacing:.08em; margin-bottom:8px; }
+  .price-card-amount { font-family:'DM Serif Display',serif; font-size:22px; color:var(--green-dark); line-height:1.2; }
+  .price-card-sub    { font-size:11px; color:var(--t-sub); margin-top:5px; }
+
+  .free-section { text-align:center; padding:28px; background:var(--white); border-radius:var(--radius); box-shadow:var(--shadow); margin-bottom:28px; }
+  .free-badge-big { font-family:'DM Serif Display',serif; font-size:40px; color:var(--green-dark); display:block; margin-bottom:6px; }
+  .free-label { display:inline-block; background:var(--gold-light); border:2px solid var(--gold); color:var(--green-dark); font-size:13px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; padding:4px 18px; border-radius:20px; margin-bottom:12px; }
+  .free-section p { font-size:15px; color:var(--t-mid); }
+
+  .usd-section { background:var(--white); border-radius:var(--radius); padding:28px; text-align:center; margin-bottom:28px; box-shadow:var(--shadow); }
+  .usd-amount { font-family:'DM Serif Display',serif; font-size:36px; color:var(--green-dark); margin-bottom:6px; }
+  .usd-brl    { font-size:16px; color:var(--t-mid); }
+  .usd-note   { font-size:12px; color:var(--t-sub); margin-top:8px; }
+  .usd-loading{ font-size:14px; color:var(--t-sub); font-style:italic; }
+
+  .pfjp-section { background:var(--cream); border:1.5px solid var(--border); border-radius:var(--radius); padding:20px 22px; margin-bottom:24px; }
+  .pfjp-lbl { font-size:11px; font-weight:800; color:var(--t-sub); text-transform:uppercase; letter-spacing:.08em; margin-bottom:12px; display:block; }
+  .pfjp-toggle { display:flex; gap:10px; flex-wrap:wrap; }
+  .pfjp-btn { flex:1; min-width:130px; padding:13px 14px; border:2px solid var(--border); border-radius:8px; background:var(--white); cursor:pointer; font-family:'DM Sans',sans-serif; font-size:14px; font-weight:700; color:var(--t-mid); text-align:center; transition:all var(--tr); }
+  .pfjp-btn:hover { border-color:var(--green); color:var(--green); }
+  .pfjp-btn.active { border-color:var(--green); background:var(--green-light); color:var(--green-dark); }
+  .pfjp-sub { font-size:11px; font-weight:400; color:var(--t-sub); margin-top:3px; }
+
+  .cta-section { text-align:center; margin-bottom:32px; }
+  .cta-note { margin-top:12px; font-size:13px; color:var(--t-sub); }
+
+  .docs-accordion { border:1.5px solid var(--border); border-radius:var(--radius); overflow:hidden; margin-bottom:8px; }
+  .docs-toggle { width:100%; background:var(--white); border:none; padding:17px 20px; display:flex; align-items:center; justify-content:space-between; cursor:pointer; font-family:'DM Sans',sans-serif; font-size:14px; font-weight:700; color:var(--green-dark); transition:background var(--tr); }
+  .docs-toggle:hover { background:var(--green-light); }
+  .docs-chevron { font-size:16px; transition:transform .25s ease; }
+  .docs-toggle.open .docs-chevron { transform:rotate(180deg); }
+  .docs-body { display:none; padding:4px 20px 20px; background:var(--white); }
+  .docs-body.open { display:block; }
+  .doc-list { list-style:none; }
+  .doc-list li { padding:9px 0; border-bottom:1px solid var(--border); font-size:14px; color:var(--t-mid); display:flex; align-items:flex-start; gap:10px; line-height:1.45; }
+  .doc-list li:last-child { border-bottom:none; }
+  .doc-icon { flex-shrink:0; font-size:15px; }
+
+  .mc-notice { font-size:12px; color:var(--t-sub); text-align:center; margin-top:8px; min-height:18px; }
+  .mc-notice.success { color:var(--green); }
+  .mc-notice.error   { color:#c53030; }
+
+  .site-footer { background:var(--green-dark); color:rgba(255,255,255,.65); text-align:center; padding:22px 16px; font-size:13px; }
+  .site-footer a { color:var(--gold); text-decoration:none; }
+
+  @media(max-width:600px){
+    .lead-form{padding:20px 16px}
+    .benefits-hero,.price-hero{padding:30px 18px}
+    .price-cards{grid-template-columns:1fr 1fr}
+    .quiz-wrapper{padding:20px 12px 56px}
+    .step-label{display:none}
+    .btn-gold{padding:16px 28px;font-size:15px}
+  }
+  @media(max-width:360px){ .price-cards{grid-template-columns:1fr} }
+  </style>
 </head>
 <body>
 
-<div class="page-title">
-  <h1>BSCA — Associe-se 2026/2027</h1>
-  <p>Comunicados por categoria de associado · Ciclo Fev/2026–Jan/2027</p>
-</div>
-
-<!-- INDEX -->
-<div class="index">
-  <h2>Navegue pelas categorias</h2>
-  <div class="index-grid">
-    <a href="#produtor">🌱 Produtor</a>
-    <a href="#torrefador">🔥 Torrefador</a>
-    <a href="#cafeteria">☕ Cafeteria</a>
-    <a href="#exportador">🌍 Exportador</a>
-    <a href="#cooperativa">🤝 Cooperativa</a>
-    <a href="#corretor">📋 Corretor</a>
-    <a href="#armazem">🏭 Armazém</a>
-    <a href="#equipamentos">⚙️ Implementos &amp; Equipamentos</a>
-    <a href="#profissionais">🎓 Profissionais</a>
-    <a href="#assoc-produtores">🌿 Assoc. de Produtores</a>
-    <a href="#assoc-cooperativas">🔗 Assoc. de Cooperativas</a>
-    <a href="#internacional">🌐 Membro Internacional</a>
+<header class="site-header">
+  <div class="logo">
+    <img src="https://www.bsca.com.br/wp-content/uploads/2025/09/Logo_BSCA-white.png" alt="BSCA"
+      onerror="this.style.display='none';document.getElementById('ltxt').style.display='block'">
+    <span class="logo-text" id="ltxt" style="display:none">BSCA</span>
   </div>
-</div>
-
-
-<!-- ════════════════════════════════════
-     1. PRODUTOR
-════════════════════════════════════ -->
-<div class="flyer theme-producer" id="produtor">
-  <div class="flyer-header">
-    <div class="flyer-badge">Membro Associado · Produtor</div>
-    <h2>Coloque seu café especial<br>no mapa do mundo</h2>
-    <p class="tagline">Para produtores rurais de café especial — do pequeno ao grande produtor</p>
+  <div class="lang-switcher">
+    <button class="lang-btn active" onclick="setLang('pt')">PT</button>
+    <button class="lang-btn"        onclick="setLang('en')">EN</button>
+    <button class="lang-btn"        onclick="setLang('es')">ES</button>
   </div>
-  <div class="flyer-body">
-    <p class="flyer-intro">
-      A BSCA é a ponte entre a sua fazenda e os melhores compradores do mundo. Ao se associar como Produtor, você garante acesso ao Selo de Qualidade BSCA, à Vitrine digital, às maiores feiras internacionais e a um ecossistema completo que transforma qualidade em prêmio sobre a cotação de mercado.
-    </p>
+</header>
 
-    <div class="subcats">
-      <h4>Enquadramento por área da propriedade</h4>
-      <div class="subcat-grid">
-        <div class="subcat-item">
-          <div class="sc-name">A1</div>
-          <div class="sc-range">Até 20 hectares</div>
-          <div class="sc-price">R$ 770,70</div>
-          <div class="sc-monthly">ou 12x R$ 70,06</div>
-        </div>
-        <div class="subcat-item">
-          <div class="sc-name">AA</div>
-          <div class="sc-range">20 a 50 ha</div>
-          <div class="sc-price">R$ 1.321,99</div>
-          <div class="sc-monthly">ou 12x R$ 120,18</div>
-        </div>
-        <div class="subcat-item">
-          <div class="sc-name">A</div>
-          <div class="sc-range">51 a 100 ha</div>
-          <div class="sc-price">R$ 2.636,28</div>
-          <div class="sc-monthly">ou 12x R$ 239,65</div>
-        </div>
-        <div class="subcat-item">
-          <div class="sc-name">B</div>
-          <div class="sc-range">101 a 200 ha</div>
-          <div class="sc-price">R$ 5.272,83</div>
-          <div class="sc-monthly">ou 12x R$ 479,33</div>
-        </div>
-        <div class="subcat-item">
-          <div class="sc-name">C</div>
-          <div class="sc-range">201 a 400 ha</div>
-          <div class="sc-price">R$ 10.545,54</div>
-          <div class="sc-monthly">ou 12x R$ 958,65</div>
-        </div>
-        <div class="subcat-item">
-          <div class="sc-name">D</div>
-          <div class="sc-range">Acima de 401 ha</div>
-          <div class="sc-price">R$ 15.733,11</div>
-          <div class="sc-monthly">ou 12x R$ 1.430,23</div>
-        </div>
+<main class="quiz-wrapper">
+  <div class="progress-bar-wrap"><div class="progress-steps" id="progressSteps"></div></div>
+
+  <!-- STEP 1 -->
+  <div class="step-panel active" id="step1">
+    <div class="step-hero">
+      <h1 data-i18n="s1Title">Faça parte da maior comunidade do café especial do Brasil</h1>
+      <p  data-i18n="s1Sub">Preencha seus dados e descubra os benefícios exclusivos para o seu perfil.</p>
+    </div>
+    <div class="lead-form">
+      <div class="form-grid">
+        <div class="form-field"><label data-i18n="fName">NOME COMPLETO</label><input type="text"  id="fName"  autocomplete="name"></div>
+        <div class="form-field"><label data-i18n="fPhone">CELULAR / WHATSAPP</label><input type="tel"   id="fPhone" autocomplete="tel"></div>
+        <div class="form-field"><label data-i18n="fEmail">E-MAIL</label><input type="email" id="fEmail" autocomplete="email"></div>
+        <div class="form-field"><label data-i18n="fCity">CIDADE</label><input type="text"  id="fCity"  autocomplete="address-level2"></div>
       </div>
-      <p style="font-size:0.72rem;color:#999;margin-top:8px;">* Valores com desconto de parcela única anual (~8%). Pagamento semestral e mensal também disponíveis. Ajuste ciclo 2026/2027: +6,7%.</p>
+      <div class="mc-notice" id="mcNotice"></div>
     </div>
+    <div class="cat-section-title">
+      <h2 data-i18n="s1CatTitle">Qual é o seu perfil?</h2>
+      <p  data-i18n="s1CatSub">Selecione a categoria que melhor descreve sua atuação no setor cafeeiro.</p>
+    </div>
+    <div class="cat-grid" id="catGrid"></div>
+    <div class="form-error-msg" id="errLead" data-i18n="errLeadFields">Por favor, preencha todos os campos antes de continuar.</div>
+    <div class="form-error-msg" id="errCat"  data-i18n="errCatSelect">Selecione sua categoria para continuar.</div>
+  </div>
 
-    <div class="benefits">
-      <h4>O que você recebe</h4>
-      <div class="benefit-list">
-        <div class="benefit-item"><div class="benefit-icon">🏅</div><div class="benefit-text">Selo de Qualidade BSCA com rastreabilidade total por lote — único no Brasil</div></div>
-        <div class="benefit-item"><div class="benefit-icon">🛒</div><div class="benefit-text">Vitrine BSCA gratuita: seu café exposto a compradores nacionais e internacionais</div></div>
-        <div class="benefit-item"><div class="benefit-icon">🌍</div><div class="benefit-text">Presença em feiras internacionais: World of Coffee, Specialty Coffee Expo, SCAJ, Café Show e mais</div></div>
-        <div class="benefit-item"><div class="benefit-icon">🤝</div><div class="benefit-text">Matchmaking qualificado com importadores e rodadas de negócios</div></div>
-        <div class="benefit-item"><div class="benefit-icon">🏆</div><div class="benefit-text">Elegibilidade para o Cup of Excellence, o concurso mais prestigiado do mundo</div></div>
-        <div class="benefit-item"><div class="benefit-icon">🎓</div><div class="benefit-text">Descontos na BSCA Academy e acesso ao programa educacional SCA</div></div>
-        <div class="benefit-item"><div class="benefit-icon">💰</div><div class="benefit-text">Descontos progressivos na anuidade a partir do 5º ano de associação</div></div>
-        <div class="benefit-item"><div class="benefit-icon">🗳️</div><div class="benefit-text">Direito a voto em Assembleia Geral e voz ativa na associação</div></div>
+  <!-- STEP 2 -->
+  <div class="step-panel" id="step2">
+    <div class="sub-hero">
+      <button class="back-btn" onclick="goToStep(1)">← <span data-i18n="btnBack">Voltar</span></button>
+      <h2 id="subTitle"></h2>
+      <p  id="subSub"></p>
+    </div>
+    <div class="sub-grid" id="subGrid"></div>
+    <div class="form-error-msg" id="errSub" data-i18n="errSubSelect">Selecione uma opção para continuar.</div>
+  </div>
+
+  <!-- STEP 3 -->
+  <div class="step-panel" id="step3">
+    <div class="benefits-hero" id="benefitsHero">
+      <h2 id="benefitsTitle"></h2>
+      <p  id="benefitsSub" data-i18n="benefitsSub">Ao tornar-se membro da BSCA, você terá acesso a:</p>
+    </div>
+    <div class="benefits-grid" id="benefitsGrid"></div>
+    <div class="step-nav">
+      <button class="btn btn-outline" onclick="goBackFromBenefits()">← <span data-i18n="btnBack">Voltar</span></button>
+      <button class="btn btn-primary" onclick="goToStep(4)"><span data-i18n="btnSeePrice">Ver valores e associar</span> →</button>
+    </div>
+  </div>
+
+  <!-- STEP 4 -->
+  <div class="step-panel" id="step4">
+    <div class="price-hero" id="priceHero">
+      <h2 id="priceTitle"></h2>
+      <p  id="priceSub"></p>
+    </div>
+    <div id="pricingArea"></div>
+    <div class="pfjp-section" id="pfjpSection" style="display:none">
+      <span class="pfjp-lbl" data-i18n="pfjpLabel">TIPO DE CADASTRO</span>
+      <div class="pfjp-toggle" id="pfjpToggle"></div>
+    </div>
+    <div class="cta-section">
+      <a id="ctaBtn" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-gold">
+        <span data-i18n="btnJoin">QUERO SER MEMBRO</span> →
+      </a>
+      <p class="cta-note" data-i18n="ctaNote">Você será direcionado ao portal de cadastro da BSCA.</p>
+    </div>
+    <div class="docs-accordion">
+      <button class="docs-toggle" id="docsToggle" onclick="toggleDocs()">
+        <span data-i18n="docsLabel">📋 Documentos necessários para se associar</span>
+        <span class="docs-chevron">▼</span>
+      </button>
+      <div class="docs-body" id="docsBody"><ul class="doc-list" id="docList"></ul></div>
+    </div>
+    <div class="step-nav" style="margin-top:28px">
+      <button class="btn btn-outline btn-sm" onclick="goToStep(3)">← <span data-i18n="btnBack">Voltar</span></button>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <p>© 2025 BSCA – Brazilian Specialty Coffee Association · <a href="https://www.bsca.com.br" target="_blank">www.bsca.com.br</a></p>
+</footer>
+
+<script>
+/* ================================================================
+   MAILCHIMP — substitua pela URL do formulário incorporado da
+   audiência INTERESSE_MEMBROS_BSCA (Audience → Signup forms →
+   Embedded forms → copie o "action" do <form>)
+================================================================ */
+const MAILCHIMP_URL = 'SEU_MAILCHIMP_URL_AQUI';
+
+/* ================================================================
+   TRANSLATIONS
+================================================================ */
+const T = {
+  pt:{
+    pageTitle:'Associe-se à BSCA',
+    s1Title:'Faça parte da maior comunidade do café especial do Brasil',
+    s1Sub:'Preencha seus dados e descubra os benefícios exclusivos para o seu perfil.',
+    fName:'NOME COMPLETO',fPhone:'CELULAR / WHATSAPP',fEmail:'E-MAIL',fCity:'CIDADE',
+    s1CatTitle:'Qual é o seu perfil?',
+    s1CatSub:'Selecione a categoria que melhor descreve sua atuação no setor cafeeiro.',
+    errLeadFields:'Por favor, preencha todos os campos antes de continuar.',
+    errCatSelect:'Selecione sua categoria para continuar.',
+    errSubSelect:'Selecione uma opção para continuar.',
+    btnBack:'Voltar',btnSeePrice:'Ver valores e associar',btnJoin:'QUERO SER MEMBRO',
+    benefitsSub:'Ao tornar-se membro da BSCA, você terá acesso a:',
+    benefitsGreeting:'{name}, conheça os benefícios exclusivos para',
+    priceGreeting:'{name}, aqui estão os planos disponíveis para você como',
+    stepLabels:['Perfil','Detalhes','Benefícios','Associar'],
+    annualLabel:'À VISTA / ANUAL',semiLabel:'SEMESTRAL',monthLabel:'MENSALIZADO',
+    annualBadge:'Melhor custo-benefício',totalNote:'Total: ',
+    pfjpLabel:'TIPO DE CADASTRO',
+    pfjpPF:'Pessoa Física',pfjpPFsub:'Cadastro com CPF',
+    pfjpPJ:'Pessoa Jurídica',pfjpPJsub:'Cadastro com CNPJ',
+    ctaNote:'Você será direcionado ao portal de cadastro da BSCA.',
+    docsLabel:'📋 Documentos necessários para se associar',
+    freeTitle:'Adesão 100% Gratuita',freeSub:'Profissionais e entidades do setor podem se associar à BSCA sem nenhum custo.',
+    usdLabel:'Anuidade Internacional',usdBrl:'Equivalência em BRL (câmbio ao vivo):',
+    usdRateNote:'Taxa USD/BRL atualizada em tempo real via API pública.',
+    usdLoading:'Carregando câmbio em tempo real…',
+    catBadgeFree:'GRATUITO',subPriceLabel:'à vista',
+    mcSuccess:'✓ Dados recebidos! Entraremos em contato em breve.',
+    mcError:'Não foi possível enviar seus dados agora.',
+  },
+  en:{
+    pageTitle:'Join BSCA',
+    s1Title:'Join the largest specialty coffee community in Brazil',
+    s1Sub:'Fill in your details and discover exclusive benefits for your profile.',
+    fName:'FULL NAME',fPhone:'MOBILE / WHATSAPP',fEmail:'EMAIL',fCity:'CITY',
+    s1CatTitle:'What is your profile?',
+    s1CatSub:'Select the category that best describes your role in the coffee industry.',
+    errLeadFields:'Please fill in all fields before continuing.',
+    errCatSelect:'Please select your category to continue.',
+    errSubSelect:'Please select an option to continue.',
+    btnBack:'Back',btnSeePrice:'See pricing & join',btnJoin:'I WANT TO BE A MEMBER',
+    benefitsSub:'As a BSCA member, you will have access to:',
+    benefitsGreeting:'{name}, discover the exclusive benefits for',
+    priceGreeting:'{name}, here are the available plans for you as',
+    stepLabels:['Profile','Details','Benefits','Join'],
+    annualLabel:'ANNUAL UPFRONT',semiLabel:'SEMI-ANNUAL',monthLabel:'MONTHLY',
+    annualBadge:'Best value',totalNote:'Total: ',
+    pfjpLabel:'REGISTRATION TYPE',
+    pfjpPF:'Individual',pfjpPFsub:'Register with CPF',
+    pfjpPJ:'Legal Entity',pfjpPJsub:'Register with CNPJ',
+    ctaNote:'You will be directed to the BSCA registration portal.',
+    docsLabel:'📋 Documents required to join',
+    freeTitle:'100% Free Membership',freeSub:'Coffee professionals and entities can join BSCA at no cost.',
+    usdLabel:'International Membership',usdBrl:'BRL equivalent (live rate):',
+    usdRateNote:'USD/BRL exchange rate updated in real time via public API.',
+    usdLoading:'Loading live exchange rate…',
+    catBadgeFree:'FREE',subPriceLabel:'annual',
+    mcSuccess:'✓ Details received! We will be in touch soon.',
+    mcError:'Could not send your details right now.',
+  },
+  es:{
+    pageTitle:'Únase a la BSCA',
+    s1Title:'Únase a la mayor comunidad de café especial de Brasil',
+    s1Sub:'Complete sus datos y descubra los beneficios exclusivos para su perfil.',
+    fName:'NOMBRE COMPLETO',fPhone:'CELULAR / WHATSAPP',fEmail:'CORREO ELECTRÓNICO',fCity:'CIUDAD',
+    s1CatTitle:'¿Cuál es su perfil?',
+    s1CatSub:'Seleccione la categoría que mejor describe su actividad en el sector cafetero.',
+    errLeadFields:'Por favor, complete todos los campos antes de continuar.',
+    errCatSelect:'Seleccione su categoría para continuar.',
+    errSubSelect:'Seleccione una opción para continuar.',
+    btnBack:'Volver',btnSeePrice:'Ver precios y asociarse',btnJoin:'QUIERO SER MIEMBRO',
+    benefitsSub:'Al convertirse en miembro de la BSCA, tendrá acceso a:',
+    benefitsGreeting:'{name}, conozca los beneficios exclusivos para',
+    priceGreeting:'{name}, aquí están los planes disponibles para usted como',
+    stepLabels:['Perfil','Detalles','Beneficios','Asociarse'],
+    annualLabel:'ANUAL AL CONTADO',semiLabel:'SEMESTRAL',monthLabel:'MENSUALIZADO',
+    annualBadge:'Mejor relación calidad-precio',totalNote:'Total: ',
+    pfjpLabel:'TIPO DE REGISTRO',
+    pfjpPF:'Persona Física',pfjpPFsub:'Registro con CPF',
+    pfjpPJ:'Persona Jurídica',pfjpPJsub:'Registro con CNPJ',
+    ctaNote:'Será dirigido al portal de registro de la BSCA.',
+    docsLabel:'📋 Documentos necesarios para asociarse',
+    freeTitle:'Membresía 100% Gratuita',freeSub:'Profesionales y entidades del sector pueden unirse a la BSCA sin ningún costo.',
+    usdLabel:'Membresía Internacional',usdBrl:'Equivalencia en BRL (tipo de cambio en vivo):',
+    usdRateNote:'Tipo de cambio USD/BRL actualizado en tiempo real vía API pública.',
+    usdLoading:'Cargando tipo de cambio en vivo…',
+    catBadgeFree:'GRATUITO',subPriceLabel:'al año',
+    mcSuccess:'✓ ¡Datos recibidos! Nos pondremos en contacto pronto.',
+    mcError:'No fue posible enviar sus datos ahora.',
+  },
+};
+
+/* ================================================================
+   CATEGORIES
+================================================================ */
+const CATS=[
+  {id:'produtor',           icon:'🌱',hasSub:true, free:false,
+   pt:{name:'Produtor Rural',          desc:'Agricultores e fazendas de café'},
+   en:{name:'Coffee Farmer',           desc:'Farmers and coffee estates'},
+   es:{name:'Productor Rural',         desc:'Agricultores y fincas cafetaleras'}},
+  {id:'torrefador',         icon:'☕',hasSub:true, free:false,
+   pt:{name:'Torrefador',              desc:'Empresas de torrefação e torra'},
+   en:{name:'Coffee Roaster',          desc:'Roasting companies'},
+   es:{name:'Tostador',                desc:'Empresas de tostado de café'}},
+  {id:'cafeteria',          icon:'🏪',hasSub:false,free:false,
+   pt:{name:'Cafeteria / Coffee Shop', desc:'Espaços de consumo de café especial'},
+   en:{name:'Coffee Shop',             desc:'Specialty coffee venues'},
+   es:{name:'Cafetería',               desc:'Espacios de consumo de café especial'}},
+  {id:'exportador',         icon:'🚢',hasSub:true, free:false,
+   pt:{name:'Exportador',              desc:'Empresas exportadoras de café verde'},
+   en:{name:'Exporter',                desc:'Green coffee export companies'},
+   es:{name:'Exportador',              desc:'Empresas exportadoras de café verde'}},
+  {id:'cooperativa',        icon:'🤝',hasSub:true, free:false,
+   pt:{name:'Cooperativa',             desc:'Cooperativas de produtores de café'},
+   en:{name:'Cooperative',             desc:'Coffee producer cooperatives'},
+   es:{name:'Cooperativa',             desc:'Cooperativas de productores de café'}},
+  {id:'corretor',           icon:'📊',hasSub:false,free:false,
+   pt:{name:'Corretor de Café',        desc:'Intermediários e traders de café'},
+   en:{name:'Coffee Broker',           desc:'Coffee intermediaries and traders'},
+   es:{name:'Corredor de Café',        desc:'Intermediarios y traders de café'}},
+  {id:'armazem',            icon:'🏭',hasSub:false,free:false,
+   pt:{name:'Armazém Geral',           desc:'Armazéns e armazenagem de café'},
+   en:{name:'Warehouse',               desc:'Coffee storage and warehousing'},
+   es:{name:'Almacén General',         desc:'Almacenamiento de café'}},
+  {id:'equipamentos',       icon:'⚙️', hasSub:false,free:false,
+   pt:{name:'Equipamentos & Insumos',  desc:'Fabricantes e fornecedores do setor'},
+   en:{name:'Equipment & Supplies',    desc:'Manufacturers and suppliers'},
+   es:{name:'Equipos e Insumos',       desc:'Fabricantes y proveedores del sector'}},
+  {id:'profissionais',      icon:'👤',hasSub:false,free:true,
+   pt:{name:'Profissional do Café',    desc:'Baristas, Q-Graders, consultores e outros'},
+   en:{name:'Coffee Professional',     desc:'Baristas, Q-Graders, consultants & others'},
+   es:{name:'Profesional del Café',    desc:'Baristas, Q-Graders, consultores y otros'}},
+  {id:'assoc-produtores',   icon:'🌾',hasSub:false,free:true,
+   pt:{name:'Assoc. de Produtores',    desc:'Associações representativas de produtores'},
+   en:{name:'Producers Association',   desc:'Producer representative associations'},
+   es:{name:'Asoc. de Productores',    desc:'Asociaciones representativas de productores'}},
+  {id:'assoc-cooperativas', icon:'🏛️',hasSub:false,free:true,
+   pt:{name:'Assoc. de Cooperativas',  desc:'Associações de cooperativas cafeeiras'},
+   en:{name:'Cooperatives Assoc.',     desc:'Coffee cooperative associations'},
+   es:{name:'Asoc. de Cooperativas',   desc:'Asociaciones de cooperativas cafetaleras'}},
+  {id:'internacional',      icon:'🌍',hasSub:false,free:false,
+   pt:{name:'Membro Internacional',    desc:'Empresas e profissionais fora do Brasil'},
+   en:{name:'International Member',    desc:'Companies and professionals outside Brazil'},
+   es:{name:'Miembro Internacional',   desc:'Empresas y profesionales fuera de Brasil'}},
+];
+
+/* ================================================================
+   SUB-OPTIONS
+================================================================ */
+const SUBOPTS={
+  produtor:{
+    pt:{title:'Produtor Rural – Porte',      sub:'Selecione a faixa de produção anual em sacas beneficiadas.'},
+    en:{title:'Coffee Farmer – Scale',        sub:'Select your annual production range in processed bags.'},
+    es:{title:'Productor Rural – Escala',     sub:'Seleccione su rango de producción anual en sacos beneficiados.'},
+    opts:[
+      {id:'a1',pt:{name:'Micro Produtor',    desc:'Até 50 sacas/ano'},           en:{name:'Micro Farmer',      desc:'Up to 50 bags/year'},       es:{name:'Micro Productor',   desc:'Hasta 50 sacos/año'}},
+      {id:'aa',pt:{name:'Pequeno Produtor',  desc:'51 a 300 sacas/ano'},          en:{name:'Small Farmer',      desc:'51–300 bags/year'},         es:{name:'Pequeño Productor', desc:'51 a 300 sacos/año'}},
+      {id:'a', pt:{name:'Médio Produtor',    desc:'301 a 900 sacas/ano'},         en:{name:'Medium Farmer',     desc:'301–900 bags/year'},        es:{name:'Productor Mediano', desc:'301 a 900 sacos/año'}},
+      {id:'b', pt:{name:'Grande Produtor',   desc:'901 a 2.000 sacas/ano'},       en:{name:'Large Farmer',      desc:'901–2,000 bags/year'},      es:{name:'Gran Productor',    desc:'901 a 2.000 sacos/año'}},
+      {id:'c', pt:{name:'Produtor Premium',  desc:'2.001 a 5.000 sacas/ano'},     en:{name:'Premium Farmer',    desc:'2,001–5,000 bags/year'},    es:{name:'Productor Premium', desc:'2.001 a 5.000 sacos/año'}},
+      {id:'d', pt:{name:'Mega Produtor',     desc:'Acima de 5.000 sacas/ano'},    en:{name:'Mega Farmer',       desc:'Over 5,000 bags/year'},     es:{name:'Mega Productor',    desc:'Más de 5.000 sacos/año'}},
+    ]
+  },
+  torrefador:{
+    pt:{title:'Torrefador – Tipo de Operação', sub:'Selecione o modelo que melhor descreve o seu negócio.'},
+    en:{title:'Roaster – Operation Type',       sub:'Select the model that best describes your business.'},
+    es:{title:'Tostador – Tipo de Operación',   sub:'Seleccione el modelo que mejor describe su negocio.'},
+    opts:[
+      {id:'nao',      pt:{name:'Não Vinculada',             desc:'Torrefação como atividade principal, independente'},en:{name:'Standalone Roastery',        desc:'Roasting as primary standalone activity'},        es:{name:'No Vinculada',                desc:'Tostado como actividad principal independiente'}},
+      {id:'vin_cafe', pt:{name:'Vinculada a Cafeteria',      desc:'Torrefação com cafeteria associada'},               en:{name:'Linked to Coffee Shop',       desc:'Roastery with an associated café'},                es:{name:'Vinculada a Cafetería',       desc:'Tostado con cafetería asociada'}},
+      {id:'vin_prod', pt:{name:'Vinculada a Produção Rural', desc:'Torrefação com fazenda própria'},                   en:{name:'Linked to Rural Production',  desc:'Roastery with own coffee farm'},                   es:{name:'Vinculada a Prod. Rural',     desc:'Tostado con finca propia'}},
+    ]
+  },
+  exportador:{
+    pt:{title:'Exportador – Volume Exportado',sub:'Selecione a faixa de exportação anual.'},
+    en:{title:'Exporter – Export Volume',     sub:'Select your annual export volume range.'},
+    es:{title:'Exportador – Volumen',         sub:'Seleccione su rango de exportación anual.'},
+    opts:[
+      {id:'a',pt:{name:'Exportador I',  desc:'Até 10.000 sacas/ano'},          en:{name:'Exporter I',   desc:'Up to 10,000 bags/year'},    es:{name:'Exportador I',   desc:'Hasta 10.000 sacos/año'}},
+      {id:'b',pt:{name:'Exportador II', desc:'10.001 a 30.000 sacas/ano'},     en:{name:'Exporter II',  desc:'10,001–30,000 bags/year'},   es:{name:'Exportador II',  desc:'10.001 a 30.000 sacos/año'}},
+      {id:'c',pt:{name:'Exportador III',desc:'Acima de 30.000 sacas/ano'},     en:{name:'Exporter III', desc:'Over 30,000 bags/year'},     es:{name:'Exportador III', desc:'Más de 30.000 sacos/año'}},
+    ]
+  },
+  cooperativa:{
+    pt:{title:'Cooperativa – Porte',sub:'Selecione o porte da sua cooperativa.'},
+    en:{title:'Cooperative – Size', sub:'Select your cooperative size.'},
+    es:{title:'Cooperativa – Tamaño',sub:'Seleccione el tamaño de su cooperativa.'},
+    opts:[
+      {id:'a',pt:{name:'Cooperativa Pequena',desc:'Até 200 cooperados'},        en:{name:'Small Cooperative', desc:'Up to 200 members'},    es:{name:'Cooperativa Pequeña',desc:'Hasta 200 asociados'}},
+      {id:'b',pt:{name:'Cooperativa Média',  desc:'201 a 500 cooperados'},      en:{name:'Medium Cooperative',desc:'201–500 members'},       es:{name:'Cooperativa Mediana',desc:'201 a 500 asociados'}},
+      {id:'c',pt:{name:'Cooperativa Grande', desc:'Mais de 500 cooperados'},    en:{name:'Large Cooperative', desc:'Over 500 members'},      es:{name:'Cooperativa Grande', desc:'Más de 500 asociados'}},
+    ]
+  },
+};
+
+/* ================================================================
+   BENEFITS
+================================================================ */
+const BENEFITS={
+  seal:        {icon:'🏷️',pt:{n:'Uso do Selo BSCA',            d:'Diferencie seus produtos com o selo de qualidade reconhecido internacionalmente.'},en:{n:'BSCA Quality Seal',           d:'Differentiate your products with an internationally recognized quality seal.'},es:{n:'Sello BSCA',                  d:'Diferencie sus productos con el sello de calidad reconocido internacionalmente.'}},
+  showcase:    {icon:'🖥️',pt:{n:'Vitrine no Portal BSCA',       d:'Exposição dos seus produtos para compradores nacionais e internacionais.'},      en:{n:'BSCA Portal Showcase',        d:'Showcase your products to national and international buyers.'},                es:{n:'Vitrina en el Portal BSCA',   d:'Exposición de sus productos a compradores nacionales e internacionales.'}},
+  fairs:       {icon:'✈️',pt:{n:'Feiras Internacionais',         d:'Participação em missões e feiras de café ao redor do mundo.'},                   en:{n:'International Trade Fairs',   d:'Participation in global coffee missions and trade fairs.'},                    es:{n:'Ferias Internacionales',      d:'Participación en misiones y ferias de café en todo el mundo.'}},
+  match:       {icon:'🤝',pt:{n:'Matchmaking com Compradores',   d:'Conexão direta com importadores e torrefadores internacionais.'},                 en:{n:'Buyer Matchmaking',           d:'Direct connection with international importers and roasters.'},               es:{n:'Matchmaking con Compradores', d:'Conexión directa con importadores y tostadores internacionales.'}},
+  cup:         {icon:'🏆',pt:{n:'Concursos de Qualidade',        d:'Acesso ao Cup of Excellence e outros concursos nacionais e internacionais.'},     en:{n:'Quality Competitions',        d:'Access to Cup of Excellence and other national and international contests.'},  es:{n:'Concursos de Calidad',        d:'Acceso a Cup of Excellence y otros concursos nacionales e internacionales.'}},
+  academy:     {icon:'🎓',pt:{n:'BSCA Academy',                  d:'Cursos, treinamentos e capacitações exclusivas para associados.'},                en:{n:'BSCA Academy',                d:'Exclusive courses, training, and capacity-building for members.'},             es:{n:'BSCA Academy',                d:'Cursos, capacitaciones y formaciones exclusivas para asociados.'}},
+  loyalty:     {icon:'⭐',pt:{n:'Programa de Fidelidade',        d:'Benefícios cumulativos e recompensas por tempo de associação.'},                  en:{n:'Loyalty Program',             d:'Cumulative benefits and rewards based on membership tenure.'},                es:{n:'Programa de Fidelidad',       d:'Beneficios acumulativos y recompensas por antigüedad.'}},
+  vote:        {icon:'🗳️',pt:{n:'Direito a Voto',                d:'Participe das assembleias e vote nas decisões da associação.'},                  en:{n:'Voting Rights',               d:'Participate in assemblies and vote on association decisions.'},               es:{n:'Derecho a Voto',              d:'Participe en asambleas y vote en las decisiones de la asociación.'}},
+  brand:       {icon:'📣',pt:{n:'Fortalecimento de Marca',       d:'Estratégias e suporte para posicionamento da sua marca no mercado.'},            en:{n:'Brand Strengthening',         d:'Strategies and support to position your brand in the market.'},               es:{n:'Fortalecimiento de Marca',    d:'Estrategias y apoyo para el posicionamiento de su marca en el mercado.'}},
+  mktg:        {icon:'📢',pt:{n:'Marketing & Comunicação',       d:'Divulgação nos canais oficiais da BSCA para compradores e o público do setor.'}, en:{n:'Marketing & Communication',   d:'Promotion on official BSCA channels to buyers and the industry.'},            es:{n:'Marketing y Comunicación',    d:'Difusión en canales oficiales de BSCA para compradores del sector.'}},
+  apex:        {icon:'🚀',pt:{n:'Programa Apex-Brasil',          d:'Acesso a programas de internacionalização em parceria com a Apex-Brasil.'},       en:{n:'Apex-Brasil Program',         d:'Access to internationalization programs in partnership with Apex-Brasil.'},    es:{n:'Programa Apex-Brasil',        d:'Acceso a programas de internacionalización con Apex-Brasil.'}},
+  network:     {icon:'🌐',pt:{n:'Rede de Networking',            d:'Conexão com profissionais e empresas de toda a cadeia produtiva do café.'},       en:{n:'Industry Networking',         d:'Connection with professionals and companies across the coffee chain.'},       es:{n:'Red de Networking',           d:'Conexión con profesionales y empresas de toda la cadena del café.'}},
+  cupping:     {icon:'☕',pt:{n:'Cupping Sessions',              d:'Participação em sessões de degustação e avaliação de cafés especiais.'},          en:{n:'Cupping Sessions',            d:'Participation in specialty coffee cupping and evaluation sessions.'},         es:{n:'Sesiones de Cupping',         d:'Participación en sesiones de catación de cafés especiales.'}},
+  farm:        {icon:'🏡',pt:{n:'Visitas a Fazendas Parceiras',  d:'Programas de visitas a fazendas certificadas e parceiras da BSCA.'},              en:{n:'Partner Farm Visits',         d:'Visit programs to BSCA-certified and partner coffee farms.'},                 es:{n:'Visitas a Fincas Socias',     d:'Programas de visitas a fincas certificadas y socias de BSCA.'}},
+  comm_academy:{icon:'🎓',pt:{n:'BSCA Academy',                  d:'Acesso a cursos e conteúdos educacionais exclusivos do setor.'},                  en:{n:'BSCA Academy',                d:'Access to exclusive educational courses and industry content.'},              es:{n:'BSCA Academy',                d:'Acceso a cursos y contenidos educativos exclusivos del sector.'}},
+  comm_net:    {icon:'🌐',pt:{n:'Rede do Setor',                 d:'Conexão com a maior rede de café especial do Brasil.'},                           en:{n:'Industry Network',            d:"Connection to Brazil's largest specialty coffee network."},                   es:{n:'Red del Sector',              d:'Conexión con la mayor red de café especial de Brasil.'}},
+  comm_content:{icon:'📰',pt:{n:'Conteúdo Exclusivo',            d:'Acesso a pesquisas, relatórios e publicações do setor cafeeiro.'},                en:{n:'Exclusive Content',           d:'Access to industry research, reports, and publications.'},                    es:{n:'Contenido Exclusivo',         d:'Acceso a investigaciones, informes y publicaciones del sector.'}},
+  comm_entry:  {icon:'🎁',pt:{n:'Kit de Boas-Vindas',            d:'Kit exclusivo para novos membros com materiais e benefícios de entrada.'},        en:{n:'Welcome Kit',                 d:'Exclusive new-member kit with materials and onboarding benefits.'},           es:{n:'Kit de Bienvenida',           d:'Kit exclusivo para nuevos miembros con materiales y beneficios de entrada.'}},
+};
+
+const BENEFIT_GROUPS={
+  produtor:            ['seal','showcase','fairs','match','cup','academy','loyalty','vote'],
+  torrefador:          ['brand','fairs','mktg','match','academy','loyalty','apex','vote'],
+  cafeteria:           ['showcase','mktg','academy','network','fairs','loyalty','apex','vote'],
+  exportador:          ['seal','fairs','match','apex','mktg','cup','loyalty','vote'],
+  cooperativa:         ['seal','fairs','match','academy','showcase','apex','loyalty','vote'],
+  corretor:            ['seal','fairs','match','mktg','academy','loyalty','apex','vote'],
+  armazem:             ['mktg','network','fairs','academy','apex','loyalty','seal','vote'],
+  equipamentos:        ['fairs','mktg','network','academy','apex','loyalty','seal','vote'],
+  internacional:       ['seal','showcase','match','cupping','farm','cup','mktg','vote'],
+  profissionais:       ['comm_academy','comm_net','comm_content','comm_entry'],
+  'assoc-produtores':  ['comm_academy','comm_net','comm_content','comm_entry'],
+  'assoc-cooperativas':['comm_academy','comm_net','comm_content','comm_entry'],
+};
+
+/* ================================================================
+   PRICES
+================================================================ */
+const PRICES={
+  prod:{
+    a1:{annual:'R$ 770,70',    semi:'2x R$ 403,02',    monthly:'12x R$ 70,06',    total:'R$ 840,73'},
+    aa:{annual:'R$ 1.321,99',  semi:'2x R$ 691,02',    monthly:'12x R$ 120,18',   total:'R$ 1.442,11'},
+    a: {annual:'R$ 2.636,28',  semi:'2x R$ 1.378,01',  monthly:'12x R$ 239,65',   total:'R$ 2.875,84'},
+    b: {annual:'R$ 5.272,83',  semi:'2x R$ 2.756,01',  monthly:'12x R$ 479,33',   total:'R$ 5.751,97'},
+    c: {annual:'R$ 10.545,54', semi:'2x R$ 5.512,11',  monthly:'12x R$ 958,65',   total:'R$ 11.503,81'},
+    d: {annual:'R$ 15.733,11', semi:'2x R$ 8.224,03',  monthly:'12x R$ 1.430,23', total:'R$ 17.162,77'},
+  },
+  torr:{
+    nao:{annual:'R$ 3.996,86', semi:'2x R$ 2.089,44',  monthly:'12x R$ 363,34',   total:'R$ 4.360,05'},
+    vin:{annual:'R$ 2.636,28', semi:'2x R$ 1.378,01',  monthly:'12x R$ 239,65',   total:'R$ 2.875,84'},
+  },
+  exp:{
+    a:{annual:'R$ 16.793,46',  semi:'2x R$ 8.778,08',  monthly:'12x R$ 1.526,62', total:'R$ 18.319,47'},
+    b:{annual:'R$ 20.711,75',  semi:'2x R$ 10.825,73', monthly:'12x R$ 1.882,82', total:'R$ 22.593,81'},
+    c:{annual:'R$ 25.889,68',  semi:'2x R$ 13.531,27', monthly:'12x R$ 2.353,52', total:'R$ 28.242,26'},
+  },
+  coop:{
+    a:{annual:'R$ 16.793,46',  semi:'2x R$ 8.778,08',  monthly:'12x R$ 1.526,62', total:'R$ 18.319,47'},
+    b:{annual:'R$ 20.711,75',  semi:'2x R$ 10.825,73', monthly:'12x R$ 1.882,82', total:'R$ 22.593,81'},
+    c:{annual:'R$ 25.889,68',  semi:'2x R$ 13.531,27', monthly:'12x R$ 2.353,52', total:'R$ 28.242,26'},
+  },
+};
+const FIXED_PRICES={
+  cafeteria:   {annual:'R$ 1.360,57', semi:'2x R$ 711,18',   monthly:'12x R$ 123,68', total:'R$ 1.484,21'},
+  corretor:    {annual:'R$ 8.252,31', semi:'2x R$ 4.313,55', monthly:'12x R$ 750,18', total:'R$ 9.002,19'},
+  armazem:     {annual:'R$ 7.823,99', semi:'2x R$ 4.089,67', monthly:'12x R$ 711,25', total:'R$ 8.534,95'},
+  equipamentos:{annual:'R$ 2.636,28', semi:'2x R$ 1.378,01', monthly:'12x R$ 239,65', total:'R$ 2.875,84'},
+};
+const USD_PRICE=739.11;
+const FREE_CATS=['profissionais','assoc-produtores','assoc-cooperativas'];
+const HAS_SUB  =['produtor','torrefador','exportador','cooperativa'];
+
+/* ================================================================
+   CAT THEMES
+================================================================ */
+const CAT_THEMES={
+  'produtor':           'linear-gradient(145deg,#1E5C34,#0B2E1A)',
+  'torrefador':         'linear-gradient(145deg,#3E1F0A,#1A0B03)',
+  'cafeteria':          'linear-gradient(145deg,#7A3A12,#4A2008)',
+  'exportador':         'linear-gradient(145deg,#1A3A6B,#0A1E3F)',
+  'cooperativa':        'linear-gradient(145deg,#4A2D7B,#26144A)',
+  'corretor':           'linear-gradient(145deg,#7A4010,#4A2208)',
+  'armazem':            'linear-gradient(145deg,#2E5E28,#162D12)',
+  'equipamentos':       'linear-gradient(145deg,#1A4A6B,#0A2840)',
+  'profissionais':      'linear-gradient(145deg,#2E3A4A,#161E28)',
+  'assoc-produtores':   'linear-gradient(145deg,#2E3A4A,#161E28)',
+  'assoc-cooperativas': 'linear-gradient(145deg,#2E3A4A,#161E28)',
+  'internacional':      'linear-gradient(145deg,#0D3D6B,#051E38)',
+};
+
+/* ================================================================
+   REGISTRATION LINKS
+================================================================ */
+const BASE_PF='http://app.associatec.com.br/AreaAssociados/BSCA?returnUrl=http%3A%2F%2Fapp.associatec.com.br%2FAreaAssociados%2FMinhaConta%2FCadastroAssociadoPF?idTipoAssociado=';
+const BASE_PJ='http://app.associatec.com.br/AreaAssociados/BSCA?returnUrl=http%3A%2F%2Fapp.associatec.com.br%2FAreaAssociados%2FMinhaConta%2FCadastroAssociadoPJ?idTipoAssociado=';
+const REG_IDS={
+  corretor:            {pf:4023,pj:4023},
+  internacional:       {pf:4028,pj:4028},
+  produtor_a1:         {pf:4030,pj:4030},
+  produtor_aa:         {pf:4031,pj:4031},
+  produtor_a:          {pf:4029,pj:4029},
+  produtor_b:          {pf:4032,pj:4032},
+  produtor_c:          {pf:4033,pj:4033},
+  produtor_d:          {pf:4034,pj:4034},
+  profissionais:       {pf:4131,pj:4131},
+  armazem:             {pj:4016},
+  'assoc-cooperativas':{pj:4017},
+  'assoc-produtores':  {pj:4018},
+  cafeteria:           {pj:4019},
+  cooperativa_a:       {pj:4020},
+  cooperativa_b:       {pj:4021},
+  cooperativa_c:       {pj:4022},
+  exportador_a:        {pj:4024},
+  exportador_b:        {pj:4025},
+  exportador_c:        {pj:4026},
+  equipamentos:        {pj:4027},
+  torr_nao:            {pj:4036},
+  torr_vin_cafe:       {pj:4037},
+  torr_vin_prod:       {pj:4085},
+};
+
+/* ================================================================
+   DOCUMENTS
+================================================================ */
+const DOC_TYPE_MAP={
+  produtor:'A',torrefador:'B',cafeteria:'B',corretor:'B',
+  armazem:'B',equipamentos:'B',exportador:'D',cooperativa:'E',
+  profissionais:'C','assoc-produtores':'C','assoc-cooperativas':'C',internacional:'F',
+};
+const DOCS={
+  A:{pt:['CPF ou CNPJ do produtor','CAR (Cadastro Ambiental Rural) ou CCIR','Comprovante de produção de café (nota fiscal, contrato ou declaração)','Formulário de filiação preenchido e assinado'],
+     en:['Individual or company tax ID (CPF/CNPJ)','Environmental Rural Registry (CAR) or Rural Property Certificate (CCIR)','Proof of coffee production (invoice, contract, or production declaration)','Completed and signed membership form'],
+     es:['CPF o CNPJ del productor','CAR (Registro Ambiental Rural) o CCIR','Comprobante de producción de café (factura, contrato o declaración)','Formulario de afiliación completo y firmado']},
+  B:{pt:['CNPJ ativo','Contrato Social ou Estatuto atualizado','Comprovante de atividade no setor cafeeiro','Formulário de filiação preenchido e assinado'],
+     en:['Active company registration (CNPJ)','Updated Articles of Incorporation or Bylaws','Proof of activity in the coffee sector','Completed and signed membership form'],
+     es:['CNPJ activo','Contrato Social o Estatutos actualizados','Comprobante de actividad en el sector cafetalero','Formulario de afiliación completo y firmado']},
+  C:{pt:['CPF ou CNPJ','Comprovante de atuação profissional no setor (certificados, contratos ou diplomas)','Formulário de cadastro preenchido'],
+     en:['Individual or company tax ID (CPF/CNPJ)','Proof of professional activity (certificates, contracts, or diplomas)','Completed registration form'],
+     es:['CPF o CNPJ','Comprobante de actividad profesional (certificados, contratos o diplomas)','Formulario de registro completo']},
+  D:{pt:['CNPJ ativo com habilitação para exportação (RADAR / Siscomex)','Contrato Social atualizado','Registros de exportação dos últimos 12 meses','Formulário de filiação preenchido e assinado'],
+     en:['Active CNPJ with export clearance (RADAR / Siscomex)','Updated Articles of Incorporation','Export records from the last 12 months','Completed and signed membership form'],
+     es:['CNPJ activo con habilitación de exportación (RADAR / Siscomex)','Contrato Social actualizado','Registros de exportación de los últimos 12 meses','Formulario de afiliación completo y firmado']},
+  E:{pt:['CNPJ da cooperativa','Estatuto Social registrado e atualizado','Ata de eleição da diretoria vigente','Formulário de filiação preenchido e assinado'],
+     en:['Cooperative CNPJ','Registered and updated Social Statute','Minutes of the current board election','Completed and signed membership form'],
+     es:['CNPJ de la cooperativa','Estatuto Social registrado y actualizado','Acta de elección de la junta actual','Formulario de afiliación completo y firmado']},
+  F:{pt:['Passaporte válido ou documentos da empresa no país de origem','Comprovante de atividade no setor cafeeiro internacional','Formulário de adesão internacional preenchido'],
+     en:['Valid passport or company documents from country of origin','Proof of activity in the international coffee sector','Completed international membership application form'],
+     es:['Pasaporte válido o documentos de la empresa del país de origen','Comprobante de actividad en el sector cafetero internacional','Formulario de membresía internacional completo']},
+};
+
+/* ================================================================
+   STATE
+================================================================ */
+const S={lang:'pt',step:1,cat:null,subcat:null,pfPj:null,firstName:'',usdBrl:null};
+
+/* ================================================================
+   HELPERS
+================================================================ */
+const $=id=>document.getElementById(id);
+function t(k){return(T[S.lang]||T.pt)[k]||k;}
+function firstN(full){return(full||'').trim().split(/\s+/)[0]||'';}
+
+function regKey(cat,sub){
+  if(cat==='produtor')  return sub?'produtor_'+sub:'produtor_a';
+  if(cat==='torrefador'){
+    if(sub==='nao')      return 'torr_nao';
+    if(sub==='vin_cafe') return 'torr_vin_cafe';
+    if(sub==='vin_prod') return 'torr_vin_prod';
+    return 'torr_nao';
+  }
+  if(cat==='exportador')  return sub?'exportador_'+sub:'exportador_a';
+  if(cat==='cooperativa') return sub?'cooperativa_'+sub:'cooperativa_a';
+  return cat;
+}
+function buildLink(cat,sub,pf){
+  const k=regKey(cat,sub),ids=REG_IDS[k];
+  if(!ids) return BASE_PJ+'4016';
+  const id=(pf==='pf'&&ids.pf)?ids.pf:(ids.pj||ids.pf);
+  const base=(pf==='pf'&&ids.pf)?BASE_PF:BASE_PJ;
+  return base+id;
+}
+function hasPF(cat,sub){const ids=REG_IDS[regKey(cat,sub)];return !!(ids&&ids.pf);}
+function priceObj(cat,sub){
+  if(cat==='produtor')   return PRICES.prod[sub]||null;
+  if(cat==='torrefador'){if(sub==='nao')return PRICES.torr.nao;if(sub==='vin_cafe'||sub==='vin_prod')return PRICES.torr.vin;return null;}
+  if(cat==='exportador') return PRICES.exp[sub]||null;
+  if(cat==='cooperativa')return PRICES.coop[sub]||null;
+  return FIXED_PRICES[cat]||null;
+}
+function catLabel(id){const c=CATS.find(x=>x.id===id);return c?(c[S.lang]||c.pt).name:id;}
+
+/* ================================================================
+   PROGRESS BAR
+================================================================ */
+function renderProgress(){
+  const labels=t('stepLabels');
+  $('progressSteps').innerHTML=labels.map((lbl,i)=>{
+    const n=i+1,active=n===S.step,done=n<S.step;
+    return`<div class="progress-step${active?' active':''}${done?' done':''}">
+      <div class="step-dot">${done?'✓':n}</div>
+      <div class="step-label">${lbl}</div>
+    </div>`;
+  }).join('');
+}
+
+/* ================================================================
+   STEP 1
+================================================================ */
+function renderCatCards(){
+  $('catGrid').innerHTML=CATS.map(c=>{
+    const i=c[S.lang]||c.pt;
+    return`<div class="cat-card${S.cat===c.id?' selected':''}"
+      style="background:${CAT_THEMES[c.id]||'#1E5C34'}"
+      onclick="selectCat('${c.id}')"
+      role="button" tabindex="0"
+      onkeydown="if(event.key==='Enter'||event.key===' ')selectCat('${c.id}')">
+      <span class="cat-icon">${c.icon}</span>
+      <div class="cat-name">${i.name}</div>
+      <div class="cat-desc">${i.desc}</div>
+      ${c.free?`<div class="cat-badge">${t('catBadgeFree')}</div>`:''}
+    </div>`;
+  }).join('');
+}
+
+function selectCat(id){
+  S.cat=id; S.subcat=null; S.pfPj=null;
+  renderCatCards();
+  hideErr('errCat'); hideErr('errLead');
+  tryAdvance();
+}
+
+function tryAdvance(){
+  const nm=$('fName').value.trim(),ph=$('fPhone').value.trim(),
+        em=$('fEmail').value.trim(),cy=$('fCity').value.trim();
+  let ok=true;
+  if(!nm||!ph||!em||!cy){
+    showErr('errLead');
+    [$('fName'),$('fPhone'),$('fEmail'),$('fCity')].forEach(el=>el.classList.toggle('field-error',!el.value.trim()));
+    ok=false;
+  } else {
+    hideErr('errLead');
+    [$('fName'),$('fPhone'),$('fEmail'),$('fCity')].forEach(el=>el.classList.remove('field-error'));
+  }
+  if(!S.cat){showErr('errCat');ok=false;}else hideErr('errCat');
+  if(!ok)return;
+  S.firstName=firstN(nm);
+  subscribeMailchimp({name:nm,phone:ph,email:em,city:cy,cat:S.cat});
+  goToStep(HAS_SUB.includes(S.cat)?2:3);
+}
+
+function showErr(id){const e=$(id);if(e)e.classList.add('visible');}
+function hideErr(id){const e=$(id);if(e)e.classList.remove('visible');}
+
+/* ================================================================
+   MAILCHIMP
+================================================================ */
+function subscribeMailchimp({name,phone,email,city,cat}){
+  if(!MAILCHIMP_URL||MAILCHIMP_URL.includes('SEU_'))return;
+  const parts=name.trim().split(/\s+/);
+  const cb='mc'+Date.now();
+  window[cb]=function(r){
+    const n=$('mcNotice');
+    if(n){
+      n.textContent=r&&r.result==='success'?t('mcSuccess'):'';
+      n.className='mc-notice'+(r&&r.result==='success'?' success':'');
+    }
+    delete window[cb];
+    if(sc.parentNode)sc.parentNode.removeChild(sc);
+  };
+  const url=(MAILCHIMP_URL.replace(/\/post(\?)/,'/post-json$1'))+
+    '&'+new URLSearchParams({EMAIL:email,FNAME:parts[0]||'',LNAME:parts.slice(1).join(' '),
+      PHONE:phone,CIDADE:city,CATEGORIA:catLabel(cat),c:cb}).toString();
+  const sc=document.createElement('script');
+  sc.src=url;
+  document.head.appendChild(sc);
+  setTimeout(()=>{if(window[cb])delete window[cb];if(sc.parentNode)sc.parentNode.removeChild(sc);},10000);
+}
+
+/* ================================================================
+   STEP 2
+================================================================ */
+function renderSubStep(){
+  const d=SUBOPTS[S.cat];
+  if(!d){goToStep(3);return;}
+  const info=d[S.lang]||d.pt;
+  $('subTitle').textContent=info.title;
+  $('subSub').textContent=info.sub;
+  $('subGrid').innerHTML=d.opts.map(o=>{
+    const oi=o[S.lang]||o.pt;
+    const pr=priceObj(S.cat,o.id);
+    const ph=pr?`<div class="sub-price">${pr.annual} ${t('subPriceLabel')}</div>`:'';
+    return`<div class="sub-card${S.subcat===o.id?' selected':''}"
+      onclick="selectSub('${o.id}')"
+      role="button" tabindex="0"
+      onkeydown="if(event.key==='Enter'||event.key===' ')selectSub('${o.id}')">
+      <h3>${oi.name}</h3><p>${oi.desc}</p>${ph}
+    </div>`;
+  }).join('');
+}
+function selectSub(id){S.subcat=id;S.pfPj=null;hideErr('errSub');renderSubStep();goToStep(3);}
+
+/* ================================================================
+   STEP 3
+================================================================ */
+function renderBenefits(){
+  const hero=$('benefitsHero');
+  hero.style.background=CAT_THEMES[S.cat]||'linear-gradient(145deg,#1E5C34,#0D2818)';
+  $('benefitsTitle').textContent=t('benefitsGreeting').replace('{name}',S.firstName)+' '+catLabel(S.cat);
+  $('benefitsSub').textContent=t('benefitsSub');
+  $('benefitsGrid').innerHTML=(BENEFIT_GROUPS[S.cat]||[]).map(k=>{
+    const b=BENEFITS[k]; if(!b)return'';
+    const bi=b[S.lang]||b.pt;
+    return`<div class="benefit-card">
+      <div class="benefit-icon">${b.icon}</div>
+      <div class="benefit-text"><h4>${bi.n}</h4><p>${bi.d}</p></div>
+    </div>`;
+  }).join('');
+}
+function goBackFromBenefits(){goToStep(HAS_SUB.includes(S.cat)?2:1);}
+
+/* ================================================================
+   STEP 4
+================================================================ */
+async function renderStep4(){
+  const hero=$('priceHero');
+  hero.style.background=CAT_THEMES[S.cat]||'linear-gradient(145deg,#1E5C34,#0D2818)';
+  $('priceTitle').textContent=t('priceGreeting').replace('{name}',S.firstName)+' '+catLabel(S.cat);
+  $('priceSub').textContent='';
+
+  const pa=$('pricingArea');
+  if(S.cat==='internacional'){
+    pa.innerHTML=`<div class="usd-section">
+      <div class="price-card-label">${t('usdLabel')}</div>
+      <div class="usd-amount">US$ ${USD_PRICE.toLocaleString('en-US',{minimumFractionDigits:2})}</div>
+      <div class="usd-brl" id="usdBrlLine"><span class="usd-loading">${t('usdLoading')}</span></div>
+      <div class="usd-note" id="usdNote"></div>
+    </div>`;
+    fetchUSD();
+  } else if(FREE_CATS.includes(S.cat)){
+    pa.innerHTML=`<div class="free-section">
+      <span class="free-badge-big">${t('freeTitle')}</span>
+      <div class="free-label">${t('catBadgeFree')}</div>
+      <p>${t('freeSub')}</p>
+    </div>`;
+  } else {
+    const pr=priceObj(S.cat,S.subcat);
+    pa.innerHTML=pr?`<div class="price-cards">
+      <div class="price-card featured">
+        <div class="price-card-badge">${t('annualBadge')}</div>
+        <div class="price-card-label">${t('annualLabel')}</div>
+        <div class="price-card-amount">${pr.annual}</div>
       </div>
-    </div>
-  </div>
-  <div class="cta-bar">
-    <div class="cta-text">
-      <strong>Associe-se hoje e leve seu café para o mundo.</strong>
-      Desde 1991 conectando a qualidade brasileira aos melhores compradores globais.
-    </div>
-    <a class="cta-btn" href="http://app.associatec.com.br/AreaAssociados/BSCA" target="_blank">Quero ser membro →</a>
-  </div>
-</div>
-
-
-<!-- ════════════════════════════════════
-     2. TORREFADOR
-════════════════════════════════════ -->
-<div class="flyer theme-roaster" id="torrefador">
-  <div class="flyer-header">
-    <div class="flyer-badge">Membro Associado · Torrefador</div>
-    <h2>Use a marca BSCA e<br>diferencie seu produto no mercado</h2>
-    <p class="tagline">Para empresas de torrefação de café especial</p>
-  </div>
-  <div class="flyer-body">
-    <p class="flyer-intro">
-      Ser membro BSCA como torrefador significa sinalizar ao mercado que você trabalha com qualidade certificada — e ter o direito exclusivo de usar a marca BSCA nas suas embalagens. Além disso, você entra na rede de negócios mais representativa do café especial brasileiro.
-    </p>
-
-    <div class="subcats">
-      <h4>Duas variações de enquadramento</h4>
-      <div class="subcat-grid">
-        <div class="subcat-item">
-          <div class="sc-name">Vinculado</div>
-          <div class="sc-range">Torrefação ligada a fazenda / produtor certificado BSCA</div>
-          <div class="sc-price">R$ 2.636,28</div>
-          <div class="sc-monthly">ou 12x R$ 239,65</div>
-        </div>
-        <div class="subcat-item">
-          <div class="sc-name">Não Vinculado</div>
-          <div class="sc-range">Torrefação independente, sem vínculo com fazenda certificada</div>
-          <div class="sc-price">R$ 3.996,86</div>
-          <div class="sc-monthly">ou 12x R$ 363,34</div>
-        </div>
+      <div class="price-card">
+        <div class="price-card-label">${t('semiLabel')}</div>
+        <div class="price-card-amount">${pr.semi}</div>
       </div>
-      <p style="font-size:0.72rem;color:#999;margin-top:8px;">* Valores com desconto de parcela única anual (~8%). Pagamento semestral e mensal também disponíveis. Ajuste ciclo 2026/2027: +6,7%.</p>
-    </div>
-
-    <div class="benefits">
-      <h4>O que você recebe</h4>
-      <div class="benefit-list">
-        <div class="benefit-item"><div class="benefit-icon">📦</div><div class="benefit-text">Uso exclusivo da marca BSCA nas embalagens do seu produto torrado</div></div>
-        <div class="benefit-item"><div class="benefit-icon">🌍</div><div class="benefit-text">Acesso a feiras internacionais e missões comerciais no exterior</div></div>
-        <div class="benefit-item"><div class="benefit-icon">📣</div><div class="benefit-text">Divulgação da sua torrefação pelos canais oficiais da BSCA</div></div>
-        <div class="benefit-item"><div class="benefit-icon">🤝</div><div class="benefit-text">Matchmaking com compradores nacionais e internacionais</div></div>
-        <div class="benefit-item"><div class="benefit-icon">🎓</div><div class="benefit-text">Descontos na BSCA Academy: torra, classificação sensorial, gestão e mais</div></div>
-        <div class="benefit-item"><div class="benefit-icon">💰</div><div class="benefit-text">Descontos progressivos na anuidade a partir do 5º ano de associação</div></div>
-        <div class="benefit-item"><div class="benefit-icon">🔗</div><div class="benefit-text">Acesso à rede Apex-Brasil para promoção e exportação</div></div>
-        <div class="benefit-item"><div class="benefit-icon">🗳️</div><div class="benefit-text">Direito a voto em Assembleia Geral</div></div>
+      <div class="price-card">
+        <div class="price-card-label">${t('monthLabel')}</div>
+        <div class="price-card-amount">${pr.monthly}</div>
+        <div class="price-card-sub">${t('totalNote')}${pr.total}</div>
       </div>
-    </div>
-  </div>
-  <div class="cta-bar">
-    <div class="cta-text">
-      <strong>Seu café torrado com o respaldo da maior entidade de cafés especiais do Brasil.</strong>
-      Entre para a rede BSCA e amplie sua visibilidade nacional e internacional.
-    </div>
-    <a class="cta-btn" href="http://app.associatec.com.br/AreaAssociados/BSCA" target="_blank">Quero ser membro →</a>
-  </div>
-</div>
+    </div>`:'';
+  }
 
+  const showPF=hasPF(S.cat,S.subcat);
+  const pfjpSec=$('pfjpSection');
+  if(showPF){pfjpSec.style.display='block';if(!S.pfPj)S.pfPj='pf';renderPFJP(true);}
+  else{pfjpSec.style.display='none';S.pfPj='pj';}
+  updateCTA();
+  renderDocs();
+}
 
-<!-- ════════════════════════════════════
-     3. CAFETERIA
-════════════════════════════════════ -->
-<div class="flyer theme-cafe" id="cafeteria">
-  <div class="flyer-header">
-    <div class="flyer-badge">Membro Associado · Cafeteria</div>
-    <h2>Faça parte da vitrine<br>do café especial brasileiro</h2>
-    <p class="tagline">Para estabelecimentos de venda e preparo de café especial ao consumidor final</p>
-  </div>
-  <div class="flyer-body">
-    <p class="flyer-intro">
-      Sua cafeteria é o ponto onde a jornada do café especial encontra o consumidor. Ao associar-se à BSCA, você reforça o compromisso com a qualidade, acessa uma rede de fornecedores certificados e posiciona seu negócio no maior ecossistema do setor no Brasil.
-    </p>
+async function fetchUSD(){
+  try{
+    if(!S.usdBrl){const r=await fetch('https://economia.awesomeapi.com.br/json/last/USD-BRL');const d=await r.json();S.usdBrl=parseFloat(d['USDBRL'].bid);}
+    const brlVal=(USD_PRICE*S.usdBrl).toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2});
+    const l=$('usdBrlLine'),n=$('usdNote');
+    if(l)l.innerHTML=`${t('usdBrl')} <strong>R$ ${brlVal}</strong>`;
+    if(n)n.textContent=t('usdRateNote');
+  }catch(e){const l=$('usdBrlLine');if(l)l.textContent='';}
+}
 
-    <div class="pricing-box">
-      <h4>Investimento anual</h4>
-      <div class="price-grid">
-        <div class="price-item">
-          <div class="label">Parcela única (c/ desconto)</div>
-          <div class="value">R$ 1.360,57</div>
-          <div class="sub">equivale a ~8% de desconto</div>
-        </div>
-        <div class="price-item">
-          <div class="label">Semestral</div>
-          <div class="value">2x R$ 711,18</div>
-          <div class="sub">com desconto equivalente a meio mês</div>
-        </div>
-        <div class="price-item">
-          <div class="label">Mensal</div>
-          <div class="value">12x R$ 123,68</div>
-          <div class="sub">anuidade integral R$ 1.484,21</div>
-        </div>
-      </div>
-    </div>
+function renderPFJP(showPF){
+  let html='';
+  if(showPF) html+=`<button class="pfjp-btn${S.pfPj==='pf'?' active':''}" onclick="setPFJP('pf')">${t('pfjpPF')}<div class="pfjp-sub">${t('pfjpPFsub')}</div></button>`;
+  html+=`<button class="pfjp-btn${S.pfPj==='pj'?' active':''}" onclick="setPFJP('pj')">${t('pfjpPJ')}<div class="pfjp-sub">${t('pfjpPJsub')}</div></button>`;
+  $('pfjpToggle').innerHTML=html;
+}
+function setPFJP(v){S.pfPj=v;renderPFJP(hasPF(S.cat,S.subcat));updateCTA();}
+function updateCTA(){const b=$('ctaBtn');if(b)b.href=buildLink(S.cat,S.subcat,S.pfPj||'pj');}
 
-    <div class="benefits">
-      <h4>O que você recebe</h4>
-      <div class="benefit-list">
-        <div class="benefit-item"><div class="benefit-icon">🛒</div><div class="benefit-text">Acesso à Vitrine BSCA para encontrar produtores e lotes certificados</div></div>
-        <div class="benefit-item"><div class="benefit-icon">📣</div><div class="benefit-text">Divulgação da sua cafeteria pelos canais oficiais da BSCA</div></div>
-        <div class="benefit-item"><div class="benefit-icon">🎓</div><div class="benefit-text">Descontos na BSCA Academy: barismo, gestão de cafeteria, protocolo CVA/SCA</div></div>
-        <div class="benefit-item"><div class="benefit-icon">🤝</div><div class="benefit-text">Networking em eventos exclusivos e grupos de membros do setor</div></div>
-        <div class="benefit-item"><div class="benefit-icon">🌍</div><div class="benefit-text">Acesso a missões e feiras para conhecer tendências globais do setor</div></div>
-        <div class="benefit-item"><div class="benefit-icon">💰</div><div class="benefit-text">Descontos progressivos a partir do 5º ano de associação</div></div>
-        <div class="benefit-item"><div class="benefit-icon">🔗</div><div class="benefit-text">Conexão com parceiros institucionais: Apex-Brasil e SCA</div></div>
-        <div class="benefit-item"><div class="benefit-icon">🗳️</div><div class="benefit-text">Direito a voto em Assembleia Geral e representação no setor</div></div>
-      </div>
-    </div>
-  </div>
-  <div class="cta-bar">
-    <div class="cta-text">
-      <strong>Sua cafeteria merece o selo de quem leva o café especial a sério.</strong>
-      Associe-se à BSCA e fortaleça sua marca junto à maior rede do setor no Brasil.
-    </div>
-    <a class="cta-btn" href="http://app.associatec.com.br/AreaAssociados/BSCA" target="_blank">Quero ser membro →</a>
-  </div>
-</div>
+function renderDocs(){
+  const tp=DOC_TYPE_MAP[S.cat]||'B',d=DOCS[tp];
+  $('docList').innerHTML=((d&&(d[S.lang]||d.pt))||[]).map(x=>`<li><span class="doc-icon">📄</span>${x}</li>`).join('');
+}
+function toggleDocs(){$('docsToggle').classList.toggle('open');$('docsBody').classList.toggle('open');}
 
+/* ================================================================
+   NAVIGATION
+================================================================ */
+function goToStep(n){
+  S.step=n;
+  document.querySelectorAll('.step-panel').forEach(p=>p.classList.remove('active'));
+  const panel=$('step'+n);
+  if(panel){panel.classList.add('active');window.scrollTo({top:0,behavior:'smooth'});}
+  renderProgress();
+  if(n===1)renderCatCards();
+  if(n===2)renderSubStep();
+  if(n===3)renderBenefits();
+  if(n===4)renderStep4();
+}
 
-<!-- ════════════════════════════════════
-     4. EXPORTADOR
-════════════════════════════════════ -->
-<div class="flyer theme-exporter" id="exportador">
-  <div class="flyer-header">
-    <div class="flyer-badge">Membro Associado · Exportador</div>
-    <h2>Acesse o melhor do café<br>especial brasileiro para exportar</h2>
-    <p class="tagline">Para empresas exportadoras de café especial</p>
-  </div>
-  <div class="flyer-body">
-    <p class="flyer-intro">
-      O exportador BSCA tem acesso privilegiado ao portfólio mais qualificado de cafés especiais certificados do Brasil. Com a BSCA, você conecta seus compradores internacionais a lotes com rastreabilidade, qualidade garantida e a credibilidade da maior associação do setor.
-    </p>
+/* ================================================================
+   i18n
+================================================================ */
+function setLang(lang){
+  S.lang=lang;
+  document.documentElement.lang=lang;
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.textContent.trim().toLowerCase()===lang));
+  document.querySelectorAll('[data-i18n]').forEach(el=>{const v=t(el.getAttribute('data-i18n'));if(v)el.textContent=v;});
+  renderProgress();
+  if(S.step===1)renderCatCards();
+  if(S.step===2)renderSubStep();
+  if(S.step===3)renderBenefits();
+  if(S.step===4)renderStep4();
+}
 
-    <div class="subcats">
-      <h4>Enquadramento por volume anual exportado</h4>
-      <div class="subcat-grid">
-        <div class="subcat-item">
-          <div class="sc-name">Exportadora A</div>
-          <div class="sc-range">Até US$ 10 milhões/ano</div>
-          <div class="sc-price">R$ 16.793,46</div>
-          <div class="sc-monthly">ou 12x R$ 1.526,62</div>
-        </div>
-        <div class="subcat-item">
-          <div class="sc-name">Exportadora B</div>
-          <div class="sc-range">Entre US$ 10 e 50 milhões/ano</div>
-          <div class="sc-price">R$ 20.711,75</div>
-          <div class="sc-monthly">ou 12x R$ 1.882,82</div>
-        </div>
-        <div class="subcat-item">
-          <div class="sc-name">Exportadora C</div>
-          <div class="sc-range">Acima de US$ 50 milhões/ano</div>
-          <div class="sc-price">R$ 25.889,68</div>
-          <div class="sc-monthly">ou 12x R$ 2.353,52</div>
-        </div>
-      </div>
-      <p style="font-size:0.72rem;color:#999;margin-top:8px;">* Valores com desconto de parcela única anual (~8%). Pagamento semestral e mensal também disponíveis. Ajuste ciclo 2026/2027: +6,7%.</p>
-    </div>
+/* ================================================================
+   PHONE MASK + INIT
+================================================================ */
+function init(){
+  document.querySelectorAll('[data-i18n]').forEach(el=>{const v=t(el.getAttribute('data-i18n'));if(v)el.textContent=v;});
+  renderProgress();
+  renderCatCards();
 
-    <div class="benefits">
-      <h4>O que você recebe</h4>
-      <div class="benefit-list">
-        <div class="benefit-item"><div class="benefit-icon">🏅</div><div class="benefit-text">Acesso a lotes com Selo de Qualidade BSCA — rastreabilidade e credibilidade para seus compradores</div></div>
-        <div class="benefit-item"><div class="benefit-icon">🌍</div><div class="benefit-text">Presença garantida nas maiores feiras internacionais do setor</div></div>
-        <div class="benefit-item"><div class="benefit-icon">🤝</div><div class="benefit-text">Matchmaking qualificado com compradores internacionais e salas de cupping exclusivas</div></div>
-        <div class="benefit-item"><div class="benefit-icon">🔗</div><div class="benefit-text">Parceria com Apex-Brasil para promoção e acesso a mercados externos</div></div>
-        <div class="benefit-item"><div class="benefit-icon">📣</div><div class="benefit-text">Divulgação da sua empresa pelos canais oficiais da BSCA no Brasil e no exterior</div></div>
-        <div class="benefit-item"><div class="benefit-icon">🏆</div><div class="benefit-text">Acesso a lotes do Cup of Excellence com total rastreabilidade de origem</div></div>
-        <div class="benefit-item"><div class="benefit-icon">💰</div><div class="benefit-text">Descontos progressivos a partir do 5º ano de associação</div></div>
-        <div class="benefit-item"><div class="benefit-icon">🗳️</div><div class="benefit-text">Direito a voto em Assembleia Geral e representação no setor</div></div>
-      </div>
-    </div>
-  </div>
-  <div class="cta-bar">
-    <div class="cta-text">
-      <strong>O café especial brasileiro tem credencial. E ela é a BSCA.</strong>
-      Associe-se e ofereça aos seus clientes internacionais o que há de melhor no Brasil.
-    </div>
-    <a class="cta-btn" href="http://app.associatec.com.br/AreaAssociados/BSCA" target="_blank">Quero ser membro →</a>
-  </div>
-</div>
+  const ph=$('fPhone');
+  if(ph) ph.addEventListener('input',()=>{
+    let v=ph.value.replace(/\D/g,'');
+    if(v.startsWith('55')&&v.length>11)v=v.slice(2);
+    v=v.slice(0,11);
+    ph.value=v.length<=10
+      ?v.replace(/^(\d{0,2})(\d{0,4})(\d{0,4})$/,(_,a,b,c)=>a?(b?`(${a}) ${b}`+(c?`-${c}`:''):`(${a}`):'')
+      :v.replace(/^(\d{2})(\d{5})(\d{0,4})$/,'($1) $2-$3');
+  });
 
+  ['fName','fPhone','fEmail','fCity'].forEach(id=>{
+    const el=$(id);
+    if(el) el.addEventListener('keydown',e=>{if(e.key==='Enter'&&S.cat)tryAdvance();});
+  });
+}
 
-<!-- ════════════════════════════════════
-     5. COOPERATIVA
-════════════════════════════════════ -->
-<div class="flyer theme-coop" id="cooperativa">
-  <div class="flyer-header">
-    <div class="flyer-badge">Membro Associado · Cooperativa</div>
-    <h2>Leve seus cooperados para<br>o mercado de cafés especiais</h2>
-    <p class="tagline">Para cooperativas de produtores de café especial</p>
-  </div>
-  <div class="flyer-body">
-    <p class="flyer-intro">
-      A BSCA é a aliada estratégica da sua cooperativa para acessar mercados premium, certificar lotes com rastreabilidade e capacitar cooperados. Juntos, construímos a reputação que gera preço justo e competitividade real.
-    </p>
-
-    <div class="subcats">
-      <h4>Enquadramento por número de cooperados</h4>
-      <div class="subcat-grid">
-        <div class="subcat-item">
-          <div class="sc-name">Cooperativa A</div>
-          <div class="sc-range">Até 1.000 cooperados</div>
-          <div class="sc-price">R$ 16.793,46</div>
-          <div class="sc-monthly">ou 12x R$ 1.526,62</div>
-        </div>
-        <div class="subcat-item">
-          <div class="sc-name">Cooperativa B</div>
-          <div class="sc-range">1.000 a 10.000 cooperados</div>
-          <div class="sc-price">R$ 20.711,75</div>
-          <div class="sc-monthly">ou 12x R$ 1.882,82</div>
-        </div>
-        <div class="subcat-item">
-          <div class="sc-name">Cooperativa C</div>
-          <div class="sc-range">Acima de 10.000 cooperados</div>
-          <div class="sc-price">R$ 25.889,68</div>
-          <div class="sc-monthly">ou 12x R$ 2.353,52</div>
-        </div>
-      </div>
-      <p style="font-size:0.72rem;color:#999;margin-top:8px;">* Valores com desconto de parcela única anual (~8%). Pagamento semestral e mensal também disponíveis. Ajuste ciclo 2026/2027: +6,7%.</p>
-    </div>
-
-    <div class="benefits">
-      <h4>O que você recebe</h4>
-      <div class="benefit-list">
-        <div class="benefit-item"><div class="benefit-icon">🏅</div><div class="benefit-text">Acesso ao Selo de Qualidade BSCA para certificar lotes dos seus cooperados</div></div>
-        <div class="benefit-item"><div class="benefit-icon">🌍</div><div class="benefit-text">Presença em feiras internacionais e missões comerciais no exterior</div></div>
-        <div class="benefit-item"><div class="benefit-icon">🤝</div><div class="benefit-text">Matchmaking com compradores internacionais e rodadas de negócios</div></div>
-        <div class="benefit-item"><div class="benefit-icon">🎓</div><div class="benefit-text">Acesso à BSCA Academy para capacitação dos seus cooperados</div></div>
-        <div class="benefit-item"><div class="benefit-icon">🛒</div><div class="benefit-text">Vitrine BSCA: exposição dos lotes certificados a compradores do mundo todo</div></div>
-        <div class="benefit-item"><div class="benefit-icon">🔗</div><div class="benefit-text">Parceria com Apex-Brasil para promoção internacional</div></div>
-        <div class="benefit-item"><div class="benefit-icon">💰</div><div class="benefit-text">Descontos progressivos na anuidade a partir do 5º ano de associação</div></div>
-        <div class="benefit-item"><div class="benefit-icon">🗳️</div><div class="benefit-text">Direito a voto em Assembleia Geral</div></div>
-      </div>
-    </div>
-  </div>
-  <div class="cta-bar">
-    <div class="cta-text">
-      <strong>Sua cooperativa mais competitiva, seus cooperados mais valorizados.</strong>
-      Associe-se à BSCA e abra as portas do mercado premium para todos.
-    </div>
-    <a class="cta-btn" href="http://app.associatec.com.br/AreaAssociados/BSCA" target="_blank">Quero ser membro →</a>
-  </div>
-</div>
-
-
-<!-- ════════════════════════════════════
-     6. CORRETOR
-════════════════════════════════════ -->
-<div class="flyer theme-broker" id="corretor">
-  <div class="flyer-header">
-    <div class="flyer-badge">Membro Associado · Corretor</div>
-    <h2>Intermedie negócios com<br>a credencial do mercado especial</h2>
-    <p class="tagline">Para profissionais e empresas de intermediação comercial de café especial</p>
-  </div>
-  <div class="flyer-body">
-    <p class="flyer-intro">
-      Como corretor membro BSCA, você opera no coração da rede mais qualificada do café especial brasileiro. Acesso a produtores certificados, compradores nacionais e internacionais, e todo o respaldo institucional da associação para suas negociações.
-    </p>
-
-    <div class="pricing-box">
-      <h4>Investimento anual</h4>
-      <div class="price-grid">
-        <div class="price-item">
-          <div class="label">Parcela única (c/ desconto)</div>
-          <div class="value">R$ 8.252,31</div>
-          <div class="sub">equivale a ~8% de desconto</div>
-        </div>
-        <div class="price-item">
-          <div class="label">Semestral</div>
-          <div class="value">2x R$ 4.313,55</div>
-          <div class="sub">com desconto equivalente a meio mês</div>
-        </div>
-        <div class="price-item">
-          <div class="label">Mensal</div>
-          <div class="value">12x R$ 750,18</div>
-          <div class="sub">anuidade integral R$ 9.002,19</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="benefits">
-      <h4>O que você recebe</h4>
-      <div class="benefit-list">
-        <div class="benefit-item"><div class="benefit-icon">🏅</div><div class="benefit-text">Acesso ao portfólio de lotes certificados com Selo BSCA — maior credibilidade nas negociações</div></div>
-        <div class="benefit-item"><div class="benefit-icon">🌍</div><div class="benefit-text">Presença em feiras internacionais e salas de cupping reservadas para membros</div></div>
-        <div class="benefit-item"><div class="benefit-icon">🤝</div><div class="benefit-text">Matchmaking qualificado com produtores, exportadores e compradores internacionais</div></div>
-        <div class="benefit-item"><div class="benefit-icon">📣</div><div class="benefit-text">Divulgação da sua atuação pelos canais oficiais da BSCA</div></div>
-        <div class="benefit-item"><div class="benefit-icon">🎓</div><div class="benefit-text">Descontos na BSCA Academy em cursos de classificação, exportação e gestão</div></div>
-        <div class="benefit-item"><div class="benefit-icon">💰</div><div class="benefit-text">Descontos progressivos a partir do 5º ano de associação</div></div>
-        <div class="benefit-item"><div class="benefit-icon">🔗</div><div class="benefit-text">Acesso à rede Apex-Brasil e SCA</div></div>
-        <div class="benefit-item"><div class="benefit-icon">🗳️</div><div class="benefit-text">Direito a voto em Assembleia Geral</div></div>
-      </div>
-    </div>
-  </div>
-  <div class="cta-bar">
-    <div class="cta-text">
-      <strong>Corretagem com o respaldo da principal entidade do café especial brasileiro.</strong>
-      Entre para a rede BSCA e opere com mais confiança e acesso.
-    </div>
-    <a class="cta-btn" href="http://app.associatec.com.br/AreaAssociados/BSCA" target="_blank">Quero ser membro →</a>
-  </div>
-</div>
-
-
-<!-- ════════════════════════════════════
-     7. ARMAZÉM
-════════════════════════════════════ -->
-<div class="flyer theme-storage" id="armazem">
-  <div class="flyer-header">
-    <div class="flyer-badge">Membro Associado · Armazém</div>
-    <h2>Sua estrutura no centro<br>da cadeia do café especial</h2>
-    <p class="tagline">Para empresas de armazenagem e logística especializadas em café especial</p>
-  </div>
-  <div class="flyer-body">
-    <p class="flyer-intro">
-      Armazéns associados à BSCA fazem parte da cadeia de guarda e preservação de qualidade dos cafés especiais certificados. Ao se associar, você se posiciona como parceiro de confiança para produtores, exportadores e torrefadores do setor.
-    </p>
-
-    <div class="pricing-box">
-      <h4>Investimento anual</h4>
-      <div class="price-grid">
-        <div class="price-item">
-          <div class="label">Parcela única (c/ desconto)</div>
-          <div class="value">R$ 7.823,99</div>
-          <div class="sub">equivale a ~8% de desconto</div>
-        </div>
-        <div class="price-item">
-          <div class="label">Semestral</div>
-          <div class="value">2x R$ 4.089,67</div>
-          <div class="sub">com desconto equivalente a meio mês</div>
-        </div>
-        <div class="price-item">
-          <div class="label">Mensal</div>
-          <div class="value">12x R$ 711,25</div>
-          <div class="sub">anuidade integral R$ 8.534,95</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="benefits">
-      <h4>O que você recebe</h4>
-      <div class="benefit-list">
-        <div class="benefit-item"><div class="benefit-icon">📣</div><div class="benefit-text">Divulgação da sua empresa na rede BSCA para produtores e exportadores membros</div></div>
-        <div class="benefit-item"><div class="benefit-icon">🤝</div><div class="benefit-text">Networking em eventos exclusivos com toda a cadeia do café especial</div></div>
-        <div class="benefit-item"><div class="benefit-icon">🌍</div><div class="benefit-text">Acesso a feiras internacionais e missões do setor</div></div>
-        <div class="benefit-item"><div class="benefit-icon">🎓</div><div class="benefit-text">Descontos na BSCA Academy para capacitação da equipe</div></div>
-        <div class="benefit-item"><div class="benefit-icon">🔗</div><div class="benefit-text">Acesso à rede de parceiros institucionais: Apex-Brasil e SCA</div></div>
-        <div class="benefit-item"><div class="benefit-icon">💰</div><div class="benefit-text">Descontos progressivos a partir do 5º ano de associação</div></div>
-        <div class="benefit-item"><div class="benefit-icon">🏅</div><div class="benefit-text">Credibilidade de fazer parte da cadeia rastreável do Selo BSCA</div></div>
-        <div class="benefit-item"><div class="benefit-icon">🗳️</div><div class="benefit-text">Direito a voto em Assembleia Geral</div></div>
-      </div>
-    </div>
-  </div>
-  <div class="cta-bar">
-    <div class="cta-text">
-      <strong>Sua empresa no coração da cadeia de qualidade do café especial.</strong>
-      Associe-se à BSCA e seja referência para os melhores produtores e exportadores do Brasil.
-    </div>
-    <a class="cta-btn" href="http://app.associatec.com.br/AreaAssociados/BSCA" target="_blank">Quero ser membro →</a>
-  </div>
-</div>
-
-
-<!-- ════════════════════════════════════
-     8. IMPLEMENTOS E EQUIPAMENTOS
-════════════════════════════════════ -->
-<div class="flyer theme-equipment" id="equipamentos">
-  <div class="flyer-header">
-    <div class="flyer-badge">Membro Associado · Implementos &amp; Equipamentos</div>
-    <h2>Suas soluções nas mãos<br>de quem mais investe em qualidade</h2>
-    <p class="tagline">Para fabricantes e fornecedores de máquinas, implementos e equipamentos para café</p>
-  </div>
-  <div class="flyer-body">
-    <p class="flyer-intro">
-      Os produtores, torrefadores e cafeterias da BSCA são justamente quem mais valoriza tecnologia e qualidade em cada etapa da cadeia. Associar-se significa ter acesso direto a esse público qualificado — e posicionar sua marca como parceira do café especial brasileiro.
-    </p>
-
-    <div class="pricing-box">
-      <h4>Investimento anual</h4>
-      <div class="price-grid">
-        <div class="price-item">
-          <div class="label">Parcela única (c/ desconto)</div>
-          <div class="value">R$ 2.636,28</div>
-          <div class="sub">equivale a ~8% de desconto</div>
-        </div>
-        <div class="price-item">
-          <div class="label">Semestral</div>
-          <div class="value">2x R$ 1.378,01</div>
-          <div class="sub">com desconto equivalente a meio mês</div>
-        </div>
-        <div class="price-item">
-          <div class="label">Mensal</div>
-          <div class="value">12x R$ 239,65</div>
-          <div class="sub">anuidade integral R$ 2.875,84</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="benefits">
-      <h4>O que você recebe</h4>
-      <div class="benefit-list">
-        <div class="benefit-item"><div class="benefit-icon">🌍</div><div class="benefit-text">Exposição nas maiores feiras internacionais do café ao lado da delegação BSCA</div></div>
-        <div class="benefit-item"><div class="benefit-icon">📣</div><div class="benefit-text">Divulgação da sua marca e produtos pelos canais oficiais da BSCA</div></div>
-        <div class="benefit-item"><div class="benefit-icon">🤝</div><div class="benefit-text">Acesso direto a produtores, torrefadores e cafeterias membros — seu público ideal</div></div>
-        <div class="benefit-item"><div class="benefit-icon">🎓</div><div class="benefit-text">Descontos na BSCA Academy e oportunidades de patrocinar conteúdo educacional</div></div>
-        <div class="benefit-item"><div class="benefit-icon">🔗</div><div class="benefit-text">Acesso à rede de parceiros e eventos exclusivos do setor</div></div>
-        <div class="benefit-item"><div class="benefit-icon">💰</div><div class="benefit-text">Descontos progressivos a partir do 5º ano de associação</div></div>
-        <div class="benefit-item"><div class="benefit-icon">🏅</div><div class="benefit-text">Credibilidade de ser reconhecido como parceiro da cadeia do café especial brasileiro</div></div>
-        <div class="benefit-item"><div class="benefit-icon">🗳️</div><div class="benefit-text">Direito a voto em Assembleia Geral</div></div>
-      </div>
-    </div>
-  </div>
-  <div class="cta-bar">
-    <div class="cta-text">
-      <strong>Sua tecnologia no campo e na xícara do café especial brasileiro.</strong>
-      Associe-se à BSCA e conecte sua empresa a quem realmente investe em qualidade.
-    </div>
-    <a class="cta-btn" href="http://app.associatec.com.br/AreaAssociados/BSCA" target="_blank">Quero ser membro →</a>
-  </div>
-</div>
-
-
-<!-- ════════════════════════════════════
-     9. PROFISSIONAIS (Comunidade)
-════════════════════════════════════ -->
-<div class="flyer theme-community" id="profissionais">
-  <div class="flyer-header">
-    <div class="flyer-badge">Membro Comunidade · Profissional · Gratuito</div>
-    <h2>Sua carreira no café especial<br>começa aqui — de graça</h2>
-    <p class="tagline">Para baristas, classificadores, mestres de torra, consultores e profissionais do setor</p>
-  </div>
-  <div class="flyer-body">
-    <p class="flyer-intro">
-      Se você atua profissionalmente no universo do café especial, a BSCA tem um lugar para você — sem custo. O Membership Comunidade para Profissionais garante acesso à rede de relacionamento, à educação da BSCA Academy e ao ecossistema mais representativo do setor no Brasil.
-    </p>
-
-    <div class="pricing-box">
-      <h4>Investimento anual</h4>
-      <div class="price-grid">
-        <div class="price-item">
-          <div class="label">Parcela única (c/ desconto)</div>
-          <div class="value">R$ 1.360,57</div>
-          <div class="sub">equivale a ~8% de desconto</div>
-        </div>
-        <div class="price-item">
-          <div class="label">Semestral</div>
-          <div class="value">2x R$ 711,18</div>
-          <div class="sub">com desconto equivalente a meio mês</div>
-        </div>
-        <div class="price-item">
-          <div class="label">Mensal</div>
-          <div class="value">12x R$ 123,68</div>
-          <div class="sub">anuidade integral R$ 1.484,21</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="benefits">
-      <h4>O que você recebe</h4>
-      <div class="benefit-list">
-        <div class="benefit-item"><div class="benefit-icon">🎓</div><div class="benefit-text">Acesso à BSCA Academy: cursos, certificações internacionais SCA e programa educacional</div></div>
-        <div class="benefit-item"><div class="benefit-icon">🤝</div><div class="benefit-text">Networking com toda a cadeia: produtores, torrefadores, cafeterias e exportadores</div></div>
-        <div class="benefit-item"><div class="benefit-icon">📚</div><div class="benefit-text">Acesso a conteúdos exclusivos, publicações e materiais educacionais da BSCA</div></div>
-        <div class="benefit-item"><div class="benefit-icon">🌱</div><div class="benefit-text">Porta de entrada para o ecossistema BSCA — com possibilidade de evolução na rede</div></div>
-      </div>
-    </div>
-    <p style="font-size:0.82rem;color:#6B7280;margin-top:4px;">* O Membro Comunidade não possui acesso às ferramentas comerciais (Selo, Vitrine, matchmaking) nem direito a voto em Assembleia.</p>
-  </div>
-  <div class="cta-bar">
-    <div class="cta-text">
-      <strong>O café especial é a sua profissão. A BSCA é a sua comunidade.</strong>
-      Associe-se e faça parte da maior rede do setor no Brasil.
-    </div>
-    <a class="cta-btn" href="http://app.associatec.com.br/AreaAssociados/BSCA" target="_blank">Quero ser membro →</a>
-  </div>
-</div>
-
-
-<!-- ════════════════════════════════════
-     10. ASSOCIAÇÃO DE PRODUTORES (Comunidade)
-════════════════════════════════════ -->
-<div class="flyer theme-community" id="assoc-produtores">
-  <div class="flyer-header">
-    <div class="flyer-badge">Membro Comunidade · Assoc. de Produtores</div>
-    <h2>Sua associação conectada<br>ao ecossistema BSCA</h2>
-    <p class="tagline">Para associações que representam produtores de café especial</p>
-  </div>
-  <div class="flyer-body">
-    <p class="flyer-intro">
-      Associações de produtores que representam a agricultura familiar e o cooperativismo do café especial têm um lugar na BSCA. Aqui, sua entidade encontra informação, educação e rede de relacionamento para fortalecer ainda mais quem você representa.
-    </p>
-
-    <div class="pricing-box">
-      <h4>Investimento anual</h4>
-      <div class="price-grid">
-        <div class="price-item">
-          <div class="label">Parcela única (c/ desconto)</div>
-          <div class="value">R$ 5.757,21</div>
-          <div class="sub">equivale a ~8% de desconto</div>
-        </div>
-        <div class="price-item">
-          <div class="label">Semestral</div>
-          <div class="value">2x R$ 3.009,92</div>
-          <div class="sub">com desconto equivalente a meio mês</div>
-        </div>
-        <div class="price-item">
-          <div class="label">Mensal</div>
-          <div class="value">12x R$ 523,36</div>
-          <div class="sub">anuidade integral R$ 6.280,36</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="benefits">
-      <h4>O que você recebe</h4>
-      <div class="benefit-list">
-        <div class="benefit-item"><div class="benefit-icon">🎓</div><div class="benefit-text">Acesso à BSCA Academy para formação e capacitação dos produtores associados</div></div>
-        <div class="benefit-item"><div class="benefit-icon">🤝</div><div class="benefit-text">Rede de relacionamento com o ecossistema BSCA: produtores, cooperativas e compradores</div></div>
-        <div class="benefit-item"><div class="benefit-icon">📚</div><div class="benefit-text">Acesso a conteúdos, publicações e materiais educacionais da BSCA</div></div>
-        <div class="benefit-item"><div class="benefit-icon">🌱</div><div class="benefit-text">Visibilidade junto à maior comunidade do café especial brasileiro</div></div>
-      </div>
-    </div>
-    <p style="font-size:0.82rem;color:#6B7280;margin-top:4px;">* O Membro Comunidade não possui acesso às ferramentas comerciais (Selo, Vitrine, matchmaking) nem direito a voto em Assembleia.</p>
-  </div>
-  <div class="cta-bar">
-    <div class="cta-text">
-      <strong>Fortaleça sua associação com a rede mais representativa do café especial.</strong>
-      Associe-se à BSCA.
-    </div>
-    <a class="cta-btn" href="http://app.associatec.com.br/AreaAssociados/BSCA" target="_blank">Quero ser membro →</a>
-  </div>
-</div>
-
-
-<!-- ════════════════════════════════════
-     11. ASSOCIAÇÃO DE COOPERATIVAS (Comunidade)
-════════════════════════════════════ -->
-<div class="flyer theme-community" id="assoc-cooperativas">
-  <div class="flyer-header">
-    <div class="flyer-badge">Membro Comunidade · Assoc. de Cooperativas</div>
-    <h2>Mais força para quem<br>representa o cooperativismo</h2>
-    <p class="tagline">Para associações que representam cooperativas de produtores de café</p>
-  </div>
-  <div class="flyer-body">
-    <p class="flyer-intro">
-      Organizações que representam cooperativas de café especial têm acesso à BSCA. Aqui, sua entidade encontra uma rede qualificada, conteúdo educacional e conexões estratégicas que beneficiam todas as cooperativas que você representa.
-    </p>
-
-    <div class="pricing-box">
-      <h4>Investimento anual</h4>
-      <div class="price-grid">
-        <div class="price-item">
-          <div class="label">Parcela única (c/ desconto)</div>
-          <div class="value">R$ 5.757,21</div>
-          <div class="sub">equivale a ~8% de desconto</div>
-        </div>
-        <div class="price-item">
-          <div class="label">Semestral</div>
-          <div class="value">2x R$ 3.009,92</div>
-          <div class="sub">com desconto equivalente a meio mês</div>
-        </div>
-        <div class="price-item">
-          <div class="label">Mensal</div>
-          <div class="value">12x R$ 523,36</div>
-          <div class="sub">anuidade integral R$ 6.280,36</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="benefits">
-      <h4>O que você recebe</h4>
-      <div class="benefit-list">
-        <div class="benefit-item"><div class="benefit-icon">🎓</div><div class="benefit-text">Acesso à BSCA Academy para formação contínua das cooperativas representadas</div></div>
-        <div class="benefit-item"><div class="benefit-icon">🤝</div><div class="benefit-text">Rede de relacionamento com cooperativas, produtores e compradores do ecossistema BSCA</div></div>
-        <div class="benefit-item"><div class="benefit-icon">📚</div><div class="benefit-text">Acesso a publicações, pesquisas e materiais institucionais da BSCA</div></div>
-        <div class="benefit-item"><div class="benefit-icon">🌱</div><div class="benefit-text">Visibilidade e reconhecimento junto ao setor do café especial brasileiro</div></div>
-      </div>
-    </div>
-    <p style="font-size:0.82rem;color:#6B7280;margin-top:4px;">* O Membro Comunidade não possui acesso às ferramentas comerciais (Selo, Vitrine, matchmaking) nem direito a voto em Assembleia.</p>
-  </div>
-  <div class="cta-bar">
-    <div class="cta-text">
-      <strong>O cooperativismo do café especial tem um lar na BSCA.</strong>
-      Associe-se e amplie a rede que você representa.
-    </div>
-    <a class="cta-btn" href="http://app.associatec.com.br/AreaAssociados/BSCA" target="_blank">Quero ser membro →</a>
-  </div>
-</div>
-
-
-<!-- ════════════════════════════════════
-     12. MEMBRO INTERNACIONAL
-════════════════════════════════════ -->
-<div class="flyer theme-intl" id="internacional">
-  <div class="flyer-header">
-    <div class="flyer-badge">Membro Associado · Internacional</div>
-    <h2>O melhor do café especial<br>brasileiro, ao seu alcance</h2>
-    <p class="tagline">Para compradores, importadores e players internacionais do mercado de cafés especiais</p>
-  </div>
-  <div class="flyer-body">
-    <p class="flyer-intro">
-      O Membro Internacional da BSCA tem acesso privilegiado ao maior ecossistema de cafés especiais do Brasil — com produtores certificados, lotes rastreados, salas de cupping e um canal direto com a origem mais diversa e premiada do mundo.
-    </p>
-
-    <div class="pricing-box">
-      <h4>Investimento</h4>
-      <div class="price-grid">
-        <div class="price-item">
-          <div class="label">Anuidade (BRL)</div>
-          <div class="value">R$ 3.850,77</div>
-          <div class="sub">Pagamento anual único · Ciclo 2026/2027</div>
-        </div>
-        <div class="price-item">
-          <div class="label">Anuidade (USD)</div>
-          <div class="value">US$ 739,11</div>
-          <div class="sub">Equivalente em dólar</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="benefits">
-      <h4>O que você recebe</h4>
-      <div class="benefit-list">
-        <div class="benefit-item"><div class="benefit-icon">🏅</div><div class="benefit-text">Acesso ao portfólio completo de lotes com Selo de Qualidade BSCA — rastreabilidade e origem garantidas</div></div>
-        <div class="benefit-item"><div class="benefit-icon">🛒</div><div class="benefit-text">Vitrine BSCA: centenas de produtores e lotes certificados em um único canal</div></div>
-        <div class="benefit-item"><div class="benefit-icon">🤝</div><div class="benefit-text">Matchmaking qualificado com produtores alinhados ao seu perfil de compra</div></div>
-        <div class="benefit-item"><div class="benefit-icon">🏺</div><div class="benefit-text">Salas de cupping exclusivas nas maiores feiras internacionais do café</div></div>
-        <div class="benefit-item"><div class="benefit-icon">🌾</div><div class="benefit-text">Recepção em fazendas brasileiras para degustações e visitas técnicas</div></div>
-        <div class="benefit-item"><div class="benefit-icon">🏆</div><div class="benefit-text">Acesso a lotes do Cup of Excellence — concurso mais prestigiado do mundo</div></div>
-        <div class="benefit-item"><div class="benefit-icon">📣</div><div class="benefit-text">Divulgação da sua empresa nos canais da BSCA como comprador parceiro</div></div>
-        <div class="benefit-item"><div class="benefit-icon">🗳️</div><div class="benefit-text">Direito a voto em Assembleia Geral e voz ativa na associação</div></div>
-      </div>
-    </div>
-  </div>
-  <div class="cta-bar">
-    <div class="cta-text">
-      <strong>Brazil Specialty Coffee. Direct from origin, certified, traceable.</strong>
-      Join BSCA and access the best of Brazilian specialty coffee.
-    </div>
-    <a class="cta-btn" href="http://app.associatec.com.br/AreaAssociados/BSCA" target="_blank">Contact us →</a>
-  </div>
-</div>
-
-
-<p class="site-footer">BSCA — Associação Brasileira de Cafés Especiais · bsca.com.br · Ciclo 2026/2027</p>
-
+document.addEventListener('DOMContentLoaded',init);
+</script>
 </body>
 </html>
