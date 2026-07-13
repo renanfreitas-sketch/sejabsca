@@ -6,7 +6,7 @@
   <title>Associe-se à BSCA</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 
   <!--
   ╔══════════════════════════════════════════════════════════╗
@@ -53,14 +53,14 @@
 
   html { scroll-behavior: smooth; }
   body {
-    font-family: 'DM Sans', system-ui, sans-serif;
+    font-family: 'Poppins', system-ui, sans-serif;
     background: var(--bg);
     color: var(--text);
     min-height: 100vh;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
-  h1, h2, h3 { font-family: 'DM Serif Display', Georgia, serif; line-height: 1.2; }
+  h1, h2, h3 { font-family: 'Poppins', sans-serif; line-height: 1.2; }
 
   /* HEADER */
   .site-header {
@@ -73,11 +73,11 @@
     box-shadow: 0 2px 16px rgba(0,0,0,0.35);
   }
   .logo img { height: 38px; display: block; }
-  .logo-text { color:#fff; font-family:'DM Serif Display',serif; font-size:24px; letter-spacing:.04em; }
+  .logo-text { color:#fff; font-family:'Poppins',sans-serif; font-size:24px; letter-spacing:.04em; }
   .lang-switcher { display:flex; gap:6px; }
   .lang-btn {
     background:transparent; border:1px solid rgba(255,255,255,.28);
-    color:rgba(255,255,255,.65); font-family:'DM Sans',sans-serif;
+    color:rgba(255,255,255,.65); font-family:'Poppins',sans-serif;
     font-size:11px; font-weight:700; letter-spacing:.06em;
     padding:4px 10px; border-radius:20px; cursor:pointer; transition:var(--tr);
   }
@@ -124,7 +124,7 @@
   .form-field label { font-size:12px; font-weight:700; color:var(--t-mid); letter-spacing:.05em; text-transform:uppercase; }
   .form-field input {
     border:1.5px solid var(--border); border-radius:8px; padding:12px 14px;
-    font-family:'DM Sans',sans-serif; font-size:15px; color:var(--text);
+    font-family:'Poppins',sans-serif; font-size:15px; color:var(--text);
     background:var(--cream); outline:none; transition:border-color var(--tr),box-shadow var(--tr);
   }
   .form-field input:focus { border-color:var(--green); box-shadow:0 0 0 3px rgba(30,92,52,.12); background:#fff; }
@@ -153,7 +153,7 @@
   .cat-card.selected { outline-color:var(--gold); transform:translateY(-2px); box-shadow:0 0 0 6px rgba(201,168,76,.22); }
   .cat-card.selected::after { opacity:1; }
   .cat-icon  { font-size:30px; display:block; margin-bottom:8px; }
-  .cat-name  { font-family:'DM Serif Display',serif; font-size:15px; line-height:1.25; margin-bottom:3px; }
+  .cat-name  { font-family:'Poppins',sans-serif; font-size:14px; font-weight:700; line-height:1.2; margin-bottom:4px; letter-spacing:.01em; }
   .cat-desc  { font-size:11px; opacity:.8; line-height:1.35; }
   .cat-badge { display:inline-block; background:var(--gold); color:var(--green-dark); font-size:9px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; padding:2px 8px; border-radius:20px; margin-top:6px; }
 
@@ -163,7 +163,7 @@
 
   /* STEP 2 */
   .sub-hero { text-align:center; margin-bottom:28px; }
-  .back-btn { display:inline-flex; align-items:center; gap:5px; background:none; border:none; color:var(--green); font-family:'DM Sans',sans-serif; font-size:14px; font-weight:600; cursor:pointer; margin-bottom:18px; padding:0; transition:color var(--tr); }
+  .back-btn { display:inline-flex; align-items:center; gap:5px; background:none; border:none; color:var(--green); font-family:'Poppins',sans-serif; font-size:14px; font-weight:600; cursor:pointer; margin-bottom:18px; padding:0; transition:color var(--tr); }
   .back-btn:hover { color:var(--green-mid); }
   .sub-hero h2 { font-size:30px; color:var(--green-dark); margin-bottom:8px; }
   .sub-hero p  { font-size:16px; color:var(--t-mid); }
@@ -171,7 +171,7 @@
   .sub-card { background:var(--white); border:2px solid var(--border); border-radius:var(--radius); padding:20px; cursor:pointer; transition:all var(--tr); user-select:none; }
   .sub-card:hover { border-color:var(--green-mid); box-shadow:var(--shadow); transform:translateY(-2px); }
   .sub-card.selected { border-color:var(--green); background:var(--green-light); box-shadow:0 0 0 3px rgba(30,92,52,.15); }
-  .sub-card h3 { font-family:'DM Serif Display',serif; font-size:16px; color:var(--green-dark); margin-bottom:4px; }
+  .sub-card h3 { font-family:'Poppins',sans-serif; font-size:16px; color:var(--green-dark); margin-bottom:4px; }
   .sub-card p  { font-size:13px; color:var(--t-sub); line-height:1.4; }
   .sub-price { font-size:13px; font-weight:700; color:var(--green); margin-top:10px; padding-top:8px; border-top:1px solid var(--border); }
 
@@ -188,7 +188,7 @@
   .benefit-text p  { font-size:13px; color:var(--t-sub); line-height:1.45; }
 
   /* BUTTONS */
-  .btn { display:inline-flex; align-items:center; gap:8px; padding:13px 26px; border-radius:8px; font-family:'DM Sans',sans-serif; font-size:15px; font-weight:700; cursor:pointer; border:none; transition:all var(--tr); text-decoration:none; white-space:nowrap; }
+  .btn { display:inline-flex; align-items:center; gap:8px; padding:13px 26px; border-radius:8px; font-family:'Poppins',sans-serif; font-size:15px; font-weight:700; cursor:pointer; border:none; transition:all var(--tr); text-decoration:none; white-space:nowrap; }
   .btn-primary { background:var(--green); color:#fff; }
   .btn-primary:hover { background:var(--green-mid); transform:translateY(-1px); box-shadow:var(--shadow); }
   .btn-gold { background:var(--gold); color:var(--green-dark); font-size:17px; padding:18px 44px; border-radius:10px; letter-spacing:.03em; box-shadow:0 4px 18px rgba(201,168,76,.3); }
@@ -209,16 +209,16 @@
   .price-card.featured { border-color:var(--green); }
   .price-card-badge { position:absolute; top:-11px; left:50%; transform:translateX(-50%); background:var(--green); color:#fff; font-size:9px; font-weight:800; letter-spacing:.09em; text-transform:uppercase; padding:3px 14px; border-radius:20px; white-space:nowrap; }
   .price-card-label  { font-size:11px; font-weight:700; color:var(--t-sub); text-transform:uppercase; letter-spacing:.08em; margin-bottom:8px; }
-  .price-card-amount { font-family:'DM Serif Display',serif; font-size:22px; color:var(--green-dark); line-height:1.2; }
+  .price-card-amount { font-family:'Poppins',sans-serif; font-size:22px; color:var(--green-dark); line-height:1.2; }
   .price-card-sub    { font-size:11px; color:var(--t-sub); margin-top:5px; }
 
   .free-section { text-align:center; padding:28px; background:var(--white); border-radius:var(--radius); box-shadow:var(--shadow); margin-bottom:28px; }
-  .free-badge-big { font-family:'DM Serif Display',serif; font-size:40px; color:var(--green-dark); display:block; margin-bottom:6px; }
+  .free-badge-big { font-family:'Poppins',sans-serif; font-size:40px; color:var(--green-dark); display:block; margin-bottom:6px; }
   .free-label { display:inline-block; background:var(--gold-light); border:2px solid var(--gold); color:var(--green-dark); font-size:13px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; padding:4px 18px; border-radius:20px; margin-bottom:12px; }
   .free-section p { font-size:15px; color:var(--t-mid); }
 
   .usd-section { background:var(--white); border-radius:var(--radius); padding:28px; text-align:center; margin-bottom:28px; box-shadow:var(--shadow); }
-  .usd-amount { font-family:'DM Serif Display',serif; font-size:36px; color:var(--green-dark); margin-bottom:6px; }
+  .usd-amount { font-family:'Poppins',sans-serif; font-size:36px; color:var(--green-dark); margin-bottom:6px; }
   .usd-brl    { font-size:16px; color:var(--t-mid); }
   .usd-note   { font-size:12px; color:var(--t-sub); margin-top:8px; }
   .usd-loading{ font-size:14px; color:var(--t-sub); font-style:italic; }
@@ -226,7 +226,7 @@
   .pfjp-section { background:var(--cream); border:1.5px solid var(--border); border-radius:var(--radius); padding:20px 22px; margin-bottom:24px; }
   .pfjp-lbl { font-size:11px; font-weight:800; color:var(--t-sub); text-transform:uppercase; letter-spacing:.08em; margin-bottom:12px; display:block; }
   .pfjp-toggle { display:flex; gap:10px; flex-wrap:wrap; }
-  .pfjp-btn { flex:1; min-width:130px; padding:13px 14px; border:2px solid var(--border); border-radius:8px; background:var(--white); cursor:pointer; font-family:'DM Sans',sans-serif; font-size:14px; font-weight:700; color:var(--t-mid); text-align:center; transition:all var(--tr); }
+  .pfjp-btn { flex:1; min-width:130px; padding:13px 14px; border:2px solid var(--border); border-radius:8px; background:var(--white); cursor:pointer; font-family:'Poppins',sans-serif; font-size:14px; font-weight:700; color:var(--t-mid); text-align:center; transition:all var(--tr); }
   .pfjp-btn:hover { border-color:var(--green); color:var(--green); }
   .pfjp-btn.active { border-color:var(--green); background:var(--green-light); color:var(--green-dark); }
   .pfjp-sub { font-size:11px; font-weight:400; color:var(--t-sub); margin-top:3px; }
@@ -235,7 +235,7 @@
   .cta-note { margin-top:12px; font-size:13px; color:var(--t-sub); }
 
   .docs-accordion { border:1.5px solid var(--border); border-radius:var(--radius); overflow:hidden; margin-bottom:8px; }
-  .docs-toggle { width:100%; background:var(--white); border:none; padding:17px 20px; display:flex; align-items:center; justify-content:space-between; cursor:pointer; font-family:'DM Sans',sans-serif; font-size:14px; font-weight:700; color:var(--green-dark); transition:background var(--tr); }
+  .docs-toggle { width:100%; background:var(--white); border:none; padding:17px 20px; display:flex; align-items:center; justify-content:space-between; cursor:pointer; font-family:'Poppins',sans-serif; font-size:14px; font-weight:700; color:var(--green-dark); transition:background var(--tr); }
   .docs-toggle:hover { background:var(--green-light); }
   .docs-chevron { font-size:16px; transition:transform .25s ease; }
   .docs-toggle.open .docs-chevron { transform:rotate(180deg); }
@@ -361,7 +361,7 @@
 </main>
 
 <footer class="site-footer">
-  <p>© 2025 BSCA – Brazilian Specialty Coffee Association · <a href="https://www.bsca.com.br" target="_blank">www.bsca.com.br</a></p>
+  <p>© 2026 BSCA – Brazilian Specialty Coffee Association · <a href="https://www.bsca.com.br" target="_blank">www.bsca.com.br</a></p>
 </footer>
 
 <script>
@@ -481,7 +481,7 @@ const CATS=[
    en:{name:'Coffee Roaster',          desc:'Roasting companies'},
    es:{name:'Tostador',                desc:'Empresas de tostado de café'}},
   {id:'cafeteria',          icon:'🏪',hasSub:false,free:false,
-   pt:{name:'Cafeteria / Coffee Shop', desc:'Espaços de consumo de café especial'},
+   pt:{name:'Cafeteria', desc:'Espaços de consumo de café especial'},
    en:{name:'Coffee Shop',             desc:'Specialty coffee venues'},
    es:{name:'Cafetería',               desc:'Espacios de consumo de café especial'}},
   {id:'exportador',         icon:'🚢',hasSub:true, free:false,
@@ -508,7 +508,7 @@ const CATS=[
    pt:{name:'Profissional do Café',    desc:'Baristas, Q-Graders, consultores e outros'},
    en:{name:'Coffee Professional',     desc:'Baristas, Q-Graders, consultants & others'},
    es:{name:'Profesional del Café',    desc:'Baristas, Q-Graders, consultores y otros'}},
-  {id:'assoc-produtores',   icon:'🌾',hasSub:false,free:true,
+  {id:'assoc-produtores',   icon:'👨\u200d🌾',hasSub:false,free:true,
    pt:{name:'Assoc. de Produtores',    desc:'Associações representativas de produtores'},
    en:{name:'Producers Association',   desc:'Producer representative associations'},
    es:{name:'Asoc. de Productores',    desc:'Asociaciones representativas de productores'}},
@@ -694,9 +694,7 @@ const REG_IDS={
   torr_nao:            {pj:4036},
   torr_vin_cafe:       {pj:4037},
   torr_vin_prod:       {pj:4085},
-};
-
-/* ================================================================
+};==================================
    DOCUMENTS
 ================================================================ */
 const DOC_TYPE_MAP={
