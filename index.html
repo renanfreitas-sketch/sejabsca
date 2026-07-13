@@ -361,7 +361,7 @@
 </main>
 
 <footer class="site-footer">
-  <p>© 2026 BSCA – Brazilian Specialty Coffee Association · <a href="https://www.bsca.com.br" target"_blank">www.bsca.com.br</a></p>
+  <p>© 2026 BSCA – Brazilian Specialty Coffee Association · <a href="https://www.bsca.com.br" target="_blank">www.bsca.com.br</a></p>
 </footer>
 
 <script>
@@ -534,9 +534,9 @@ const SUBOPTS={
       {id:'a1',pt:{name:'Produtor A1', desc:'Até 50 sacas/ano'},           en:{name:'Produtor A1',       desc:'Up to 50 bags/year'},       es:{name:'Productor A1',      desc:'Hasta 50 sacos/año'}},
       {id:'aa',pt:{name:'Produtor AA',  desc:'51 a 300 sacas/ano'},          en:{name:'Produtor AA',       desc:'51–300 bags/year'},         es:{name:'Productor AA',      desc:'51 a 300 sacos/año'}},
       {id:'a', pt:{name:'Produtor A',   desc:'301 a 900 sacas/ano'},         en:{name:'Produtor A',        desc:'301–900 bags/year'},        es:{name:'Productor A',       desc:'301 a 900 sacos/año'}},
-      {id:'b', pt:{name:'Produtor B',   desc:'901 a 2.000 sacas/ano'},       en:{name:'Produtor B',        desc:'901–2,000 bags/year'},      es:{name:'Productor B',       desc:'901 a 2.000 sacos/año'}},
-      {id:'c', pt:{name:'Produtor C',   desc:'2.001 a 5.000 sacas/ano'},     en:{name:'Produtor C',        desc:'2,001–5,000 bags/year'},    es:{name:'Productor C',       desc:'2.001 a 5.000 sacos/año'}},
-      {id:'d', pt:{name:'Produtor D',   desc:'Acima de 5.000 sacas/ano'},    en:{name:'Produtor D',        desc:'Over 5,000 bags/year'},     es:{name:'Productor D',       desc:'Más de 5.000 sacos/año'}},
+      {id:'b', pt:{name:'Produtor B',   desc:'901 a 2.000 sacas/ano'},       en:{name:'Produtor B',        desc:'901–2,000 bags/year'},      es:{name:'Produtor B',       desc:'901 a 2.000 sacos/año'}},
+      {id:'c', pt:{name:'Produtor C',   desc:'2.001 a 5.000 sacas/ano'},     en:{name:'Produtor C',        desc:'2,001–5,000 bags/year'},    es:{name:'Produtor C',       desc:'2.001 a 5.000 sacos/año'}},
+      {id:'d', pt:{name:'Produtor D',   desc:'Acima de 5.000 sacas/ano'},    en:{name:'Produtor D',        desc:'Over 5,000 bags/year'},     es:{name:'Produtor D',       desc:'Más de 5.000 sacos/año'}},
     ]
   },
   torrefador:{
@@ -705,9 +705,9 @@ const DOC_TYPE_MAP={
   profissionais:'C','assoc-produtores':'C','assoc-cooperativas':'C',internacional:'F',
 };
 const DOCS={
-  A:{pt:['CPF ou CNPJ do produtor','CAR (Cadastro Ambiental Rural) ou CCIR','Comprovante de produção de café (nota fiscal, contrato ou declaração)','Formulário de filiação preenchido e assinado'],
-     en:['Individual or company tax ID (CPF/CNPJ)','Environmental Rural Registry (CAR) or Rural Property Certificate (CCIR)','Proof of coffee production (invoice, contract, or production declaration)','Completed and signed membership form'],
-     es:['CPF o CNPJ del productor','CAR (Registro Ambiental Rural) o CCIR','Comprobante de producción de café (factura, contrato o declaración)','Formulario de afiliación completo y firmado']},
+  A:{pt:['CPF ou CNPJ do produtor','Cadastro de Produtor Rural (CAR)','Certificado de sustentabilidade','Comprovante de produção de café (nota fiscal, contrato ou declaração)','Formulário de filiação preenchido e assinado'],
+     en:['Individual or company tax ID (CPF/CNPJ)','Rural Producer Registration (CAR)','Sustainability certificate','Proof of coffee production (invoice, contract, or production declaration)','Completed and signed membership form'],
+     es:['CPF o CNPJ del productor','Registro de Productor Rural (CAR)','Certificado de sostenibilidad','Comprobante de producción de café (factura, contrato o declaración)','Formulario de afiliación completo y firmado']},
   B:{pt:['CNPJ ativo','Contrato Social ou Estatuto atualizado','Comprovante de atividade no setor cafeeiro','Formulário de filiação preenchido e assinado'],
      en:['Active company registration (CNPJ)','Updated Articles of Incorporation or Bylaws','Proof of activity in the coffee sector','Completed and signed membership form'],
      es:['CNPJ activo','Contrato Social o Estatutos actualizados','Comprobante de actividad en el sector cafetalero','Formulario de afiliación completo y firmado']},
@@ -822,6 +822,7 @@ function tryAdvance(){
   if(!ok)return;
   S.firstName=firstN(nm);
   subscribeMailchimp({name:nm,phone:ph,email:em,city:cy,cat:S.cat});
+  subscribeMonday({name:nm,phone:ph,email:em,city:cy,cat:S.cat});
   goToStep(HAS_SUB.includes(S.cat)?2:3);
 }
 
@@ -851,6 +852,19 @@ function subscribeMailchimp({name,phone,email,city,cat}){
   sc.src=url;
   document.head.appendChild(sc);
   setTimeout(()=>{if(window[cb])delete window[cb];if(sc.parentNode)sc.parentNode.removeChild(sc);},10000);
+}
+
+/* ================================================================
+   MONDAY WEBHOOK
+================================================================ */
+const MONDAY_HOOK='https://hook.us2.make.com/wonhep92y3ur7xgkbhiuhsklmhh3e2op';
+function subscribeMonday({name,phone,email,city,cat}){
+  if(!MONDAY_HOOK)return;
+  fetch(MONDAY_HOOK,{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({name,phone,email,city,cat:catLabel(cat)})
+  }).catch(()=>{});
 }
 
 /* ================================================================
