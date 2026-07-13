@@ -370,7 +370,7 @@
    audiência INTERESSE_MEMBROS_BSCA (Audience → Signup forms →
    Embedded forms → copie o "action" do <form>)
 ================================================================ */
-const MAILCHIMP_URL = 'SEU_MAILCHIMP_URL_AQUI';
+const MAILCHIMP_URL = 'https://bsca.us17.list-manage.com/subscribe/post?u=af49ad637ae9ec76560509ad9&id=c9a599dbab';
 
 /* ================================================================
    TRANSLATIONS
@@ -531,12 +531,12 @@ const SUBOPTS={
     en:{title:'Coffee Farmer – Scale',        sub:'Select your annual production range in processed bags.'},
     es:{title:'Productor Rural – Escala',     sub:'Seleccione su rango de producción anual en sacos beneficiados.'},
     opts:[
-      {id:'a1',pt:{name:'Micro Produtor',    desc:'Até 50 sacas/ano'},           en:{name:'Micro Farmer',      desc:'Up to 50 bags/year'},       es:{name:'Micro Productor',   desc:'Hasta 50 sacos/año'}},
-      {id:'aa',pt:{name:'Pequeno Produtor',  desc:'51 a 300 sacas/ano'},          en:{name:'Small Farmer',      desc:'51–300 bags/year'},         es:{name:'Pequeño Productor', desc:'51 a 300 sacos/año'}},
-      {id:'a', pt:{name:'Médio Produtor',    desc:'301 a 900 sacas/ano'},         en:{name:'Medium Farmer',     desc:'301–900 bags/year'},        es:{name:'Productor Mediano', desc:'301 a 900 sacos/año'}},
-      {id:'b', pt:{name:'Grande Produtor',   desc:'901 a 2.000 sacas/ano'},       en:{name:'Large Farmer',      desc:'901–2,000 bags/year'},      es:{name:'Gran Productor',    desc:'901 a 2.000 sacos/año'}},
-      {id:'c', pt:{name:'Produtor Premium',  desc:'2.001 a 5.000 sacas/ano'},     en:{name:'Premium Farmer',    desc:'2,001–5,000 bags/year'},    es:{name:'Productor Premium', desc:'2.001 a 5.000 sacos/año'}},
-      {id:'d', pt:{name:'Mega Produtor',     desc:'Acima de 5.000 sacas/ano'},    en:{name:'Mega Farmer',       desc:'Over 5,000 bags/year'},     es:{name:'Mega Productor',    desc:'Más de 5.000 sacos/año'}},
+      {id:'a1',pt:{name:'Produtor A1', desc:'Até 50 sacas/ano'},           en:{name:'Produtor A1',       desc:'Up to 50 bags/year'},       es:{name:'Productor A1',      desc:'Hasta 50 sacos/año'}},
+      {id:'aa',pt:{name:'Produtor AA',  desc:'51 a 300 sacas/ano'},          en:{name:'Produtor AA',       desc:'51–300 bags/year'},         es:{name:'Productor AA',      desc:'51 a 300 sacos/año'}},
+      {id:'a', pt:{name:'Produtor A',   desc:'301 a 900 sacas/ano'},         en:{name:'Produtor A',        desc:'301–900 bags/year'},        es:{name:'Productor A',       desc:'301 a 900 sacos/año'}},
+      {id:'b', pt:{name:'Produtor B',   desc:'901 a 2.000 sacas/ano'},       en:{name:'Produtor B',        desc:'901–2,000 bags/year'},      es:{name:'Productor B',       desc:'901 a 2.000 sacos/año'}},
+      {id:'c', pt:{name:'Produtor C',   desc:'2.001 a 5.000 sacas/ano'},     en:{name:'Produtor C',        desc:'2,001–5,000 bags/year'},    es:{name:'Productor C',       desc:'2.001 a 5.000 sacos/año'}},
+      {id:'d', pt:{name:'Produtor D',   desc:'Acima de 5.000 sacas/ano'},    en:{name:'Produtor D',        desc:'Over 5,000 bags/year'},     es:{name:'Productor D',       desc:'Más de 5.000 sacos/año'}},
     ]
   },
   torrefador:{
@@ -864,13 +864,11 @@ function renderSubStep(){
   $('subSub').textContent=info.sub;
   $('subGrid').innerHTML=d.opts.map(o=>{
     const oi=o[S.lang]||o.pt;
-    const pr=priceObj(S.cat,o.id);
-    const ph=pr?`<div class="sub-price">${pr.annual} ${t('subPriceLabel')}</div>`:'';
     return`<div class="sub-card${S.subcat===o.id?' selected':''}"
       onclick="selectSub('${o.id}')"
       role="button" tabindex="0"
       onkeydown="if(event.key==='Enter'||event.key===' ')selectSub('${o.id}')">
-      <h3>${oi.name}</h3><p>${oi.desc}</p>${ph}
+      <h3>${oi.name}</h3><p>${oi.desc}</p>
     </div>`;
   }).join('');
 }
