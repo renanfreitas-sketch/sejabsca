@@ -51,6 +51,66 @@
     --tr:          0.22s ease;
   }
 
+  /* EXIT-INTENT POPUP */
+  #exitPopupOverlay {
+    display:none; position:fixed; inset:0; z-index:9000;
+    background:rgba(13,40,24,0.72); backdrop-filter:blur(4px);
+    align-items:center; justify-content:center;
+  }
+  #exitPopupOverlay.open { display:flex; }
+  #exitPopup {
+    background:var(--white); border-radius:var(--radius-lg);
+    box-shadow:var(--shadow-lg); max-width:480px; width:calc(100% - 32px);
+    overflow:hidden; position:relative; animation:popIn .28s ease;
+  }
+  @keyframes popIn { from{opacity:0;transform:scale(.92)} to{opacity:1;transform:scale(1)} }
+  #exitPopup .ep-banner {
+    background:var(--green); padding:28px 28px 20px;
+    display:flex; flex-direction:column; align-items:center; gap:8px;
+  }
+  #exitPopup .ep-icon { font-size:36px; line-height:1; }
+  #exitPopup .ep-title {
+    color:#fff; font-size:20px; font-weight:700; text-align:center; margin:0;
+  }
+  #exitPopup .ep-sub {
+    color:rgba(255,255,255,.8); font-size:13px; text-align:center; margin:0;
+  }
+  #exitPopup .ep-body { padding:24px 28px 28px; }
+  #exitPopup .ep-form { display:flex; flex-direction:column; gap:12px; }
+  #exitPopup .ep-input {
+    width:100%; padding:12px 14px; border:1.5px solid var(--border);
+    border-radius:var(--radius); font-family:'Poppins',sans-serif;
+    font-size:14px; color:var(--text); background:var(--cream);
+    outline:none; transition:border-color var(--tr);
+  }
+  #exitPopup .ep-input:focus { border-color:var(--green); }
+  #exitPopup .ep-btn {
+    width:100%; padding:13px; background:var(--gold); border:none;
+    border-radius:var(--radius); font-family:'Poppins',sans-serif;
+    font-size:14px; font-weight:700; letter-spacing:.04em;
+    color:var(--green-dark); cursor:pointer; transition:background var(--tr);
+  }
+  #exitPopup .ep-btn:hover { background:var(--gold-hover); }
+  #exitPopup .ep-notice { font-size:11px; color:var(--t-sub); text-align:center; margin-top:4px; }
+  #exitPopup .ep-close {
+    position:absolute; top:12px; right:14px; background:none; border:none;
+    color:rgba(255,255,255,.7); font-size:20px; cursor:pointer; line-height:1;
+    padding:4px; transition:color var(--tr);
+  }
+  #exitPopup .ep-close:hover { color:#fff; }
+  #exitPopup .ep-msg {
+    text-align:center; font-size:13px; color:var(--green); font-weight:600;
+    padding:8px 0 0; display:none;
+  }
+  #exitPopup .ep-msg.show { display:block; }
+  #exitPopup .ep-skip {
+    display:block; text-align:center; margin-top:14px;
+    font-size:12px; color:var(--t-sub); cursor:pointer;
+    text-decoration:underline; background:none; border:none;
+    font-family:'Poppins',sans-serif;
+  }
+  #exitPopup .ep-skip:hover { color:var(--text); }
+
   html { scroll-behavior: smooth; }
   body {
     font-family: 'Poppins', system-ui, sans-serif;
@@ -364,6 +424,27 @@
   <p>© 2026 BSCA – Brazilian Specialty Coffee Association · <a href="https://www.bsca.com.br" target="_blank">www.bsca.com.br</a></p>
 </footer>
 
+<!-- EXIT-INTENT NEWSLETTER POPUP -->
+<div id="exitPopupOverlay" role="dialog" aria-modal="true" aria-label="Newsletter BSCA">
+  <div id="exitPopup">
+    <button class="ep-close" onclick="closeExitPopup()" aria-label="Fechar">✕</button>
+    <div class="ep-banner">
+      <span class="ep-icon">☕</span>
+      <p class="ep-title">Fique por dentro das novidades da BSCA!</p>
+      <p class="ep-sub">Inscreva-se na nossa newsletter e receba conteúdos exclusivos sobre o café especial brasileiro.</p>
+    </div>
+    <div class="ep-body">
+      <div class="ep-form">
+        <input id="epEmail" class="ep-input" type="email" placeholder="Seu melhor e-mail" autocomplete="email">
+        <button class="ep-btn" onclick="subscribeNewsletter()">QUERO RECEBER AS NOVIDADES</button>
+        <p class="ep-notice">Sem spam. Cancele a qualquer momento.</p>
+        <div id="epMsg" class="ep-msg"></div>
+      </div>
+      <button class="ep-skip" onclick="closeExitPopup()">Não, obrigado</button>
+    </div>
+  </div>
+</div>
+
 <script>
 /* ================================================================
    MAILCHIMP — substitua pela URL do formulário incorporado da
@@ -527,16 +608,16 @@ const CATS=[
 ================================================================ */
 const SUBOPTS={
   produtor:{
-    pt:{title:'Produtor Rural – Porte',      sub:'Selecione a faixa de produção anual em sacas beneficiadas.'},
-    en:{title:'Coffee Farmer – Scale',        sub:'Select your annual production range in processed bags.'},
-    es:{title:'Productor Rural – Escala',     sub:'Seleccione su rango de producción anual en sacos beneficiados.'},
+    pt:{title:'Produtor Rural – Porte',      sub:'Selecione a faixa de área de produção em hectares.'},
+    en:{title:'Coffee Farmer – Scale',        sub:'Select your production area range in hectares.'},
+    es:{title:'Productor Rural – Escala',     sub:'Seleccione su rango de área de producción en hectáreas.'},
     opts:[
-      {id:'a1',pt:{name:'Produtor A1', desc:'Até 50 sacas/ano'},           en:{name:'Produtor A1',       desc:'Up to 50 bags/year'},       es:{name:'Productor A1',      desc:'Hasta 50 sacos/año'}},
-      {id:'aa',pt:{name:'Produtor AA',  desc:'51 a 300 sacas/ano'},          en:{name:'Produtor AA',       desc:'51–300 bags/year'},         es:{name:'Productor AA',      desc:'51 a 300 sacos/año'}},
-      {id:'a', pt:{name:'Produtor A',   desc:'301 a 900 sacas/ano'},         en:{name:'Produtor A',        desc:'301–900 bags/year'},        es:{name:'Productor A',       desc:'301 a 900 sacos/año'}},
-      {id:'b', pt:{name:'Produtor B',   desc:'901 a 2.000 sacas/ano'},       en:{name:'Produtor B',        desc:'901–2,000 bags/year'},      es:{name:'Productor B',       desc:'901 a 2.000 sacos/año'}},
-      {id:'c', pt:{name:'Produtor C',   desc:'2.001 a 5.000 sacas/ano'},     en:{name:'Produtor C',        desc:'2,001–5,000 bags/year'},    es:{name:'Productor C',       desc:'2.001 a 5.000 sacos/año'}},
-      {id:'d', pt:{name:'Produtor D',   desc:'Acima de 5.000 sacas/ano'},    en:{name:'Produtor D',        desc:'Over 5,000 bags/year'},     es:{name:'Productor D',       desc:'Más de 5.000 sacos/año'}},
+      {id:'a1',pt:{name:'Produtor A1', desc:'Até 20 hectares'},           en:{name:'Produtor A1',       desc:'Up to 20 hectares'},       es:{name:'Productor A1',      desc:'Hasta 20 hectáreas'}},
+      {id:'aa',pt:{name:'Produtor AA',  desc:'De 20 a 50 hectares'},       en:{name:'Produtor AA',       desc:'20 to 50 hectares'},       es:{name:'Productor AA',      desc:'De 20 a 50 hectáreas'}},
+      {id:'a', pt:{name:'Produtor A',   desc:'De 51 a 100 hectares'},      en:{name:'Produtor A',        desc:'51 to 100 hectares'},      es:{name:'Productor A',       desc:'De 51 a 100 hectáreas'}},
+      {id:'b', pt:{name:'Produtor B',   desc:'De 101 a 200 hectares'},     en:{name:'Produtor B',        desc:'101 to 200 hectares'},     es:{name:'Productor B',       desc:'De 101 a 200 hectáreas'}},
+      {id:'c', pt:{name:'Produtor C',   desc:'De 201 a 400 hectares'},     en:{name:'Produtor C',        desc:'201 to 400 hectares'},     es:{name:'Productor C',       desc:'De 201 a 400 hectáreas'}},
+      {id:'d', pt:{name:'Produtor D',   desc:'Acima de 401 hectares'},     en:{name:'Produtor D',        desc:'Over 401 hectares'},       es:{name:'Productor D',       desc:'Más de 401 hectáreas'}},
     ]
   },
   torrefador:{
@@ -1042,6 +1123,93 @@ function init(){
 }
 
 document.addEventListener('DOMContentLoaded',init);
+
+/* ================================================================
+   NEWSLETTER MAILCHIMP — substitua pela URL da audiência NEWSLETTER
+   Mailchimp → Audience → (selecione NEWSLETTER) → Signup forms →
+   Embedded forms → copie o "action" do <form>
+================================================================ */
+const MAILCHIMP_NEWSLETTER_URL = '';
+
+/* ================================================================
+   EXIT-INTENT POPUP
+================================================================ */
+(function(){
+  let shown = false;
+  const SESSION_KEY = 'bsca_nl_shown';
+
+  function openExitPopup(){
+    if(shown || sessionStorage.getItem(SESSION_KEY)) return;
+    shown = true;
+    sessionStorage.setItem(SESSION_KEY,'1');
+    document.getElementById('exitPopupOverlay').classList.add('open');
+  }
+
+  // Desktop: mouse leaves toward the top of the viewport
+  document.addEventListener('mouseleave', function(e){
+    if(e.clientY <= 10) openExitPopup();
+  });
+
+  // Mobile: page visibility hidden (switching tab / going back)
+  document.addEventListener('visibilitychange', function(){
+    if(document.visibilityState === 'hidden') openExitPopup();
+  });
+
+  // Close on overlay click
+  document.getElementById('exitPopupOverlay').addEventListener('click', function(e){
+    if(e.target === this) closeExitPopup();
+  });
+
+  // ESC key
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') closeExitPopup();
+  });
+})();
+
+function closeExitPopup(){
+  document.getElementById('exitPopupOverlay').classList.remove('open');
+}
+
+function subscribeNewsletter(){
+  const emailEl = document.getElementById('epEmail');
+  const msgEl   = document.getElementById('epMsg');
+  const email   = emailEl.value.trim();
+
+  if(!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+    emailEl.style.borderColor = '#c0392b';
+    emailEl.focus();
+    return;
+  }
+  emailEl.style.borderColor = '';
+
+  if(!MAILCHIMP_NEWSLETTER_URL){
+    // URL não configurada — mostra mensagem de sucesso local
+    msgEl.textContent = '✓ Inscrição recebida! Obrigado.';
+    msgEl.classList.add('show');
+    setTimeout(closeExitPopup, 2000);
+    return;
+  }
+
+  const cb = 'nlcb' + Date.now();
+  window[cb] = function(r){
+    if(r && r.result === 'success'){
+      msgEl.textContent = '✓ Inscrição confirmada! Bem-vindo(a).';
+    } else {
+      msgEl.textContent = r && r.msg ? r.msg.replace(/<[^>]+>/g,'') : '✓ Inscrição recebida!';
+    }
+    msgEl.classList.add('show');
+    delete window[cb];
+    if(sc.parentNode) sc.parentNode.removeChild(sc);
+    setTimeout(closeExitPopup, 2500);
+  };
+
+  const url = MAILCHIMP_NEWSLETTER_URL.replace(/\/post(\?)/,'/post-json$1') +
+    '&' + new URLSearchParams({EMAIL: email, c: cb}).toString();
+  const sc = document.createElement('script');
+  sc.src = url;
+  document.head.appendChild(sc);
+  setTimeout(()=>{ if(window[cb]) delete window[cb]; if(sc.parentNode) sc.parentNode.removeChild(sc); }, 10000);
+}
 </script>
 </body>
 </html>
